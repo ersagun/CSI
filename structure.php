@@ -29,7 +29,7 @@ finhtml;
 
 function connexion(){
 
-    $p = new PDO("mysql:host=localhost; dbname=magasin; ;charset=ISO 8859-1", "root");
+    $p = new PDO("mysql:host=127.0.0.1; dbname=magasin; ;charset=ISO 8859-1", "root");
     return $p;
 }
 ?>
