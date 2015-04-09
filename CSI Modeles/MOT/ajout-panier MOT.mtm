@@ -1,0 +1,1172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?PowerDesigner AppLocale="UTF16" ID="{36ECBD23-238E-463E-83DA-58D04F425297}" Label="" LastModificationDate="1428415296" Name="MOT Ajout" Objects="18" Symbols="18" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" signature="MTM_MODEL_XML" version="15.1.0.2850"?>
+<!-- Veuillez ne pas modifier ce fichier -->
+
+<Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
+
+<o:RootObject Id="o1">
+<c:Children>
+<o:Model Id="o2">
+<a:ObjectID>36ECBD23-238E-463E-83DA-58D04F425297</a:ObjectID>
+<a:Name>MOT Ajout</a:Name>
+<a:Code>MOT_AJOUT</a:Code>
+<a:CreationDate>1426175200</a:CreationDate>
+<a:Creator>ms</a:Creator>
+<a:ModificationDate>1428415296</a:ModificationDate>
+<a:Modifier>Ersagun</a:Modifier>
+<a:PackageOptionsText>[FolderOptions]
+
+[FolderOptions\Merise Process Objects]
+GenerationCheckModel=Yes
+GenerationPath=
+GenerationOptions=
+GenerationTasks=
+GenerationTargets=
+GenerationSelections=</a:PackageOptionsText>
+<a:ModelOptionsText>[ModelOptions]
+
+[ModelOptions\Merise Process Model options]
+CaseSensitive=No
+DisplayName=Yes
+EnableTrans=No
+EnableRequirements=No
+ActnReuse=Yes
+ActnUnique=Yes
+TaskReuse=Yes
+TaskUnique=Yes
+
+[ModelOptions\Merise Process Model options\NamingOptionsTemplates]
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions]
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMPCKG]
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMPCKG\Name]
+Template=
+MaxLen=254
+Case=M
+ValidChar=
+InvldChar=
+AllValid=Yes
+NoAccent=No
+DefaultChar=_
+Script=.convert_name(%Name%,&quot;_&quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMPCKG\Code]
+Template=
+MaxLen=254
+Case=U
+ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
+InvldChar=
+AllValid=No
+NoAccent=Yes
+DefaultChar=_
+Script=.convert_code(%Code%,&quot; &quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMACTR]
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMACTR\Name]
+Template=
+MaxLen=254
+Case=M
+ValidChar=
+InvldChar=
+AllValid=Yes
+NoAccent=No
+DefaultChar=_
+Script=.convert_name(%Name%,&quot;_&quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMACTR\Code]
+Template=
+MaxLen=254
+Case=U
+ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
+InvldChar=
+AllValid=No
+NoAccent=Yes
+DefaultChar=_
+Script=.convert_code(%Code%,&quot; &quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMFLOW]
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMFLOW\Name]
+Template=
+MaxLen=254
+Case=M
+ValidChar=
+InvldChar=
+AllValid=Yes
+NoAccent=No
+DefaultChar=_
+Script=.convert_name(%Name%,&quot;_&quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMFLOW\Code]
+Template=
+MaxLen=254
+Case=U
+ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
+InvldChar=
+AllValid=No
+NoAccent=Yes
+DefaultChar=_
+Script=.convert_code(%Code%,&quot; &quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMDATA]
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMDATA\Name]
+Template=
+MaxLen=254
+Case=M
+ValidChar=
+InvldChar=
+AllValid=Yes
+NoAccent=No
+DefaultChar=_
+Script=.convert_name(%Name%,&quot;_&quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMDATA\Code]
+Template=
+MaxLen=254
+Case=U
+ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
+InvldChar=
+AllValid=No
+NoAccent=Yes
+DefaultChar=_
+Script=.convert_code(%Code%,&quot; &quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMOPER]
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMOPER\Name]
+Template=
+MaxLen=254
+Case=M
+ValidChar=
+InvldChar=
+AllValid=Yes
+NoAccent=No
+DefaultChar=_
+Script=.convert_name(%Name%,&quot;_&quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMOPER\Code]
+Template=
+MaxLen=254
+Case=U
+ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
+InvldChar=
+AllValid=No
+NoAccent=Yes
+DefaultChar=_
+Script=.convert_code(%Code%,&quot; &quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMPHAS]
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMPHAS\Name]
+Template=
+MaxLen=254
+Case=M
+ValidChar=
+InvldChar=
+AllValid=Yes
+NoAccent=No
+DefaultChar=_
+Script=.convert_name(%Name%,&quot;_&quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMPHAS\Code]
+Template=
+MaxLen=254
+Case=U
+ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
+InvldChar=
+AllValid=No
+NoAccent=Yes
+DefaultChar=_
+Script=.convert_code(%Code%,&quot; &quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMEVNT]
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMEVNT\Name]
+Template=
+MaxLen=254
+Case=M
+ValidChar=
+InvldChar=
+AllValid=Yes
+NoAccent=No
+DefaultChar=_
+Script=.convert_name(%Name%,&quot;_&quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMEVNT\Code]
+Template=
+MaxLen=254
+Case=U
+ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
+InvldChar=
+AllValid=No
+NoAccent=Yes
+DefaultChar=_
+Script=.convert_code(%Code%,&quot; &quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMACTN]
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMACTN\Name]
+Template=
+MaxLen=254
+Case=M
+ValidChar=
+InvldChar=
+AllValid=Yes
+NoAccent=No
+DefaultChar=_
+Script=.convert_name(%Name%,&quot;_&quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMACTN\Code]
+Template=
+MaxLen=254
+Case=U
+ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
+InvldChar=
+AllValid=No
+NoAccent=Yes
+DefaultChar=_
+Script=.convert_code(%Code%,&quot; &quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMTASK]
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMTASK\Name]
+Template=
+MaxLen=254
+Case=M
+ValidChar=
+InvldChar=
+AllValid=Yes
+NoAccent=No
+DefaultChar=_
+Script=.convert_name(%Name%,&quot;_&quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMTASK\Code]
+Template=
+MaxLen=254
+Case=U
+ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
+InvldChar=
+AllValid=No
+NoAccent=Yes
+DefaultChar=_
+Script=.convert_code(%Code%,&quot; &quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMMODU]
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMMODU\Name]
+Template=
+MaxLen=254
+Case=M
+ValidChar=
+InvldChar=
+AllValid=Yes
+NoAccent=No
+DefaultChar=_
+Script=.convert_name(%Name%,&quot;_&quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\MTMMODU\Code]
+Template=
+MaxLen=254
+Case=U
+ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
+InvldChar=
+AllValid=No
+NoAccent=Yes
+DefaultChar=_
+Script=.convert_code(%Code%,&quot; &quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\FILO]
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\FILO\Name]
+Template=
+MaxLen=254
+Case=M
+ValidChar=
+InvldChar=&quot;\/:*?&lt;&gt;|&quot;
+AllValid=Yes
+NoAccent=No
+DefaultChar=_
+Script=.convert_name(%Name%,&quot;_&quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\FILO\Code]
+Template=
+MaxLen=254
+Case=U
+ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_. &quot;
+InvldChar=
+AllValid=No
+NoAccent=Yes
+DefaultChar=_
+Script=.convert_code(%Code%,&quot; &quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\FRMEOBJ]
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\FRMEOBJ\Name]
+Template=
+MaxLen=254
+Case=M
+ValidChar=
+InvldChar=
+AllValid=Yes
+NoAccent=No
+DefaultChar=_
+Script=.convert_name(%Name%,&quot;_&quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\FRMEOBJ\Code]
+Template=
+MaxLen=254
+Case=U
+ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
+InvldChar=
+AllValid=No
+NoAccent=Yes
+DefaultChar=_
+Script=.convert_code(%Code%,&quot; &quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\FRMELNK]
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\FRMELNK\Name]
+Template=
+MaxLen=254
+Case=M
+ValidChar=
+InvldChar=
+AllValid=Yes
+NoAccent=No
+DefaultChar=_
+Script=.convert_name(%Name%,&quot;_&quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\FRMELNK\Code]
+Template=
+MaxLen=254
+Case=U
+ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
+InvldChar=
+AllValid=No
+NoAccent=Yes
+DefaultChar=_
+Script=.convert_code(%Code%,&quot; &quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\DefaultClass]
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\DefaultClass\Name]
+Template=
+MaxLen=254
+Case=M
+ValidChar=
+InvldChar=
+AllValid=Yes
+NoAccent=No
+DefaultChar=_
+Script=.convert_name(%Name%,&quot;_&quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion
+
+[ModelOptions\Merise Process Model options\ClssNamingOptions\DefaultClass\Code]
+Template=
+MaxLen=254
+Case=U
+ValidChar=&#39;a&#39;-&#39;z&#39;,&#39;A&#39;-&#39;Z&#39;,&#39;0&#39;-&#39;9&#39;,&quot;_&quot;
+InvldChar=
+AllValid=No
+NoAccent=Yes
+DefaultChar=_
+Script=.convert_code(%Code%,&quot; &quot;)
+ConvTable=
+ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion</a:ModelOptionsText>
+<c:OrganizationalDiagrams>
+<o:OrganizationalDiagram Id="o3">
+<a:ObjectID>77AE3360-5124-46AA-A21A-CDDE014BD7FF</a:ObjectID>
+<a:Name>MOT Ajout</a:Name>
+<a:Code>MOT_AJOUT</a:Code>
+<a:CreationDate>1426175200</a:CreationDate>
+<a:Creator>ms</a:Creator>
+<a:ModificationDate>1426267384</a:ModificationDate>
+<a:Modifier>Ersagun</a:Modifier>
+<a:DisplayPreferences>[DisplayPreferences]
+
+[DisplayPreferences\MOT]
+
+[DisplayPreferences\General]
+Adjust to text=Yes
+Snap Grid=No
+Constrain Labels=Yes
+Display Grid=No
+Show Page Delimiter=Yes
+Grid size=0
+Graphic unit=2
+Window color=255, 255, 255
+Background image=
+Background mode=8
+Watermark image=
+Watermark mode=8
+Show watermark on screen=No
+Gradient mode=0
+Gradient end color=255, 255, 255
+Show Swimlane=Yes
+SwimlaneVert=Yes
+TreeVert=No
+CompDark=0
+
+[DisplayPreferences\Object]
+Mode=2
+Trunc Length=40
+Word Length=40
+Word Text=!&quot;&quot;#$%&amp;&#39;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+Shortcut IntIcon=Yes
+Shortcut IntLoct=Yes
+Shortcut IntFullPath=No
+Shortcut IntLastPackage=Yes
+Shortcut ExtIcon=Yes
+Shortcut ExtLoct=No
+Shortcut ExtFullPath=No
+Shortcut ExtLastPackage=Yes
+Shortcut ExtIncludeModl=Yes
+EObjShowStrn=Yes
+ExtendedObject.Comment=No
+ExtendedObject.IconPicture=No
+ExtendedObject_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Nom de l&amp;#39;objet&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
+ELnkShowStrn=Yes
+ELnkShowName=Yes
+ExtendedLink_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
+FileObject.Stereotype=No
+FileObject.DisplayName=Yes
+FileObject.LocationOrName=No
+FileObject.IconPicture=No
+FileObject.IconMode=Yes
+FileObject_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;ExclusiveChoice Name=&quot;Choix exclusif&quot; Mandatory=&quot;Yes&quot; Display=&quot;HorizontalRadios&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Emplacement&quot; Attribute=&quot;LocationOrName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/ExclusiveChoice&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
+PckgShowStrn=Yes
+Package.Comment=No
+Package.IconPicture=No
+Package_SymbolLayout=
+Display Model Version=Yes
+Phase.IconPicture=No
+Phase_SymbolLayout=
+Event.IconPicture=No
+Event_SymbolLayout=
+Actor.IconPicture=No
+Actor_SymbolLayout=
+PhasShowStrn=Yes
+PhasShowTask=Yes
+PhasShowEmRu=Yes
+PhEmShowStrn=Yes
+PhTrShowStrn=Yes
+EvntShowStrn=Yes
+EmRuShowStrn=Yes
+TaskShowStrn=Yes
+
+[DisplayPreferences\Symbol]
+
+[DisplayPreferences\Symbol\FRMEOBJ]
+STRNFont=Arial,8,N
+STRNFont color=0, 0, 0
+DISPNAMEFont=Arial,8,N
+DISPNAMEFont color=0, 0, 0
+LABLFont=Arial,8,N
+LABLFont color=0, 0, 0
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Width=6000
+Height=2000
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=6
+Brush bitmap mode=12
+Brush gradient mode=64
+Brush gradient color=192 192 192
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=1 0 255 128 128
+Shadow color=192 192 192
+Shadow=0
+
+[DisplayPreferences\Symbol\FRMELNK]
+CENTERFont=Arial,8,N
+CENTERFont color=0, 0, 0
+Line style=1
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=1
+Brush bitmap mode=12
+Brush gradient mode=0
+Brush gradient color=118 118 118
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=1 0 128 128 255
+Shadow color=192 192 192
+Shadow=0
+
+[DisplayPreferences\Symbol\FILO]
+OBJSTRNFont=Arial,8,N
+OBJSTRNFont color=0, 0, 0
+DISPNAMEFont=Arial,8,N
+DISPNAMEFont color=0, 0, 0
+LCNMFont=Arial,8,N
+LCNMFont color=0, 0, 0
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Width=4800
+Height=3600
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=1
+Brush bitmap mode=12
+Brush gradient mode=0
+Brush gradient color=118 118 118
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=1 0 0 0 255
+Shadow color=192 192 192
+Shadow=0
+
+[DisplayPreferences\Symbol\MTMPCKG]
+STRNFont=Arial,8,N
+STRNFont color=0, 0, 0
+DISPNAMEFont=Arial,8,N
+DISPNAMEFont color=0, 0, 0
+LABLFont=Arial,8,N
+LABLFont color=0, 0, 0
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Width=4800
+Height=3600
+Brush color=255 255 192
+Fill Color=Yes
+Brush style=6
+Brush bitmap mode=12
+Brush gradient mode=65
+Brush gradient color=255 255 255
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=1 0 178 178 178
+Shadow color=192 192 192
+Shadow=0
+
+[DisplayPreferences\Symbol\USRDEPD]
+OBJXSTRFont=Arial,8,N
+OBJXSTRFont color=0, 0, 0
+Line style=1
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=1
+Brush bitmap mode=12
+Brush gradient mode=0
+Brush gradient color=118 118 118
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=2 0 128 128 255
+Shadow color=192 192 192
+Shadow=0
+
+[DisplayPreferences\Symbol\Free Symbol]
+Free TextFont=Arial,8,N
+Free TextFont color=0, 0, 0
+Line style=0
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=1
+Brush bitmap mode=12
+Brush gradient mode=0
+Brush gradient color=118 118 118
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=1 0 0 0 255
+Shadow color=192 192 192
+Shadow=0
+
+[DisplayPreferences\Symbol\MTMPHAS]
+SYNCFont=Arial,8,N
+SYNCFont color=0, 0, 0
+STRNFont=Arial,8,N
+STRNFont color=0, 0, 0
+DISPNAMEFont=Arial,8,N
+DISPNAMEFont color=0, 0, 0
+TasksFont=Arial,8,N
+TasksFont color=0, 0, 0
+EmissionRulesFont=Arial,8,N
+EmissionRulesFont color=0, 0, 0
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Width=6000
+Height=6000
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=6
+Brush bitmap mode=12
+Brush gradient mode=64
+Brush gradient color=226 226 226
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=1 0 0 0 0
+Shadow color=192 192 192
+Shadow=0
+
+[DisplayPreferences\Symbol\MTMEVNT]
+STRNFont=Arial,8,N
+STRNFont color=0, 0, 0
+DISPNAMEFont=Arial,8,N
+DISPNAMEFont color=0, 0, 0
+ALIAFont=Arial,8,N
+ALIAFont color=0, 0, 0
+AutoAdjustToText=Yes
+Keep aspect=Yes
+Keep center=Yes
+Keep size=No
+Width=4000
+Height=4000
+Brush color=223 255 223
+Fill Color=Yes
+Brush style=6
+Brush bitmap mode=12
+Brush gradient mode=512
+Brush gradient color=255 255 255
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=1 0 0 0 0
+Shadow color=192 192 192
+Shadow=0
+
+[DisplayPreferences\Symbol\MTMPHTR]
+DISPNAMEFont=Arial,8,N
+DISPNAMEFont color=0, 0, 0
+Line style=1
+Pen=1 0 0 0 0
+Shadow color=192 192 192
+Shadow=0
+
+[DisplayPreferences\Symbol\MTMPHEM]
+DISPNAMEFont=Arial,8,N
+DISPNAMEFont color=0, 0, 0
+Line style=1
+Pen=1 0 0 0 0
+Shadow color=192 192 192
+Shadow=0
+
+[DisplayPreferences\Symbol\MTMACTR]
+DISPNAMEFont=Arial,8,N
+DISPNAMEFont color=0, 0, 0
+AutoAdjustToText=Yes
+Keep aspect=No
+Keep center=No
+Keep size=No
+Width=4000
+Height=2000
+Brush color=255 255 255
+Fill Color=Yes
+Brush style=6
+Brush bitmap mode=12
+Brush gradient mode=65
+Brush gradient color=253 237 181
+Brush background image=
+Custom shape=
+Custom text mode=0
+Pen=1 0 0 0 128
+Shadow color=192 192 192
+Shadow=0</a:DisplayPreferences>
+<a:PaperSize>(8268, 11693)</a:PaperSize>
+<a:PageMargins>((315,354), (433,354))</a:PageMargins>
+<a:PageOrientation>1</a:PageOrientation>
+<a:PaperSource>15</a:PaperSource>
+<c:Symbols>
+<o:PhaseTriggeringSymbol Id="o4">
+<a:CreationDate>1426175561</a:CreationDate>
+<a:ModificationDate>1426175864</a:ModificationDate>
+<a:Rect>((8124,2121), (23337,7424))</a:Rect>
+<a:ListOfPoints>((8124,7424),(8124,2121),(23337,2121))</a:ListOfPoints>
+<a:CornerStyle>1</a:CornerStyle>
+<a:ArrowStyle>1</a:ArrowStyle>
+<a:LineColor>0</a:LineColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
+<c:SourceSymbol>
+<o:EventSymbol Ref="o5"/>
+</c:SourceSymbol>
+<c:DestinationSymbol>
+<o:PhaseSymbol Ref="o6"/>
+</c:DestinationSymbol>
+<c:Object>
+<o:PhaseTriggering Ref="o7"/>
+</c:Object>
+</o:PhaseTriggeringSymbol>
+<o:PhaseEmissionSymbol Id="o8">
+<a:CreationDate>1426175903</a:CreationDate>
+<a:ModificationDate>1426175904</a:ModificationDate>
+<a:Rect>((4576,-8702), (18213,-6074))</a:Rect>
+<a:ListOfPoints>((18213,-6074),(18213,-8702),(4576,-8702))</a:ListOfPoints>
+<a:CornerStyle>1</a:CornerStyle>
+<a:ArrowStyle>1</a:ArrowStyle>
+<a:LineColor>0</a:LineColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
+<c:SourceSymbol>
+<o:PhaseSymbol Ref="o6"/>
+</c:SourceSymbol>
+<c:DestinationSymbol>
+<o:EventSymbol Ref="o9"/>
+</c:DestinationSymbol>
+<c:Object>
+<o:PhaseEmission Ref="o10"/>
+</c:Object>
+</o:PhaseEmissionSymbol>
+<o:PhaseEmissionSymbol Id="o11">
+<a:CreationDate>1426175904</a:CreationDate>
+<a:ModificationDate>1426175904</a:ModificationDate>
+<a:Rect>((9751,-19202), (25641,-6074))</a:Rect>
+<a:ListOfPoints>((25641,-6074),(25641,-19202),(9751,-19202))</a:ListOfPoints>
+<a:CornerStyle>1</a:CornerStyle>
+<a:ArrowStyle>1</a:ArrowStyle>
+<a:LineColor>0</a:LineColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
+<c:SourceSymbol>
+<o:PhaseSymbol Ref="o6"/>
+</c:SourceSymbol>
+<c:DestinationSymbol>
+<o:EventSymbol Ref="o12"/>
+</c:DestinationSymbol>
+<c:Object>
+<o:PhaseEmission Ref="o13"/>
+</c:Object>
+</o:PhaseEmissionSymbol>
+<o:SwimlaneGroupSymbol Id="o14">
+<a:CreationDate>1426175203</a:CreationDate>
+<a:ModificationDate>1426175766</a:ModificationDate>
+<a:Rect>((-10749,-25389), (40789,14611))</a:Rect>
+<a:LineColor>0</a:LineColor>
+<c:SubSymbols>
+<o:MotSwimlaneSymbol Id="o15">
+<a:Text>Période</a:Text>
+<a:CreationDate>1426175203</a:CreationDate>
+<a:ModificationDate>1426175203</a:ModificationDate>
+<a:Rect>((-10749,-25389), (-2749,14611))</a:Rect>
+<a:TextStyle>4130</a:TextStyle>
+<a:LineColor>0</a:LineColor>
+<a:FillColor>16777215</a:FillColor>
+<a:ShadowColor>16777215</a:ShadowColor>
+<a:FontName>Arial,8,N</a:FontName>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>65</a:GradientFillMode>
+<a:GradientEndColor>11922941</a:GradientEndColor>
+</o:MotSwimlaneSymbol>
+<o:ActorSwimlaneSymbol Id="o16">
+<a:CreationDate>1426175203</a:CreationDate>
+<a:ModificationDate>1426175613</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
+<a:Rect>((-2749,-25389), (14337,14611))</a:Rect>
+<a:AutoAdjustToText>0</a:AutoAdjustToText>
+<a:LineColor>8388608</a:LineColor>
+<a:FillColor>16777215</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>65</a:GradientFillMode>
+<a:CustomTextMode>-1</a:CustomTextMode>
+<a:GradientEndColor>11922941</a:GradientEndColor>
+<c:SubSymbols>
+<o:EventSymbol Id="o5">
+<a:CreationDate>1426175257</a:CreationDate>
+<a:ModificationDate>1426175275</a:ModificationDate>
+<a:Rect>((2300,2425), (9748,9873))</a:Rect>
+<a:AutoAdjustToText>0</a:AutoAdjustToText>
+<a:LineColor>0</a:LineColor>
+<a:FillColor>14680031</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>STRN 0 Arial,8,N
+DISPNAME 0 Arial,8,N
+ALIA 0 Arial,8,N</a:FontList>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>512</a:GradientFillMode>
+<a:GradientEndColor>16777215</a:GradientEndColor>
+<a:KeepAspect>1</a:KeepAspect>
+<a:KeepCenter>1</a:KeepCenter>
+<a:ManuallyResized>1</a:ManuallyResized>
+<c:Object>
+<o:Event Ref="o17"/>
+</c:Object>
+</o:EventSymbol>
+<o:EventSymbol Id="o12">
+<a:CreationDate>1426175564</a:CreationDate>
+<a:ModificationDate>1426175615</a:ModificationDate>
+<a:Rect>((4451,-22498), (13147,-13802))</a:Rect>
+<a:LineColor>0</a:LineColor>
+<a:FillColor>14680031</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>STRN 0 Arial,8,N
+DISPNAME 0 Arial,8,N
+ALIA 0 Arial,8,N</a:FontList>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>512</a:GradientFillMode>
+<a:GradientEndColor>16777215</a:GradientEndColor>
+<a:KeepAspect>1</a:KeepAspect>
+<a:KeepCenter>1</a:KeepCenter>
+<c:Object>
+<o:Event Ref="o18"/>
+</c:Object>
+</o:EventSymbol>
+<o:EventSymbol Id="o9">
+<a:CreationDate>1426175565</a:CreationDate>
+<a:ModificationDate>1426175616</a:ModificationDate>
+<a:Rect>((-960,-13986), (7512,-5514))</a:Rect>
+<a:AutoAdjustToText>0</a:AutoAdjustToText>
+<a:LineColor>0</a:LineColor>
+<a:FillColor>14680031</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>STRN 0 Arial,8,N
+DISPNAME 0 Arial,8,N
+ALIA 0 Arial,8,N</a:FontList>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>512</a:GradientFillMode>
+<a:GradientEndColor>16777215</a:GradientEndColor>
+<a:KeepAspect>1</a:KeepAspect>
+<a:KeepCenter>1</a:KeepCenter>
+<a:ManuallyResized>1</a:ManuallyResized>
+<c:Object>
+<o:Event Ref="o19"/>
+</c:Object>
+</o:EventSymbol>
+</c:SubSymbols>
+<c:Object>
+<o:Actor Ref="o20"/>
+</c:Object>
+</o:ActorSwimlaneSymbol>
+<o:ActorSwimlaneSymbol Id="o21">
+<a:CreationDate>1426175205</a:CreationDate>
+<a:ModificationDate>1426175766</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
+<a:Rect>((14337,-25389), (32789,14611))</a:Rect>
+<a:AutoAdjustToText>0</a:AutoAdjustToText>
+<a:LineColor>8388608</a:LineColor>
+<a:FillColor>16777215</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>65</a:GradientFillMode>
+<a:CustomTextMode>-1</a:CustomTextMode>
+<a:GradientEndColor>11922941</a:GradientEndColor>
+<c:SubSymbols>
+<o:PhaseSymbol Id="o6">
+<a:CreationDate>1426175281</a:CreationDate>
+<a:ModificationDate>1426175904</a:ModificationDate>
+<a:Rect>((15910,-6827), (30764,2621))</a:Rect>
+<a:LineColor>0</a:LineColor>
+<a:FillColor>16777215</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>SYNC 0 Arial,8,N
+STRN 0 Arial,8,N
+DISPNAME 0 Arial,8,N
+Tasks 0 Arial,8,N
+EmissionRules 0 Arial,8,N</a:FontList>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>64</a:GradientFillMode>
+<a:GradientEndColor>14869218</a:GradientEndColor>
+<c:Object>
+<o:Phase Ref="o22"/>
+</c:Object>
+</o:PhaseSymbol>
+</c:SubSymbols>
+<c:Object>
+<o:Actor Ref="o23"/>
+</c:Object>
+</o:ActorSwimlaneSymbol>
+<o:MotSwimlaneSymbol Id="o24">
+<a:Text>Type</a:Text>
+<a:CreationDate>1426175203</a:CreationDate>
+<a:ModificationDate>1426175203</a:ModificationDate>
+<a:Rect>((32789,-25389), (40789,14611))</a:Rect>
+<a:TextStyle>4130</a:TextStyle>
+<a:LineColor>0</a:LineColor>
+<a:FillColor>16777215</a:FillColor>
+<a:ShadowColor>16777215</a:ShadowColor>
+<a:FontName>Arial,8,N</a:FontName>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>65</a:GradientFillMode>
+<a:GradientEndColor>11922941</a:GradientEndColor>
+</o:MotSwimlaneSymbol>
+</c:SubSymbols>
+</o:SwimlaneGroupSymbol>
+</c:Symbols>
+</o:OrganizationalDiagram>
+</c:OrganizationalDiagrams>
+<c:Actors>
+<o:Actor Id="o20">
+<a:ObjectID>83DC2428-45D2-4E63-9164-8C12F447DE4B</a:ObjectID>
+<a:Name>Client</a:Name>
+<a:Code>CLIENT</a:Code>
+<a:CreationDate>1426175203</a:CreationDate>
+<a:Creator>ms</a:Creator>
+<a:ModificationDate>1426175225</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
+</o:Actor>
+<o:Actor Id="o23">
+<a:ObjectID>C79E0CD5-89FF-4E4B-95A8-A9D9E97556E7</a:ObjectID>
+<a:Name>Entreprise (SI)</a:Name>
+<a:Code>ENTREPRISE__SI_</a:Code>
+<a:CreationDate>1426175205</a:CreationDate>
+<a:Creator>ms</a:Creator>
+<a:ModificationDate>1426175232</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
+</o:Actor>
+</c:Actors>
+<c:Phases>
+<o:Phase Id="o22">
+<a:ObjectID>28E5FAFC-612C-434F-B481-9F59DE05DA7A</a:ObjectID>
+<a:Name>Ajout</a:Name>
+<a:Code>AJOUT</a:Code>
+<a:CreationDate>1426175281</a:CreationDate>
+<a:Creator>ms</a:Creator>
+<a:ModificationDate>1426175917</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
+<a:Period>Temps reel</a:Period>
+<a:Phase.Type>1</a:Phase.Type>
+<c:Phase.Tasks>
+<o:Task Ref="o25"/>
+<o:Task Ref="o26"/>
+<o:Task Ref="o27"/>
+<o:Task Ref="o28"/>
+</c:Phase.Tasks>
+<c:EmissionRules>
+<o:EmissionRule Id="o29">
+<a:ObjectID>C76F77FD-3B31-4EB0-9193-AC2232EC6793</a:ObjectID>
+<a:Name>ok</a:Name>
+<a:Code>OK</a:Code>
+<a:CreationDate>1426175464</a:CreationDate>
+<a:Creator>ms</a:Creator>
+<a:ModificationDate>1426175896</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
+</o:EmissionRule>
+<o:EmissionRule Id="o30">
+<a:ObjectID>C15CC250-E73F-4F2A-94F7-CA583D783F18</a:ObjectID>
+<a:Name>Non ok</a:Name>
+<a:Code>NON_OK</a:Code>
+<a:CreationDate>1426175464</a:CreationDate>
+<a:Creator>ms</a:Creator>
+<a:ModificationDate>1426175552</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
+</o:EmissionRule>
+</c:EmissionRules>
+<c:Actor>
+<o:Actor Ref="o23"/>
+</c:Actor>
+</o:Phase>
+</c:Phases>
+<c:Tasks>
+<o:Task Id="o25">
+<a:ObjectID>7CB46099-CB36-4903-A8A3-73A235C738AD</a:ObjectID>
+<a:Name>Ajout du produit dans le panier du client</a:Name>
+<a:Code>AJOUT_DU_PRODUIT_DANS_LE_PANIER_DU_CLIENT</a:Code>
+<a:CreationDate>1426175285</a:CreationDate>
+<a:Creator>ms</a:Creator>
+<a:ModificationDate>1426175464</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
+</o:Task>
+<o:Task Id="o26">
+<a:ObjectID>C30C2AD9-ADEC-4E6E-90E1-BA2DF2AD13EF</a:ObjectID>
+<a:Name>Modification du prix total</a:Name>
+<a:Code>MODIFICATION_DU_PRIX_TOTAL</a:Code>
+<a:CreationDate>1426175285</a:CreationDate>
+<a:Creator>ms</a:Creator>
+<a:ModificationDate>1426175464</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
+</o:Task>
+<o:Task Id="o27">
+<a:ObjectID>50449A00-55A3-4990-8BC3-FB2C7B4A3576</a:ObjectID>
+<a:Name>Modification des stocks produit</a:Name>
+<a:Code>MODIFICATION_DES_STOCKS_PRODUIT</a:Code>
+<a:CreationDate>1426175285</a:CreationDate>
+<a:Creator>ms</a:Creator>
+<a:ModificationDate>1426175464</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
+</o:Task>
+<o:Task Id="o28">
+<a:ObjectID>5ED99894-0393-405F-9025-1C65041EFC7B</a:ObjectID>
+<a:Name>Creation du panier si non crée</a:Name>
+<a:Code>CREATION_DU_PANIER_SI_NON_CREE</a:Code>
+<a:CreationDate>1426175285</a:CreationDate>
+<a:Creator>ms</a:Creator>
+<a:ModificationDate>1426175945</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
+</o:Task>
+</c:Tasks>
+<c:Events>
+<o:Event Id="o17">
+<a:ObjectID>99539DF6-EBF5-4662-B566-B01728D1AED6</a:ObjectID>
+<a:Name>Ajout d&#39;articles au panier</a:Name>
+<a:Code>AJOUT_D_ARTICLES_AU_PANIER</a:Code>
+<a:CreationDate>1426175257</a:CreationDate>
+<a:Creator>ms</a:Creator>
+<a:ModificationDate>1426175271</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
+</o:Event>
+<o:Event Id="o18">
+<a:ObjectID>9116601F-AA3C-4491-B8D9-FD89AFFA6B50</a:ObjectID>
+<a:Name>Message d&#39;erreur</a:Name>
+<a:Code>MESSAGE_D_ERREUR</a:Code>
+<a:CreationDate>1426175564</a:CreationDate>
+<a:Creator>ms</a:Creator>
+<a:ModificationDate>1426175576</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
+</o:Event>
+<o:Event Id="o19">
+<a:ObjectID>56F9CB2E-99DD-4FAA-8DA1-11489039F204</a:ObjectID>
+<a:Name>Ajout d&#39;une ligne dans le panier du client</a:Name>
+<a:Code>AJOUT_D_UNE_LIGNE_DANS_LE_PANIER_DU_CLIENT</a:Code>
+<a:CreationDate>1426175565</a:CreationDate>
+<a:Creator>ms</a:Creator>
+<a:ModificationDate>1426175608</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
+</o:Event>
+</c:Events>
+<c:PhaseTriggerings>
+<o:PhaseTriggering Id="o7">
+<a:ObjectID>52299F31-AE59-424D-8603-DB871A3B7E5F</a:ObjectID>
+<a:CreationDate>1426175561</a:CreationDate>
+<a:Creator>ms</a:Creator>
+<a:ModificationDate>1426175561</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
+<c:Object1>
+<o:Phase Ref="o22"/>
+</c:Object1>
+<c:Object2>
+<o:Event Ref="o17"/>
+</c:Object2>
+</o:PhaseTriggering>
+</c:PhaseTriggerings>
+<c:PhaseEmissions>
+<o:PhaseEmission Id="o10">
+<a:ObjectID>1552BC36-C73A-4746-A76C-DAD3BB0BC957</a:ObjectID>
+<a:CreationDate>1426175903</a:CreationDate>
+<a:Creator>ms</a:Creator>
+<a:ModificationDate>1426175903</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
+<c:Object1>
+<o:Event Ref="o19"/>
+</c:Object1>
+<c:Object2>
+<o:Phase Ref="o22"/>
+</c:Object2>
+<c:EmissionRule>
+<o:EmissionRule Ref="o29"/>
+</c:EmissionRule>
+</o:PhaseEmission>
+<o:PhaseEmission Id="o13">
+<a:ObjectID>E2F24533-841E-4832-A3BB-6730A0F34BAE</a:ObjectID>
+<a:CreationDate>1426175904</a:CreationDate>
+<a:Creator>ms</a:Creator>
+<a:ModificationDate>1426175904</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
+<c:Object1>
+<o:Event Ref="o18"/>
+</c:Object1>
+<c:Object2>
+<o:Phase Ref="o22"/>
+</c:Object2>
+<c:EmissionRule>
+<o:EmissionRule Ref="o30"/>
+</c:EmissionRule>
+</o:PhaseEmission>
+</c:PhaseEmissions>
+<c:Files>
+<o:FileObject Id="o31">
+<a:ObjectID>13CD5032-C09A-4E4D-9896-723AFAE0B625</a:ObjectID>
+<a:Name>Fichier_1</a:Name>
+<a:Code>FICHIER_1</a:Code>
+<a:CreationDate>1428415296</a:CreationDate>
+<a:Creator>Ersagun</a:Creator>
+<a:ModificationDate>1428415296</a:ModificationDate>
+<a:Modifier>Ersagun</a:Modifier>
+<a:Location>file:///C|/Users/Ersagun/Desktop/CSI/csi final/ajout-panier.mtm</a:Location>
+<a:Extension>mtm</a:Extension>
+</o:FileObject>
+</c:Files>
+<c:DefaultDiagram>
+<o:OrganizationalDiagram Ref="o3"/>
+</c:DefaultDiagram>
+</o:Model>
+</c:Children>
+</o:RootObject>
+
+</Model>
