@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{13624FC0-BAE8-40B2-AA92-A7AD9DE96539}" Label="" LastModificationDate="1428592402" Name="MCT Connexion" Objects="16" Symbols="29" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" signature="MTM_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{13624FC0-BAE8-40B2-AA92-A7AD9DE96539}" Label="" LastModificationDate="1428592199" Name="MCT Connexion" Objects="16" Symbols="29" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" signature="MTM_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -835,9 +835,9 @@ Shadow=0</a:DisplayPreferences>
 <o:TextSymbol Id="o16">
 <a:Text>OB1 : Demande de connection
 OB2 : Liste de Client
-OB5 : Liste des Paniers</a:Text>
+OB3 : Liste membre (nouveau)</a:Text>
 <a:CreationDate>1426268433</a:CreationDate>
-<a:ModificationDate>1428592402</a:ModificationDate>
+<a:ModificationDate>1428592199</a:ModificationDate>
 <a:Rect>((-347076,688817), (-337684,698553))</a:Rect>
 <a:TextStyle>4130</a:TextStyle>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>

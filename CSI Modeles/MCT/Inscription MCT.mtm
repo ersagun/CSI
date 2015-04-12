@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{13624FC0-BAE8-40B2-AA92-A7AD9DE96539}" Label="" LastModificationDate="1427672211" Name="MCT Inscription" Objects="15" Symbols="29" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" signature="MTM_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{13624FC0-BAE8-40B2-AA92-A7AD9DE96539}" Label="" LastModificationDate="1428592719" Name="MCT Inscription" Objects="17" Symbols="35" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" signature="MTM_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -12,7 +12,7 @@
 <a:Code>MCT_INSCRIPTION</a:Code>
 <a:CreationDate>1426186762</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
-<a:ModificationDate>1426270291</a:ModificationDate>
+<a:ModificationDate>1428592678</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 <a:PackageOptionsText>[FolderOptions]
 
@@ -437,7 +437,7 @@ ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion</a:ModelOption
 <a:Code>MCT_INSCRIPTION</a:Code>
 <a:CreationDate>1426186762</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
-<a:ModificationDate>1426270417</a:ModificationDate>
+<a:ModificationDate>1428592711</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 <a:DisplayPreferences>[DisplayPreferences]
 
@@ -810,9 +810,9 @@ Shadow=0</a:DisplayPreferences>
 </o:ExtendedDependencySymbol>
 <o:OperationEmissionSymbol Id="o17">
 <a:CreationDate>1426270291</a:CreationDate>
-<a:ModificationDate>1426270299</a:ModificationDate>
-<a:Rect>((-350331,703594), (-336211,704044))</a:Rect>
-<a:ListOfPoints>((-350331,703824),(-336211,703814))</a:ListOfPoints>
+<a:ModificationDate>1428592695</a:ModificationDate>
+<a:Rect>((-350331,703824), (-336336,705938))</a:Rect>
+<a:ListOfPoints>((-350331,703824),(-341130,703824),(-341130,705938),(-336336,705938))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>0</a:LineColor>
@@ -828,7 +828,27 @@ Shadow=0</a:DisplayPreferences>
 <o:OperationEmission Ref="o19"/>
 </c:Object>
 </o:OperationEmissionSymbol>
-<o:TextSymbol Id="o20">
+<o:OperationEmissionSymbol Id="o20">
+<a:CreationDate>1428592678</a:CreationDate>
+<a:ModificationDate>1428592692</a:ModificationDate>
+<a:Rect>((-350331,697461), (-334912,703824))</a:Rect>
+<a:ListOfPoints>((-350331,703824),(-334912,703824),(-334912,697461))</a:ListOfPoints>
+<a:CornerStyle>1</a:CornerStyle>
+<a:ArrowStyle>1</a:ArrowStyle>
+<a:LineColor>0</a:LineColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
+<c:SourceSymbol>
+<o:OperationSymbol Ref="o5"/>
+</c:SourceSymbol>
+<c:DestinationSymbol>
+<o:EventSymbol Ref="o21"/>
+</c:DestinationSymbol>
+<c:Object>
+<o:OperationEmission Ref="o22"/>
+</c:Object>
+</o:OperationEmissionSymbol>
+<o:TextSymbol Id="o23">
 <a:Text>C2 OU C3</a:Text>
 <a:CreationDate>1426269963</a:CreationDate>
 <a:ModificationDate>1427672211</a:ModificationDate>
@@ -842,7 +862,7 @@ Shadow=0</a:DisplayPreferences>
 <a:FontName>Arial,8,N</a:FontName>
 <a:ManuallyResized>1</a:ManuallyResized>
 </o:TextSymbol>
-<o:TextSymbol Id="o21">
+<o:TextSymbol Id="o24">
 <a:CreationDate>1426269963</a:CreationDate>
 <a:ModificationDate>1426269963</a:ModificationDate>
 <a:Rect>((-340619,706462), (-335820,710061))</a:Rect>
@@ -853,10 +873,10 @@ Shadow=0</a:DisplayPreferences>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontName>Arial,8,N</a:FontName>
 </o:TextSymbol>
-<o:TextSymbol Id="o22">
-<a:Text>Le client demande de se connecter avec son identifiant et son mot de passe</a:Text>
+<o:TextSymbol Id="o25">
+<a:Text>Le client donne ses informations pour créer un compte.</a:Text>
 <a:CreationDate>1426269963</a:CreationDate>
-<a:ModificationDate>1426270476</a:ModificationDate>
+<a:ModificationDate>1428592492</a:ModificationDate>
 <a:Rect>((-346463,710599), (-340418,716766))</a:Rect>
 <a:TextStyle>4130</a:TextStyle>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
@@ -867,7 +887,7 @@ Shadow=0</a:DisplayPreferences>
 <a:FontName>Arial,8,N</a:FontName>
 <a:ManuallyResized>1</a:ManuallyResized>
 </o:TextSymbol>
-<o:TextSymbol Id="o23">
+<o:TextSymbol Id="o26">
 <a:Text>Client</a:Text>
 <a:CreationDate>1426269963</a:CreationDate>
 <a:ModificationDate>1426269963</a:ModificationDate>
@@ -879,14 +899,14 @@ Shadow=0</a:DisplayPreferences>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontName>Arial,8,N</a:FontName>
 </o:TextSymbol>
-<o:TextSymbol Id="o24">
+<o:TextSymbol Id="o27">
 <a:Text>OB1 : Demande de inscription
 OB2 : Liste inscrit
 OB3 : Liste membre (nouveau)
 </a:Text>
 <a:CreationDate>1426269963</a:CreationDate>
-<a:ModificationDate>1426270184</a:ModificationDate>
-<a:Rect>((-369269,692345), (-359877,702081))</a:Rect>
+<a:ModificationDate>1428592575</a:ModificationDate>
+<a:Rect>((-370452,690726), (-361060,700462))</a:Rect>
 <a:TextStyle>4130</a:TextStyle>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
 <a:LineColor>0</a:LineColor>
@@ -896,7 +916,7 @@ OB3 : Liste membre (nouveau)
 <a:FontName>Arial,8,N</a:FontName>
 <a:ManuallyResized>1</a:ManuallyResized>
 </o:TextSymbol>
-<o:TextSymbol Id="o25">
+<o:TextSymbol Id="o28">
 <a:Text>C1 : Utilisateur à bien données les informations
 C2 : Utilisateur existe déja
 C3 : Erreur les champs ne sont pas remplis correctement
@@ -915,7 +935,7 @@ C3 : Erreur les champs ne sont pas remplis correctement
 </o:TextSymbol>
 <o:OperationSymbol Id="o5">
 <a:CreationDate>1426269963</a:CreationDate>
-<a:ModificationDate>1426270291</a:ModificationDate>
+<a:ModificationDate>1428592678</a:ModificationDate>
 <a:Rect>((-357373,700340), (-343289,707309))</a:Rect>
 <a:LineColor>32768</a:LineColor>
 <a:FillColor>16777215</a:FillColor>
@@ -929,7 +949,7 @@ EmissionRules 0 Arial,8,N</a:FontList>
 <a:GradientFillMode>64</a:GradientFillMode>
 <a:GradientEndColor>12774654</a:GradientEndColor>
 <c:Object>
-<o:Operation Ref="o26"/>
+<o:Operation Ref="o29"/>
 </c:Object>
 </o:OperationSymbol>
 <o:EventSymbol Id="o12">
@@ -951,7 +971,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:KeepCenter>1</a:KeepCenter>
 <a:ManuallyResized>1</a:ManuallyResized>
 <c:Object>
-<o:Event Ref="o27"/>
+<o:Event Ref="o30"/>
 </c:Object>
 </o:EventSymbol>
 <o:EventSymbol Id="o9">
@@ -973,7 +993,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:KeepCenter>1</a:KeepCenter>
 <a:ManuallyResized>1</a:ManuallyResized>
 <c:Object>
-<o:Event Ref="o28"/>
+<o:Event Ref="o31"/>
 </c:Object>
 </o:EventSymbol>
 <o:EventSymbol Id="o15">
@@ -994,7 +1014,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:KeepCenter>1</a:KeepCenter>
 <a:ManuallyResized>1</a:ManuallyResized>
 <c:Object>
-<o:Event Ref="o29"/>
+<o:Event Ref="o32"/>
 </c:Object>
 </o:EventSymbol>
 <o:EventSymbol Id="o6">
@@ -1016,10 +1036,10 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:KeepCenter>1</a:KeepCenter>
 <a:ManuallyResized>1</a:ManuallyResized>
 <c:Object>
-<o:Event Ref="o30"/>
+<o:Event Ref="o33"/>
 </c:Object>
 </o:EventSymbol>
-<o:TextSymbol Id="o31">
+<o:TextSymbol Id="o34">
 <a:Text>C1</a:Text>
 <a:CreationDate>1426269963</a:CreationDate>
 <a:ModificationDate>1426270284</a:ModificationDate>
@@ -1035,8 +1055,8 @@ ALIA 0 Arial,8,N</a:FontList>
 </o:TextSymbol>
 <o:EventSymbol Id="o18">
 <a:CreationDate>1426270165</a:CreationDate>
-<a:ModificationDate>1426270293</a:ModificationDate>
-<a:Rect>((-338847,701829), (-334985,705691))</a:Rect>
+<a:ModificationDate>1428592695</a:ModificationDate>
+<a:Rect>((-338972,703945), (-335110,707807))</a:Rect>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
 <a:LineColor>32768</a:LineColor>
 <a:FillColor>14680031</a:FillColor>
@@ -1051,14 +1071,14 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:KeepCenter>1</a:KeepCenter>
 <a:ManuallyResized>1</a:ManuallyResized>
 <c:Object>
-<o:Event Ref="o32"/>
+<o:Event Ref="o35"/>
 </c:Object>
 </o:EventSymbol>
-<o:TextSymbol Id="o33">
+<o:TextSymbol Id="o36">
 <a:Text>Client</a:Text>
 <a:CreationDate>1426270404</a:CreationDate>
-<a:ModificationDate>1426270407</a:ModificationDate>
-<a:Rect>((-339179,704542), (-334380,708141))</a:Rect>
+<a:ModificationDate>1428592699</a:ModificationDate>
+<a:Rect>((-342291,706037), (-337492,709636))</a:Rect>
 <a:TextStyle>4130</a:TextStyle>
 <a:LineColor>0</a:LineColor>
 <a:DashStyle>7</a:DashStyle>
@@ -1066,11 +1086,32 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontName>Arial,8,N</a:FontName>
 </o:TextSymbol>
-<o:TextSymbol Id="o34">
-<a:Text>&quot; Client inséré &quot;</a:Text>
-<a:CreationDate>1426270417</a:CreationDate>
-<a:ModificationDate>1426270454</a:ModificationDate>
-<a:Rect>((-339348,698289), (-334549,701888))</a:Rect>
+<o:EventSymbol Id="o21">
+<a:CreationDate>1428592578</a:CreationDate>
+<a:ModificationDate>1428592630</a:ModificationDate>
+<a:Rect>((-338368,694533), (-334506,698395))</a:Rect>
+<a:AutoAdjustToText>0</a:AutoAdjustToText>
+<a:LineColor>32768</a:LineColor>
+<a:FillColor>14680031</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>STRN 0 Arial,8,N
+DISPNAME 0 Arial,8,N
+ALIA 0 Arial,8,N</a:FontList>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>512</a:GradientFillMode>
+<a:GradientEndColor>16777215</a:GradientEndColor>
+<a:KeepAspect>1</a:KeepAspect>
+<a:KeepCenter>1</a:KeepCenter>
+<a:ManuallyResized>1</a:ManuallyResized>
+<c:Object>
+<o:Event Ref="o37"/>
+</c:Object>
+</o:EventSymbol>
+<o:TextSymbol Id="o38">
+<a:Text>Compte</a:Text>
+<a:CreationDate>1428592711</a:CreationDate>
+<a:ModificationDate>1428592719</a:ModificationDate>
+<a:Rect>((-340020,697964), (-335221,701563))</a:Rect>
 <a:TextStyle>4130</a:TextStyle>
 <a:LineColor>0</a:LineColor>
 <a:DashStyle>7</a:DashStyle>
@@ -1082,7 +1123,7 @@ ALIA 0 Arial,8,N</a:FontList>
 </o:ConceptualDiagram>
 </c:ConceptualDiagrams>
 <c:Actions>
-<o:Action Id="o35">
+<o:Action Id="o39">
 <a:ObjectID>272232A5-047A-4732-AB7B-BC18D00ACE51</a:ObjectID>
 <a:Name>- Vérification de l&#39;unicité des données</a:Name>
 <a:Code>__VERIFICATION_DE_L_UNICITE_DES_DONNEES</a:Code>
@@ -1091,7 +1132,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1426270136</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 </o:Action>
-<o:Action Id="o36">
+<o:Action Id="o40">
 <a:ObjectID>DD288B84-B34B-439D-AB06-C12E94CD34CE</a:ObjectID>
 <a:Name>- Vérification de mot de passe,  identifiant utilisateur et toutes autres données</a:Name>
 <a:Code>__VERIFICATION_DE_MOT_DE_PASSE___IDENTIFIANT_UTILISATEUR_ET_TOUTES_AUTRES_DONNEES</a:Code>
@@ -1102,7 +1143,7 @@ ALIA 0 Arial,8,N</a:FontList>
 </o:Action>
 </c:Actions>
 <c:Operations>
-<o:Operation Id="o26">
+<o:Operation Id="o29">
 <a:ObjectID>95C94F3F-7135-4453-B7E1-165DC1E596A2</a:ObjectID>
 <a:Name>Inscription</a:Name>
 <a:Code>INSCRIPTION</a:Code>
@@ -1112,13 +1153,13 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:Modifier>Ersagun</a:Modifier>
 <a:Synchronization>Ext1</a:Synchronization>
 <c:Operation.Actions>
-<o:Action Ref="o36"/>
-<o:Action Ref="o35"/>
+<o:Action Ref="o40"/>
+<o:Action Ref="o39"/>
 </c:Operation.Actions>
 </o:Operation>
 </c:Operations>
 <c:Events>
-<o:Event Id="o27">
+<o:Event Id="o30">
 <a:ObjectID>DB38C7D4-578A-4551-BAAD-8B2C82A39034</a:ObjectID>
 <a:Name>OB1</a:Name>
 <a:Code>OB1</a:Code>
@@ -1129,7 +1170,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:Event.Alias>Ext1</a:Event.Alias>
 <a:Event.Type>1</a:Event.Type>
 </o:Event>
-<o:Event Id="o28">
+<o:Event Id="o31">
 <a:ObjectID>5827E4A1-A0DC-4762-A2F8-8D2FB9D32475</a:ObjectID>
 <a:Name>Message de validation</a:Name>
 <a:Code>MESSAGE_DE_VALIDATION</a:Code>
@@ -1140,7 +1181,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:Event.Alias>EXT2</a:Event.Alias>
 <a:Event.Type>1</a:Event.Type>
 </o:Event>
-<o:Event Id="o29">
+<o:Event Id="o32">
 <a:ObjectID>DCD3494E-93CD-41FF-8D23-863B8CBE6AA8</a:ObjectID>
 <a:Name>OB2</a:Name>
 <a:Code>OB2</a:Code>
@@ -1149,7 +1190,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1426269963</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 </o:Event>
-<o:Event Id="o30">
+<o:Event Id="o33">
 <a:ObjectID>DEB61785-02E8-4C89-BABA-505E7E3B4232</a:ObjectID>
 <a:Name>Message d&#39;erreur</a:Name>
 <a:Code>MESSAGE_D_ERREUR</a:Code>
@@ -1159,13 +1200,22 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:Modifier>Ersagun</a:Modifier>
 <a:Event.Type>1</a:Event.Type>
 </o:Event>
-<o:Event Id="o32">
+<o:Event Id="o35">
 <a:ObjectID>199FBFCB-DC73-4F6F-A0A1-158EEBED5150</a:ObjectID>
 <a:Name>OB3</a:Name>
 <a:Code>OB3</a:Code>
 <a:CreationDate>1426270165</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
 <a:ModificationDate>1426270165</a:ModificationDate>
+<a:Modifier>Ersagun</a:Modifier>
+</o:Event>
+<o:Event Id="o37">
+<a:ObjectID>9806B76A-2900-4FF9-905C-7E82EBF34951</a:ObjectID>
+<a:Name>OB4</a:Name>
+<a:Code>OB4</a:Code>
+<a:CreationDate>1428592578</a:CreationDate>
+<a:Creator>Ersagun</a:Creator>
+<a:ModificationDate>1428592578</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 </o:Event>
 </c:Events>
@@ -1177,10 +1227,10 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1426269963</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 <c:Object1>
-<o:Operation Ref="o26"/>
+<o:Operation Ref="o29"/>
 </c:Object1>
 <c:Object2>
-<o:Event Ref="o27"/>
+<o:Event Ref="o30"/>
 </c:Object2>
 </o:OperationTriggering>
 </c:OperationTriggerings>
@@ -1192,10 +1242,10 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1426269963</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 <c:Object1>
-<o:Event Ref="o30"/>
+<o:Event Ref="o33"/>
 </c:Object1>
 <c:Object2>
-<o:Operation Ref="o26"/>
+<o:Operation Ref="o29"/>
 </c:Object2>
 </o:OperationEmission>
 <o:OperationEmission Id="o10">
@@ -1205,10 +1255,10 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1426269963</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 <c:Object1>
-<o:Event Ref="o28"/>
+<o:Event Ref="o31"/>
 </c:Object1>
 <c:Object2>
-<o:Operation Ref="o26"/>
+<o:Operation Ref="o29"/>
 </c:Object2>
 </o:OperationEmission>
 <o:OperationEmission Id="o19">
@@ -1218,10 +1268,23 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1426270291</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 <c:Object1>
-<o:Event Ref="o32"/>
+<o:Event Ref="o35"/>
 </c:Object1>
 <c:Object2>
-<o:Operation Ref="o26"/>
+<o:Operation Ref="o29"/>
+</c:Object2>
+</o:OperationEmission>
+<o:OperationEmission Id="o22">
+<a:ObjectID>79192825-1200-445C-AA97-25269A6BAF32</a:ObjectID>
+<a:CreationDate>1428592678</a:CreationDate>
+<a:Creator>Ersagun</a:Creator>
+<a:ModificationDate>1428592678</a:ModificationDate>
+<a:Modifier>Ersagun</a:Modifier>
+<c:Object1>
+<o:Event Ref="o37"/>
+</c:Object1>
+<c:Object2>
+<o:Operation Ref="o29"/>
 </c:Object2>
 </o:OperationEmission>
 </c:OperationEmissions>
@@ -1236,10 +1299,10 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1426269963</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 <c:Object1>
-<o:Operation Ref="o26"/>
+<o:Operation Ref="o29"/>
 </c:Object1>
 <c:Object2>
-<o:Event Ref="o29"/>
+<o:Event Ref="o32"/>
 </c:Object2>
 </o:ExtendedDependency>
 </c:ChildExtendedDependencies>
