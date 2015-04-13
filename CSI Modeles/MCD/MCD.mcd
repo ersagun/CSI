@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{4D1AB899-AE25-4A1A-A913-0E6C3AE084F2}" Label="" LastModificationDate="1428877078" Name="MCD" Objects="125" Symbols="36" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" signature="CDM_DATA_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{4D1AB899-AE25-4A1A-A913-0E6C3AE084F2}" Label="" LastModificationDate="1428927746" Name="MCD" Objects="121" Symbols="35" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" signature="CDM_DATA_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -787,7 +787,7 @@ Shadow=0</a:DisplayPreferences>
 <o:AssociationLinkSymbol Id="o4">
 <a:CreationDate>1425033126</a:CreationDate>
 <a:ModificationDate>1428591238</a:ModificationDate>
-<a:Rect>((-1933,17138), (-71,27157))</a:Rect>
+<a:Rect>((-1971,17138), (-71,27157))</a:Rect>
 <a:ListOfPoints>((-171,17138),(-171,27157))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
@@ -851,7 +851,7 @@ CARD 0 Arial,8,N</a:FontList>
 <o:AssociationLinkSymbol Id="o15">
 <a:CreationDate>1425033213</a:CreationDate>
 <a:ModificationDate>1428591242</a:ModificationDate>
-<a:Rect>((48,10445), (1848,17757))</a:Rect>
+<a:Rect>((86,10445), (1886,17757))</a:Rect>
 <a:ListOfPoints>((86,17757),(86,10445))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
@@ -892,9 +892,9 @@ CARD 0 Arial,8,N</a:FontList>
 </o:AssociationLinkSymbol>
 <o:AssociationLinkSymbol Id="o21">
 <a:CreationDate>1425033221</a:CreationDate>
-<a:ModificationDate>1428594219</a:ModificationDate>
-<a:Rect>((1005,-4465), (8624,1288))</a:Rect>
-<a:ListOfPoints>((1005,114),(8624,114),(8624,-4465))</a:ListOfPoints>
+<a:ModificationDate>1428927724</a:ModificationDate>
+<a:Rect>((1305,-4465), (8624,164))</a:Rect>
+<a:ListOfPoints>((1305,-1011),(8624,-1011),(8624,-4465))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744576</a:LineColor>
@@ -936,8 +936,8 @@ CARD 0 Arial,8,N</a:FontList>
 <o:AssociationLinkSymbol Id="o26">
 <a:CreationDate>1425033244</a:CreationDate>
 <a:ModificationDate>1428591128</a:ModificationDate>
-<a:Rect>((-16801,-6790), (-14939,4912))</a:Rect>
-<a:ListOfPoints>((-15039,-6790),(-15039,4912))</a:ListOfPoints>
+<a:Rect>((-16855,-6790), (-15039,4912))</a:Rect>
+<a:ListOfPoints>((-15060,-6790),(-15039,4912))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744576</a:LineColor>
@@ -978,8 +978,8 @@ CARD 0 Arial,8,N</a:FontList>
 <o:AssociationLinkSymbol Id="o33">
 <a:CreationDate>1425033261</a:CreationDate>
 <a:ModificationDate>1428591172</a:ModificationDate>
-<a:Rect>((-15785,-18120), (-13985,-7954))</a:Rect>
-<a:ListOfPoints>((-15747,-7954),(-15747,-18120))</a:ListOfPoints>
+<a:Rect>((-15791,-18120), (-13980,-7954))</a:Rect>
+<a:ListOfPoints>((-15791,-7954),(-15747,-18120))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744576</a:LineColor>
@@ -1061,9 +1061,10 @@ CARD 0 Arial,8,N</a:FontList>
 </o:AssociationLinkSymbol>
 <o:AssociationLinkSymbol Id="o45">
 <a:CreationDate>1425033326</a:CreationDate>
-<a:ModificationDate>1428591226</a:ModificationDate>
-<a:Rect>((295,18284), (18679,19458))</a:Rect>
-<a:ListOfPoints>((295,18284),(18679,18284))</a:ListOfPoints>
+<a:ModificationDate>1428927746</a:ModificationDate>
+<a:SourceTextOffset>(1425, 737)</a:SourceTextOffset>
+<a:Rect>((4238,1200), (15413,15375))</a:Rect>
+<a:ListOfPoints>((4238,1200),(4238,7359),(15413,7359),(15413,15375))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744576</a:LineColor>
@@ -1071,7 +1072,7 @@ CARD 0 Arial,8,N</a:FontList>
 <a:FontList>ROLE 0 Arial,8,N
 CARD 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
-<o:EntitySymbol Ref="o5"/>
+<o:EntitySymbol Ref="o12"/>
 </c:SourceSymbol>
 <c:DestinationSymbol>
 <o:AssociationSymbol Ref="o43"/>
@@ -1125,8 +1126,8 @@ CARD 0 Arial,8,N</a:FontList>
 <o:AssociationLinkSymbol Id="o53">
 <a:CreationDate>1428801888</a:CreationDate>
 <a:ModificationDate>1428801894</a:ModificationDate>
-<a:Rect>((17844,-27256), (19644,-18406))</a:Rect>
-<a:ListOfPoints>((18750,-18406),(18740,-27256))</a:ListOfPoints>
+<a:Rect>((17842,-27256), (19642,-18406))</a:Rect>
+<a:ListOfPoints>((18742,-18406),(18742,-27256))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744576</a:LineColor>
@@ -1254,7 +1255,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:CreationDate>1424895238</a:CreationDate>
 <a:ModificationDate>1428591125</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-21475,-10338), (-7315,-4570))</a:Rect>
+<a:Rect>((-21707,-10338), (-7083,-4570))</a:Rect>
 <a:LineColor>4227200</a:LineColor>
 <a:FillColor>16777215</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -2133,12 +2134,12 @@ LABL 0 Arial,8,N</a:FontList>
 </o:DataItem>
 <o:DataItem Id="o121">
 <a:ObjectID>037BB7B1-4F70-4B46-BD44-583D121CD239</a:ObjectID>
-<a:Name>Commande_recuperé</a:Name>
-<a:Code>COMMANDE_RECUPERE</a:Code>
+<a:Name>Commande_recuperee</a:Name>
+<a:Code>COMMANDE_RECUPEREE</a:Code>
 <a:CreationDate>1425032258</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
-<a:ModificationDate>1425032320</a:ModificationDate>
-<a:Modifier>Ersagun</a:Modifier>
+<a:ModificationDate>1428927390</a:ModificationDate>
+<a:Modifier>Arthur</a:Modifier>
 <a:DataType>BL</a:DataType>
 </o:DataItem>
 <o:DataItem Id="o123">
@@ -2739,14 +2740,14 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ObjectID>62319BED-E7AE-4CD9-A280-B8744B3A60A8</a:ObjectID>
 <a:CreationDate>1425033326</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
-<a:ModificationDate>1428877078</a:ModificationDate>
-<a:Modifier>Ersagun</a:Modifier>
+<a:ModificationDate>1428927717</a:ModificationDate>
+<a:Modifier>Arthur</a:Modifier>
 <a:Cardinality>0,1</a:Cardinality>
 <c:Object1>
 <o:Association Ref="o71"/>
 </c:Object1>
 <c:Object2>
-<o:Entity Ref="o55"/>
+<o:Entity Ref="o56"/>
 </c:Object2>
 </o:AssociationLink>
 <o:AssociationLink Id="o48">
