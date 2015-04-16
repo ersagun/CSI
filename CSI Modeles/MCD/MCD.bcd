@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{4D1AB899-AE25-4A1A-A913-0E6C3AE084F2}" Label="" LastModificationDate="1428927746" Name="MCD" Objects="121" Symbols="35" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" signature="CDM_DATA_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{4D1AB899-AE25-4A1A-A913-0E6C3AE084F2}" Label="" LastModificationDate="1429182523" Name="MCD" Objects="121" Symbols="35" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" signature="CDM_DATA_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -787,7 +787,7 @@ Shadow=0</a:DisplayPreferences>
 <o:AssociationLinkSymbol Id="o4">
 <a:CreationDate>1425033126</a:CreationDate>
 <a:ModificationDate>1428591238</a:ModificationDate>
-<a:Rect>((-1971,17138), (-71,27157))</a:Rect>
+<a:Rect>((-1933,17138), (-71,27157))</a:Rect>
 <a:ListOfPoints>((-171,17138),(-171,27157))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
@@ -851,7 +851,7 @@ CARD 0 Arial,8,N</a:FontList>
 <o:AssociationLinkSymbol Id="o15">
 <a:CreationDate>1425033213</a:CreationDate>
 <a:ModificationDate>1428591242</a:ModificationDate>
-<a:Rect>((86,10445), (1886,17757))</a:Rect>
+<a:Rect>((48,10445), (1848,17757))</a:Rect>
 <a:ListOfPoints>((86,17757),(86,10445))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
@@ -936,8 +936,8 @@ CARD 0 Arial,8,N</a:FontList>
 <o:AssociationLinkSymbol Id="o26">
 <a:CreationDate>1425033244</a:CreationDate>
 <a:ModificationDate>1428591128</a:ModificationDate>
-<a:Rect>((-16855,-6790), (-15039,4912))</a:Rect>
-<a:ListOfPoints>((-15060,-6790),(-15039,4912))</a:ListOfPoints>
+<a:Rect>((-16806,-6790), (-14944,4912))</a:Rect>
+<a:ListOfPoints>((-15044,-6790),(-15044,4912))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744576</a:LineColor>
@@ -978,8 +978,8 @@ CARD 0 Arial,8,N</a:FontList>
 <o:AssociationLinkSymbol Id="o33">
 <a:CreationDate>1425033261</a:CreationDate>
 <a:ModificationDate>1428591172</a:ModificationDate>
-<a:Rect>((-15791,-18120), (-13980,-7954))</a:Rect>
-<a:ListOfPoints>((-15791,-7954),(-15747,-18120))</a:ListOfPoints>
+<a:Rect>((-15796,-18120), (-13996,-7954))</a:Rect>
+<a:ListOfPoints>((-15758,-7954),(-15758,-18120))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744576</a:LineColor>
@@ -1105,7 +1105,7 @@ CARD 0 Arial,8,N</a:FontList>
 <o:AssociationLinkSymbol Id="o49">
 <a:CreationDate>1428801888</a:CreationDate>
 <a:ModificationDate>1428802175</a:ModificationDate>
-<a:Rect>((18499,-34456), (22463,-27256))</a:Rect>
+<a:Rect>((18499,-34456), (22501,-27256))</a:Rect>
 <a:ListOfPoints>((22463,-34456),(22463,-30163),(18499,-30163),(18499,-27256))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
@@ -1569,8 +1569,8 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>PANIER</a:Code>
 <a:CreationDate>1424894832</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
-<a:ModificationDate>1425064726</a:ModificationDate>
-<a:Modifier>Ersagun</a:Modifier>
+<a:ModificationDate>1429006616</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
 <c:Attributes>
 <o:EntityAttribute Id="o82">
 <a:ObjectID>044E12D9-77AF-4AD4-ABF5-C17CC1DEB13D</a:ObjectID>
@@ -1665,7 +1665,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>CLIENT</a:Code>
 <a:CreationDate>1424894836</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
-<a:ModificationDate>1425067518</a:ModificationDate>
+<a:ModificationDate>1429182523</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 <c:Attributes>
 <o:EntityAttribute Id="o94">
@@ -1965,8 +1965,8 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>COMPTE</a:Code>
 <a:CreationDate>1428801597</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
-<a:ModificationDate>1428801763</a:ModificationDate>
-<a:Modifier>Ersagun</a:Modifier>
+<a:ModificationDate>1429006985</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
 <c:Attributes>
 <o:EntityAttribute Id="o142">
 <a:ObjectID>97F79C2C-074C-42E0-9A48-A62095EBB3C0</a:ObjectID>
@@ -2491,8 +2491,8 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>PEUT_DEVENIR</a:Code>
 <a:CreationDate>1425033244</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
-<a:ModificationDate>1425064444</a:ModificationDate>
-<a:Modifier>Ersagun</a:Modifier>
+<a:ModificationDate>1429006616</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
 </o:Association>
 <o:Association Id="o69">
 <a:ObjectID>619AD352-5A3B-4E4C-B920-7111FA130FD1</a:ObjectID>
@@ -2549,7 +2549,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>POSSEDE_UN</a:Code>
 <a:CreationDate>1428801888</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
-<a:ModificationDate>1428801911</a:ModificationDate>
+<a:ModificationDate>1429182523</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 </o:Association>
 </c:Associations>
@@ -2642,9 +2642,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ObjectID>1DC3106E-5AB2-4250-BC98-10B31AFC6737</a:ObjectID>
 <a:CreationDate>1425033244</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
-<a:ModificationDate>1425064421</a:ModificationDate>
-<a:Modifier>Ersagun</a:Modifier>
-<a:Cardinality>0,1</a:Cardinality>
+<a:ModificationDate>1429006616</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
+<a:Cardinality>0,n</a:Cardinality>
 <c:Object1>
 <o:Association Ref="o68"/>
 </c:Object1>
@@ -2768,9 +2768,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ObjectID>538FF1DA-097E-4C1E-8EFF-9968C9C00C30</a:ObjectID>
 <a:CreationDate>1428801888</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
-<a:ModificationDate>1428801888</a:ModificationDate>
-<a:Modifier>Ersagun</a:Modifier>
-<a:Cardinality>0,n</a:Cardinality>
+<a:ModificationDate>1429006985</a:ModificationDate>
+<a:Modifier>ms</a:Modifier>
+<a:Cardinality>1,1</a:Cardinality>
 <c:Object1>
 <o:Association Ref="o73"/>
 </c:Object1>
@@ -2782,9 +2782,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ObjectID>ADD6BAF6-69EA-4CC9-8E59-8BEE084696D6</a:ObjectID>
 <a:CreationDate>1428801888</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
-<a:ModificationDate>1428801888</a:ModificationDate>
+<a:ModificationDate>1429182523</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
-<a:Cardinality>0,n</a:Cardinality>
+<a:Cardinality>1,1</a:Cardinality>
 <c:Object1>
 <o:Association Ref="o73"/>
 </c:Object1>
