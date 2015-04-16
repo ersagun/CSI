@@ -4,7 +4,7 @@
 
 <Workspace>
 	<Local Expanded="Yes" Name="CSIl">
-		<Model ID="{4D1AB899-AE25-4A1A-A913-0E6C3AE084F2}" Name="MCD" Selected="Yes" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="MCD/MCD.mcd"/>
+		<Model ID="{4D1AB899-AE25-4A1A-A913-0E6C3AE084F2}" Loaded="No" Name="MCD" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="MCD/MCD.mcd"/>
 		<Model ID="{36ECBD23-238E-463E-83DA-58D04F425297}" Loaded="No" Name="MOT Ajout" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" URL="MOT/ajout-panier MOT.mtm"/>
 		<Model ID="{5A79CD8E-EF8E-48CE-AC08-DFFA02AD4C2D}" Loaded="No" Name="MOT inscription" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" URL="MOT/Inscription MOT.mtm"/>
 		<Model ID="{62F2BFCA-9095-4AA9-A11F-72AFC22E54E3}" Loaded="No" Name="MOT Validation Commande" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" URL="MOT/validation-commande MOT.mtm"/>
@@ -13,7 +13,8 @@
 		<Model ID="{13624FC0-BAE8-40B2-AA92-A7AD9DE96539}" Loaded="No" Name="MCT Inscription" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" URL="MCT/Inscription MCT.mtm"/>
 		<Model ID="{161B2D87-F097-479F-A019-3E12A3E41F7D}" Loaded="No" Name="MCT ValidationCommande" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" URL="/Users/Ersagun/Desktop/CSI/CSI Modeles/MCT/validationCommande.mtm"/>
 		<Model ID="{13624FC0-BAE8-40B2-AA92-A7AD9DE96539}" Loaded="No" Name="MCT Ajout" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" URL="MCT/Ajouter MCT.mtm"/>
-		<Model Expanded="Yes" ID="{4D1AB899-AE25-4A1A-A913-0E6C3AE084F2}" Loaded="No" Name="MCD" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="MCD/MCD.mcd"/>
+		<Model ID="{4D1AB899-AE25-4A1A-A913-0E6C3AE084F2}" Name="MCD" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="MCD/MCD.mcd"/>
+		<Model ID="{E1B3EB45-B987-4C40-A43F-C9E4E2F37710}" Name="MPD" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="MPD/MPD.mpd"/>
 	</Local>
 	<BrowserModule Name="Référentiel"/>
 </Workspace>
