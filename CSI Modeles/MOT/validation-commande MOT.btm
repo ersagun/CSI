@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{62F2BFCA-9095-4AA9-A11F-72AFC22E54E3}" Label="" LastModificationDate="1426267457" Name="MOT Validation Commande" Objects="32" Symbols="32" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" signature="MTM_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{62F2BFCA-9095-4AA9-A11F-72AFC22E54E3}" Label="" LastModificationDate="1429006376" Name="MOT Validation Commande" Objects="32" Symbols="32" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" signature="MTM_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -795,8 +795,8 @@ Shadow=0</a:DisplayPreferences>
 <o:PhaseEmissionSymbol Id="o11">
 <a:CreationDate>1426176544</a:CreationDate>
 <a:ModificationDate>1426176546</a:ModificationDate>
-<a:Rect>((3451,-23221), (20672,-20085))</a:Rect>
-<a:ListOfPoints>((20672,-20085),(20672,-23221),(3451,-23221))</a:ListOfPoints>
+<a:Rect>((3451,-23221), (20671,-20084))</a:Rect>
+<a:ListOfPoints>((20671,-20084),(20671,-23221),(3451,-23221))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>0</a:LineColor>
@@ -815,8 +815,8 @@ Shadow=0</a:DisplayPreferences>
 <o:PhaseEmissionSymbol Id="o15">
 <a:CreationDate>1426176546</a:CreationDate>
 <a:ModificationDate>1426176601</a:ModificationDate>
-<a:Rect>((10651,-31171), (27309,-20085))</a:Rect>
-<a:ListOfPoints>((27309,-20085),(27309,-31171),(10651,-31171))</a:ListOfPoints>
+<a:Rect>((10651,-31171), (27309,-20084))</a:Rect>
+<a:ListOfPoints>((27309,-20084),(27309,-31171),(10651,-31171))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>0</a:LineColor>
@@ -835,8 +835,8 @@ Shadow=0</a:DisplayPreferences>
 <o:PhaseEmissionSymbol Id="o18">
 <a:CreationDate>1426176601</a:CreationDate>
 <a:ModificationDate>1426176624</a:ModificationDate>
-<a:Rect>((20672,-24412), (39821,-20085))</a:Rect>
-<a:ListOfPoints>((20672,-20085),(20672,-24412),(39821,-24412))</a:ListOfPoints>
+<a:Rect>((20671,-24412), (39821,-20084))</a:Rect>
+<a:ListOfPoints>((20671,-20084),(20671,-24412),(39821,-24412))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>0</a:LineColor>
@@ -1014,8 +1014,8 @@ ALIA 0 Arial,8,N</a:FontList>
 <o:PhaseEmissionSymbol Id="o33">
 <a:CreationDate>1426176323</a:CreationDate>
 <a:ModificationDate>1426176454</a:ModificationDate>
-<a:Rect>((19720,-7463), (20170,1314))</a:Rect>
-<a:ListOfPoints>((19945,1314),(19945,-7463))</a:ListOfPoints>
+<a:Rect>((19719,-7463), (20169,1314))</a:Rect>
+<a:ListOfPoints>((19944,1314),(19944,-7463))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>0</a:LineColor>
@@ -1230,10 +1230,10 @@ EmissionRules 0 Arial,8,N</a:FontList>
 <a:Code>VERIFICATION_BANCAIRE</a:Code>
 <a:CreationDate>1426176113</a:CreationDate>
 <a:Creator>ms</a:Creator>
-<a:ModificationDate>1426176483</a:ModificationDate>
+<a:ModificationDate>1429006370</a:ModificationDate>
 <a:Modifier>ms</a:Modifier>
 <a:Period>Temps reel</a:Period>
-<a:Phase.Type>1</a:Phase.Type>
+<a:Phase.Type>2</a:Phase.Type>
 <c:Phase.Tasks>
 <o:Task Ref="o47"/>
 <o:Task Ref="o48"/>
@@ -1269,10 +1269,10 @@ EmissionRules 0 Arial,8,N</a:FontList>
 <a:Code>VERIFICATION_DU_PAIEMENT</a:Code>
 <a:CreationDate>1426176361</a:CreationDate>
 <a:Creator>ms</a:Creator>
-<a:ModificationDate>1426176497</a:ModificationDate>
+<a:ModificationDate>1429006376</a:ModificationDate>
 <a:Modifier>ms</a:Modifier>
 <a:Period>Temps reel</a:Period>
-<a:Phase.Type>1</a:Phase.Type>
+<a:Phase.Type>2</a:Phase.Type>
 <c:Phase.Tasks>
 <o:Task Ref="o52"/>
 </c:Phase.Tasks>

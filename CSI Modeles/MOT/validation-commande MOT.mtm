@@ -795,8 +795,8 @@ Shadow=0</a:DisplayPreferences>
 <o:PhaseEmissionSymbol Id="o11">
 <a:CreationDate>1426176544</a:CreationDate>
 <a:ModificationDate>1426176546</a:ModificationDate>
-<a:Rect>((3451,-23221), (20671,-20084))</a:Rect>
-<a:ListOfPoints>((20671,-20084),(20671,-23221),(3451,-23221))</a:ListOfPoints>
+<a:Rect>((3451,-23221), (20672,-20085))</a:Rect>
+<a:ListOfPoints>((20672,-20085),(20672,-23221),(3451,-23221))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>0</a:LineColor>
@@ -815,8 +815,8 @@ Shadow=0</a:DisplayPreferences>
 <o:PhaseEmissionSymbol Id="o15">
 <a:CreationDate>1426176546</a:CreationDate>
 <a:ModificationDate>1426176601</a:ModificationDate>
-<a:Rect>((10651,-31171), (27309,-20084))</a:Rect>
-<a:ListOfPoints>((27309,-20084),(27309,-31171),(10651,-31171))</a:ListOfPoints>
+<a:Rect>((10651,-31171), (27309,-20085))</a:Rect>
+<a:ListOfPoints>((27309,-20085),(27309,-31171),(10651,-31171))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>0</a:LineColor>
@@ -835,8 +835,8 @@ Shadow=0</a:DisplayPreferences>
 <o:PhaseEmissionSymbol Id="o18">
 <a:CreationDate>1426176601</a:CreationDate>
 <a:ModificationDate>1426176624</a:ModificationDate>
-<a:Rect>((20671,-24412), (39821,-20084))</a:Rect>
-<a:ListOfPoints>((20671,-20084),(20671,-24412),(39821,-24412))</a:ListOfPoints>
+<a:Rect>((20672,-24412), (39821,-20085))</a:Rect>
+<a:ListOfPoints>((20672,-20085),(20672,-24412),(39821,-24412))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>0</a:LineColor>
@@ -1014,8 +1014,8 @@ ALIA 0 Arial,8,N</a:FontList>
 <o:PhaseEmissionSymbol Id="o33">
 <a:CreationDate>1426176323</a:CreationDate>
 <a:ModificationDate>1426176454</a:ModificationDate>
-<a:Rect>((19719,-7463), (20169,1314))</a:Rect>
-<a:ListOfPoints>((19944,1314),(19944,-7463))</a:ListOfPoints>
+<a:Rect>((19720,-7463), (20170,1314))</a:Rect>
+<a:ListOfPoints>((19945,1314),(19945,-7463))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>0</a:LineColor>
