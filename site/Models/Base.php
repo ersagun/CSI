@@ -18,7 +18,7 @@ class Base
 	private static $dblink;	// The PDO connecting to the database.
 	
 	
-	// Méthods	
+	// Mï¿½thods	
 	
 	
 	/**
@@ -33,8 +33,10 @@ class Base
 		{
 			include('config.php');
 			$db = new PDO($host, $user, $pass, array(PDO::ERRMODE_EXCEPTION=>true,
-					PDO::ATTR_PERSISTENT=>true));
-		}
+			PDO::ATTR_PERSISTENT=>true));
+                    $db->exec("set names utf8");
+                        
+                }
 		catch(PDOException $e) 
 		{
 			throw new BaseException("connection: $dsn ".$e->getMessage(). '<br/>');

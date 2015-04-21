@@ -7,7 +7,7 @@
 require_once('Base.php');
 require_once('BaseException.php');
 
-class Categorie
+class Categorie implements JsonSerializable
 {
 
     // Fields
@@ -165,5 +165,17 @@ class Categorie
             return $tab;
         }
         catch(BaseException $e) { print $e -> getMessage(); }
+    }
+
+    /**
+     * (PHP 5 &gt;= 5.4.0)<br/>
+     * Specify data which should be serialized to JSON
+     * @link http://php.net/manual/en/jsonserializable.jsonserialize.php
+     * @return mixed data which can be serialized by <b>json_encode</b>,
+     * which is a value of any type other than a resource.
+     */
+    // function called when encoded with json_encode
+    public function jsonSerialize() {
+        return get_object_vars($this);
     }
 }

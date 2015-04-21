@@ -7,7 +7,7 @@
 require_once('Base.php');
 require_once('BaseException.php');
 
-class Reduction
+class Reduction implements JsonSerializable
 {
 
     // Fields
@@ -139,5 +139,10 @@ class Reduction
         {
             print $e -> getMessage();
         }
+    }
+
+    // function called when encoded with json_encode
+    public function jsonSerialize() {
+        return get_object_vars($this);
     }
 }

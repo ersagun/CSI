@@ -8,7 +8,7 @@ require_once('Base.php');
 require_once('BaseException.php');
 require_once('Categorie.php');
 
-class Produit
+class Produit implements JsonSerializable
 {
 
     // Fields
@@ -127,9 +127,13 @@ class Produit
 
     }
 
-
     // Methods
 
+    public function __toString() {
+        return "[". __CLASS__ . "] cat_id : ". $this->categorie_id . ":
+                   name  ". $this->nom  .":
+                   url ". $this->img_url;
+    }
 
     /**
      * Vérifie si le nom de produit donné en parametre est bien unique.
@@ -246,6 +250,61 @@ class Produit
      */
 
     public static function findByID($id)
+{
+    try
+    {
+        // Connection a la base.
+
+        $bdd = Base::getConnection();
+
+        // On prépare la récupération du Produit avec l'ID spécifié.
+
+        $requete = $bdd -> prepare("SELECT Produit_Id, Produit_Nom, Produit_Img_URL, Produit_Prix,
+            Produit.Categorie_Id AS c_id, Categorie_Nom FROM Produit INNER JOIN Categorie ON Categorie.Categorie_Id =
+            Produit.Categorie_Id WHERE Produit_Id = ?;");
+        $requete->execute(array($id));
+
+        /**
+         * Décommenter ici et commenter la suite si vous voulez retourner
+         * l'objet en format JSON.
+         * return json_encode($requete->fetchAll(PDO::FETCH_ASSOC));
+         */
+
+        // On transforme le résultat en un objet
+
+        $reponse = $requete->fetch(PDO::FETCH_ASSOC);
+
+        // On transforme l'objet en un Produit
+
+        if($reponse)
+        {
+            $c = new Categorie();
+
+            $c->setCategorie_id(intval($reponse['c_id']));
+            $c->setCategorie_nom($reponse['Categorie_Nom']);
+
+            $p = new Produit();
+
+            $p->id = intval($reponse['Produit_Id']);
+            $p->nom = $reponse['Produit_Nom'];
+            $p->img_url = $reponse['Produit_Img_URL'];
+            $p->prix = floatval($reponse['Produit_Prix']);
+            $p->categorie_id = intval($reponse['c_id']);
+            $p->categorie = $c;
+
+            $requete->closeCursor();
+            return $p;
+        }
+        else return null;
+    }
+    catch(BaseException $e) { print $e -> getMessage(); }
+}
+
+
+    /**
+     * @return string
+     */
+    public static function allProducts()
     {
         try
         {
@@ -253,12 +312,10 @@ class Produit
 
             $bdd = Base::getConnection();
 
-            // On prépare la récupération du Produit avec l'ID spécifié.
-
             $requete = $bdd -> prepare("SELECT Produit_Id, Produit_Nom, Produit_Img_URL, Produit_Prix,
             Produit.Categorie_Id AS c_id, Categorie_Nom FROM Produit INNER JOIN Categorie ON Categorie.Categorie_Id =
-            Produit.Categorie_Id WHERE Produit_Id = ?;");
-            $requete->execute(array($id));
+            Produit.Categorie_Id;");
+            $requete->execute();
 
             /**
              * Décommenter ici et commenter la suite si vous voulez retourner
@@ -266,35 +323,55 @@ class Produit
              * return json_encode($requete->fetchAll(PDO::FETCH_ASSOC));
              */
 
-            // On transforme le résultat en un objet
+            // On transforme le résultat en un tableau d'objets
 
-            $reponse = $requete->fetch(PDO::FETCH_ASSOC);
 
-            // On transforme l'objet en un Produit
 
-            if($reponse)
+            // Que l'on va retransformer en tableau de membres
+            $tab = array();
+            $reponses= $requete->fetchAll(PDO::FETCH_ASSOC);
+            foreach($reponses as $reponse)
             {
-                $c = new Categorie();
 
-                $c->setCategorie_id(intval($reponse['c_id']));
-                $c->setCategorie_nom($reponse['Categorie_Nom']);
+                $c_id=intval($reponse['c_id']);
+                $categorie_nom=$reponse['Categorie_Nom'];
+                $c = new Categorie();
+                $c->setCategorie_id($c_id);
+                $c->setCategorie_nom($categorie_nom);
+
+
+                $p_id= $reponse['Produit_Id'];
+                $p_nom = $reponse['Produit_Nom'];
+                $p_img_url = $reponse['Produit_Img_URL'];
+                $p_prix = floatval($reponse['Produit_Prix']);
+                $p_categorie_id = intval($reponse['c_id']);
+
+                $c = new Categorie();
+                $c->setCategorie_id($c_id);
+                $c->setCategorie_nom($categorie_nom);
 
                 $p = new Produit();
-
-                $p->id = intval($reponse['Produit_Id']);
-                $p->nom = $reponse['Produit_Nom'];
-                $p->img_url = $reponse['Produit_Img_URL'];
-                $p->prix = floatval($reponse['Produit_Prix']);
-                $p->categorie_id = intval($reponse['c_id']);
+                $p->id = $p_id;
+                $p->nom = $p_nom;
+                $p->img_url = $p_img_url;
+                $p->prix = $p_prix;
+                $p->categorie_id = $p_categorie_id;;
                 $p->categorie = $c;
 
-                $requete->closeCursor();
-                return $p;
+                array_push($tab ,$p);
+               //echo($tab[$i]);
+                //$i++;
             }
-            else return null;
+
+            //$requete->closeCursor();
+            return $tab;
+            
         }
         catch(BaseException $e) { print $e -> getMessage(); }
     }
+
+
+
 
     /**
      * Permet de retrouver des Produits dans la base de données
@@ -376,6 +453,7 @@ class Produit
                 $p->categorie = $c;
 
                 $tab[$i] = $p;
+
                 $i++;
             }
 
@@ -383,5 +461,10 @@ class Produit
             return $tab;
         }
         catch(BaseException $e) { print $e -> getMessage(); }
+    }
+
+    // function called when encoded with json_encode
+    public function jsonSerialize() {
+        return get_object_vars($this);
     }
 }

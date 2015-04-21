@@ -9,7 +9,7 @@ require_once('BaseException.php');
 require_once('Promotion.php');
 require_once('Produit.php');
 
-class ObtenirPromotion
+class ObtenirPromotion implements JsonSerializable
 {
 
     // Fields
@@ -346,5 +346,10 @@ class ObtenirPromotion
             return $tab;
         }
         catch(BaseException $e) { print $e -> getMessage(); }
+    }
+
+    // function called when encoded with json_encode
+    public function jsonSerialize() {
+        return get_object_vars($this);
     }
 }

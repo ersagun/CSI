@@ -1,5 +1,5 @@
 <?php
-require_once("../Models/User.php");
+//require_once("../Models/User.php");
 //echo file_get_contents("../View/View.html");
 
 /*
@@ -16,10 +16,12 @@ require_once("../Models/User.php");
  * This class used when user ask data
  */
 
-include_once '../Models/Compose.php';
-include_once '../Models/Commande.php';
-include_once '../Models/Historique.php';
-include_once '../Models/ObtenirPromotion.php';
+require_once '../Models/Compose.php';
+require_once '../Models/Commande.php';
+require_once '../Models/Historique.php';
+require_once '../Models/ObtenirPromotion.php';
+require_once '../Models/Produit.php';
+
 class Controller {
     
     /**
@@ -31,7 +33,7 @@ class Controller {
             'voirProduits' => 'voirProduits',
             'signIn' => 'signIn',
                 'search'=>'search',
-                'allMusic'=>'allMusic',
+                'Products'=>'allProducts',
                 'insertUser'=>'insertUser',
                 'findSongs'=>'findSongs'
         );
@@ -82,8 +84,8 @@ class Controller {
     /**
      * Tranform all musics in json to Ajax
      */
-    public function allMusic(){
-        $tab=Track::findAll(); 
+    public function allProducts(){
+       $tab=Produit::allProducts();
         echo json_encode($tab);
     }
     

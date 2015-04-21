@@ -8,7 +8,7 @@ require_once('Base.php');
 require_once('BaseException.php');
 require_once('Compte.php');
 
-class Client
+class Client implements JsonSerializable
 {
 
     // Fields
@@ -513,5 +513,10 @@ class Client
         {
             print $e -> getMessage();
         }
+    }
+
+    // function called when encoded with json_encode
+    public function jsonSerialize() {
+        return get_object_vars($this);
     }
 }

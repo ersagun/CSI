@@ -9,7 +9,7 @@ require_once('BaseException.php');
 require_once('Reduction.php');
 require_once('Client.php');
 
-class Panier
+class Panier implements JsonSerializable
 {
 
     // Fields
@@ -309,5 +309,10 @@ class Panier
             return $tab;
         }
         catch(BaseException $e) { print $e -> getMessage(); }
+    }
+
+    // function called when encoded with json_encode
+    public function jsonSerialize() {
+        return get_object_vars($this);
     }
 }

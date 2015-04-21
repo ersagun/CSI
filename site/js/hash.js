@@ -15,10 +15,10 @@
  */
 
 // i allow my application to show only these hash names (hash name : function name)
-var hash={'#SignIn':'signIn','#!':'allMusic','#AllArtist':'allArtist','#SignUp':'signUp','#AllMusic':'allMusic','#CheckUser':'checkUser'};
+var hash={'#SignIn':'signIn','#!':'showProducts','#SignUp':'signUp','#Products':'showProducts','#CheckUser':'checkUser'};
 
 /**
- * 
+ *
  * @param {type} param
  * I check the page that user ask if is exist in my hash name table so i call the function
  * wich will show it else, i show the first page (#!)
@@ -28,7 +28,7 @@ $(document).ready(function(){
     if(location.hash && ($.inArray(getLocationHash(),hash)!=-1)){
         updateMyApp(getLocationHash());
     }else{
-        location='#AllMusic';
+        location='#!';
     }
     
     
@@ -126,25 +126,25 @@ function allArtist(){
             } 
             $("#center").append('</div>');
         }
-    }); 
+    });
 }
 
 /**
  * 
  * @returns {undefined}
- * Function show all musics when hash is all music
+ * Function show all products
  */
-function allMusic(){
+function showProducts(){
+    console.log("coucou");
     $.ajax({ 
-        type: "POST", 
+        type: "POST",
         url: "../Controller/Controller.php", 
-        data: "a=allMusic",
+        data: "a=Products",
         dataType:"json",
         error: function() { 
             console.log("erreur !"); 
         },
         success: function(retour){
-            console.log("haha");
             
             $("#center").empty();
             
@@ -152,10 +152,10 @@ function allMusic(){
             
             for(i=0;i<retour.length;i++){
                 
-                $("#center").append('<div id="music" class="thumbnail"><img class="imgBlock" data-src="holder.js/300x300" src="'+retour[i].image_url+'" alt="artist" style="height:150px;widht:150px;"><div class="caption">\
-                        <p>'+retour[i].title.substring(0,21)+'</p>\
+                $("#center").append('<div id="music" class="thumbnail"><img class="imgBlock" data-src="holder.js/300x300" src="../'+retour[i].img_url+'" alt="artist" style="height:150px;widht:150px;"><div class="caption">\
+                        <p>'+retour[i].nom.substring(0,21)+'</p>\
                         <p style="width:300px;text-align:justify"></p>\
-                        <p><span onclick="listenMusic(\''+retour[i].mp3_url+'\')" class="btn btn-primary" role="button">listen</span></p>\
+                        <p><span onclick="listenMusic(\'../'+retour[i].img_url+'\')" class="btn btn-primary" role="button">ajouter</span></p>\
                         </div>\
                         </div>');
                 

@@ -1,15 +1,19 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Tom
- * Date: 18-4-2015
- * Time: 10:25
- */
 
 include_once '../Models/Compose.php';
 include_once '../Models/Commande.php';
 include_once '../Models/Historique.php';
 include_once '../Models/ObtenirPromotion.php';
+
+$tab=Produit::allProducts();
+$t=json_encode($tab);
+
+foreach($tab as $arg){
+    echo($arg);
+}
+echo $t;
+
+/**
 
 echo "<h1>Test de la classe Categorie ....</h1>";
 
@@ -436,3 +440,4 @@ var_dump(Commande::findByPanierID($pan2->id));
 $cmd1->estRecuperee();
 var_dump(Commande::findByPanierID($pan2->id));
 
+**/

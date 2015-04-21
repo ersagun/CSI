@@ -9,7 +9,7 @@ require_once('BaseException.php');
 require_once('Produit.php');
 require_once('Panier.php');
 
-class Compose
+class Compose implements JsonSerializable
 {
 
     // Fields
@@ -247,5 +247,10 @@ class Compose
             return $tab;
         }
         catch(BaseException $e) { print $e -> getMessage(); }
+    }
+
+    // function called when encoded with json_encode
+    public function jsonSerialize() {
+        return get_object_vars($this);
     }
 }

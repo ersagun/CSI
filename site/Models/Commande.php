@@ -9,7 +9,7 @@ require_once('BaseException.php');
 require_once('HeureRecuperation.php');
 require_once('Panier.php');
 
-class Commande
+class Commande implements JsonSerializable
 {
 
     // Fields
@@ -293,5 +293,10 @@ class Commande
             return $tab;
         }
         catch(BaseException $e) { print $e -> getMessage(); }
+    }
+
+    // function called when encoded with json_encode
+    public function jsonSerialize() {
+        return get_object_vars($this);
     }
 }
