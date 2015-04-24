@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{13624FC0-BAE8-40B2-AA92-A7AD9DE96539}" Label="" LastModificationDate="1428594102" Name="MCT Ajout" Objects="23" Symbols="47" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" signature="MTM_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{13624FC0-BAE8-40B2-AA92-A7AD9DE96539}" Label="" LastModificationDate="1429879890" Name="MCT Ajout" Objects="23" Symbols="47" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" signature="MTM_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -12,7 +12,7 @@
 <a:Code>MCT_AJOUT</a:Code>
 <a:CreationDate>1426186762</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
-<a:ModificationDate>1426276999</a:ModificationDate>
+<a:ModificationDate>1429879874</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 <a:PackageOptionsText>[FolderOptions]
 
@@ -437,7 +437,7 @@ ConvTablePath=%_HOME%\Fichiers de ressources\Tables de conversion</a:ModelOption
 <a:Code>MCT_AJOUT</a:Code>
 <a:CreationDate>1426186762</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
-<a:ModificationDate>1426277150</a:ModificationDate>
+<a:ModificationDate>1429879874</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 <a:DisplayPreferences>[DisplayPreferences]
 
@@ -728,19 +728,7 @@ Shadow=0</a:DisplayPreferences>
 <a:PageOrientation>1</a:PageOrientation>
 <a:PaperSource>15</a:PaperSource>
 <c:Symbols>
-<o:TextSymbol Id="o4">
-<a:Text>Commande</a:Text>
-<a:CreationDate>1426275704</a:CreationDate>
-<a:ModificationDate>1426277130</a:ModificationDate>
-<a:Rect>((-369421,708477), (-364622,712076))</a:Rect>
-<a:TextStyle>4130</a:TextStyle>
-<a:LineColor>0</a:LineColor>
-<a:DashStyle>7</a:DashStyle>
-<a:FillColor>0</a:FillColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontName>Arial,8,N</a:FontName>
-</o:TextSymbol>
-<o:OperationEmissionSymbol Id="o5">
+<o:OperationEmissionSymbol Id="o4">
 <a:CreationDate>1426270508</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-354777,692761), (-346725,704243))</a:Rect>
@@ -751,16 +739,16 @@ Shadow=0</a:DisplayPreferences>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
-<o:OperationSymbol Ref="o6"/>
+<o:OperationSymbol Ref="o5"/>
 </c:SourceSymbol>
 <c:DestinationSymbol>
-<o:EventSymbol Ref="o7"/>
+<o:EventSymbol Ref="o6"/>
 </c:DestinationSymbol>
 <c:Object>
-<o:OperationEmission Ref="o8"/>
+<o:OperationEmission Ref="o7"/>
 </c:Object>
 </o:OperationEmissionSymbol>
-<o:OperationEmissionSymbol Id="o9">
+<o:OperationEmissionSymbol Id="o8">
 <a:CreationDate>1426270508</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-361524,692395), (-354777,704243))</a:Rect>
@@ -771,16 +759,16 @@ Shadow=0</a:DisplayPreferences>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
-<o:OperationSymbol Ref="o6"/>
+<o:OperationSymbol Ref="o5"/>
 </c:SourceSymbol>
 <c:DestinationSymbol>
-<o:EventSymbol Ref="o10"/>
+<o:EventSymbol Ref="o9"/>
 </c:DestinationSymbol>
 <c:Object>
-<o:OperationEmission Ref="o11"/>
+<o:OperationEmission Ref="o10"/>
 </c:Object>
 </o:OperationEmissionSymbol>
-<o:OperationTriggeringSymbol Id="o12">
+<o:OperationTriggeringSymbol Id="o11">
 <a:CreationDate>1426270508</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-355002,707228), (-354552,713597))</a:Rect>
@@ -791,16 +779,16 @@ Shadow=0</a:DisplayPreferences>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
-<o:EventSymbol Ref="o13"/>
+<o:EventSymbol Ref="o12"/>
 </c:SourceSymbol>
 <c:DestinationSymbol>
-<o:OperationSymbol Ref="o6"/>
+<o:OperationSymbol Ref="o5"/>
 </c:DestinationSymbol>
 <c:Object>
-<o:OperationTriggering Ref="o14"/>
+<o:OperationTriggering Ref="o13"/>
 </c:Object>
 </o:OperationTriggeringSymbol>
-<o:ExtendedDependencySymbol Id="o15">
+<o:ExtendedDependencySymbol Id="o14">
 <a:CreationDate>1426270508</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-379762,703643), (-354777,704243))</a:Rect>
@@ -811,16 +799,16 @@ Shadow=0</a:DisplayPreferences>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>OBJXSTR 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
-<o:EventSymbol Ref="o16"/>
+<o:EventSymbol Ref="o15"/>
 </c:SourceSymbol>
 <c:DestinationSymbol>
-<o:OperationSymbol Ref="o6"/>
+<o:OperationSymbol Ref="o5"/>
 </c:DestinationSymbol>
 <c:Object>
-<o:ExtendedDependency Ref="o17"/>
+<o:ExtendedDependency Ref="o16"/>
 </c:Object>
 </o:ExtendedDependencySymbol>
-<o:OperationEmissionSymbol Id="o18">
+<o:OperationEmissionSymbol Id="o17">
 <a:CreationDate>1426270508</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-354777,704018), (-340657,704468))</a:Rect>
@@ -831,16 +819,16 @@ Shadow=0</a:DisplayPreferences>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
-<o:OperationSymbol Ref="o6"/>
+<o:OperationSymbol Ref="o5"/>
 </c:SourceSymbol>
 <c:DestinationSymbol>
-<o:EventSymbol Ref="o19"/>
+<o:EventSymbol Ref="o18"/>
 </c:DestinationSymbol>
 <c:Object>
-<o:OperationEmission Ref="o20"/>
+<o:OperationEmission Ref="o19"/>
 </c:Object>
 </o:OperationEmissionSymbol>
-<o:ExtendedDependencySymbol Id="o21">
+<o:ExtendedDependencySymbol Id="o20">
 <a:CreationDate>1426275425</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-371306,696702), (-361943,701475))</a:Rect>
@@ -851,36 +839,16 @@ Shadow=0</a:DisplayPreferences>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>OBJXSTR 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
-<o:EventSymbol Ref="o22"/>
+<o:EventSymbol Ref="o21"/>
 </c:SourceSymbol>
 <c:DestinationSymbol>
-<o:OperationSymbol Ref="o6"/>
+<o:OperationSymbol Ref="o5"/>
 </c:DestinationSymbol>
 <c:Object>
-<o:ExtendedDependency Ref="o23"/>
+<o:ExtendedDependency Ref="o22"/>
 </c:Object>
 </o:ExtendedDependencySymbol>
-<o:ExtendedDependencySymbol Id="o24">
-<a:CreationDate>1426275447</a:CreationDate>
-<a:ModificationDate>1426277130</a:ModificationDate>
-<a:Rect>((-362007,704810), (-358307,709994))</a:Rect>
-<a:ListOfPoints>((-362007,709994),(-358307,709994),(-358307,704810))</a:ListOfPoints>
-<a:CornerStyle>1</a:CornerStyle>
-<a:ArrowStyle>8</a:ArrowStyle>
-<a:LineColor>16744576</a:LineColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>OBJXSTR 0 Arial,8,N</a:FontList>
-<c:SourceSymbol>
-<o:EventSymbol Ref="o25"/>
-</c:SourceSymbol>
-<c:DestinationSymbol>
-<o:OperationSymbol Ref="o6"/>
-</c:DestinationSymbol>
-<c:Object>
-<o:ExtendedDependency Ref="o26"/>
-</c:Object>
-</o:ExtendedDependencySymbol>
-<o:ExtendedDependencySymbol Id="o27">
+<o:ExtendedDependencySymbol Id="o23">
 <a:CreationDate>1426276995</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-377589,699332), (-352316,702627))</a:Rect>
@@ -891,16 +859,16 @@ Shadow=0</a:DisplayPreferences>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>OBJXSTR 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
-<o:EventSymbol Ref="o28"/>
+<o:EventSymbol Ref="o24"/>
 </c:SourceSymbol>
 <c:DestinationSymbol>
-<o:OperationSymbol Ref="o6"/>
+<o:OperationSymbol Ref="o5"/>
 </c:DestinationSymbol>
 <c:Object>
-<o:ExtendedDependency Ref="o29"/>
+<o:ExtendedDependency Ref="o25"/>
 </c:Object>
 </o:ExtendedDependencySymbol>
-<o:ExtendedDependencySymbol Id="o30">
+<o:ExtendedDependencySymbol Id="o26">
 <a:CreationDate>1426276999</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-373830,705128), (-361355,705728))</a:Rect>
@@ -911,16 +879,16 @@ Shadow=0</a:DisplayPreferences>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>OBJXSTR 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
-<o:EventSymbol Ref="o31"/>
+<o:EventSymbol Ref="o27"/>
 </c:SourceSymbol>
 <c:DestinationSymbol>
-<o:OperationSymbol Ref="o6"/>
+<o:OperationSymbol Ref="o5"/>
 </c:DestinationSymbol>
 <c:Object>
-<o:ExtendedDependency Ref="o32"/>
+<o:ExtendedDependency Ref="o28"/>
 </c:Object>
 </o:ExtendedDependencySymbol>
-<o:TextSymbol Id="o33">
+<o:TextSymbol Id="o29">
 <a:Text>C2</a:Text>
 <a:CreationDate>1426270508</a:CreationDate>
 <a:ModificationDate>1426277519</a:ModificationDate>
@@ -934,7 +902,7 @@ Shadow=0</a:DisplayPreferences>
 <a:FontName>Arial,8,N</a:FontName>
 <a:ManuallyResized>1</a:ManuallyResized>
 </o:TextSymbol>
-<o:TextSymbol Id="o34">
+<o:TextSymbol Id="o30">
 <a:CreationDate>1426270508</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-345065,706881), (-340266,710480))</a:Rect>
@@ -945,7 +913,7 @@ Shadow=0</a:DisplayPreferences>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontName>Arial,8,N</a:FontName>
 </o:TextSymbol>
-<o:TextSymbol Id="o35">
+<o:TextSymbol Id="o31">
 <a:Text>Le client demande d&#39;ajouter un produit dans son panier</a:Text>
 <a:CreationDate>1426270508</a:CreationDate>
 <a:ModificationDate>1428594102</a:ModificationDate>
@@ -959,7 +927,7 @@ Shadow=0</a:DisplayPreferences>
 <a:FontName>Arial,8,N</a:FontName>
 <a:ManuallyResized>1</a:ManuallyResized>
 </o:TextSymbol>
-<o:TextSymbol Id="o36">
+<o:TextSymbol Id="o32">
 <a:Text>Produit</a:Text>
 <a:CreationDate>1426270508</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
@@ -971,18 +939,17 @@ Shadow=0</a:DisplayPreferences>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontName>Arial,8,N</a:FontName>
 </o:TextSymbol>
-<o:TextSymbol Id="o37">
+<o:TextSymbol Id="o33">
 <a:Text>OB1 : Ajouter l&#39;article
 OB2 : Liste Produit
-OB3 : Commande modifié
+OB3 : Paniere modifié
 OB4 : Liste panier
-OB5 : Liste commande
 OB6 : Liste promotions
-OBè : Liste de réduction
+OB7 : Liste de réduction
 
 </a:Text>
 <a:CreationDate>1426270508</a:CreationDate>
-<a:ModificationDate>1426277130</a:ModificationDate>
+<a:ModificationDate>1429879890</a:ModificationDate>
 <a:Rect>((-377490,685608), (-368098,695344))</a:Rect>
 <a:TextStyle>4130</a:TextStyle>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
@@ -993,7 +960,7 @@ OBè : Liste de réduction
 <a:FontName>Arial,8,N</a:FontName>
 <a:ManuallyResized>1</a:ManuallyResized>
 </o:TextSymbol>
-<o:TextSymbol Id="o38">
+<o:TextSymbol Id="o34">
 <a:Text>C1 : Utilisateur à bien inseré le produit dans son panier
 C2: Utilisateur a eu un erreur au moment d&#39;insértion</a:Text>
 <a:CreationDate>1426270508</a:CreationDate>
@@ -1008,7 +975,7 @@ C2: Utilisateur a eu un erreur au moment d&#39;insértion</a:Text>
 <a:FontName>Arial,8,N</a:FontName>
 <a:ManuallyResized>1</a:ManuallyResized>
 </o:TextSymbol>
-<o:OperationSymbol Id="o6">
+<o:OperationSymbol Id="o5">
 <a:CreationDate>1426270508</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-361973,700759), (-347581,707728))</a:Rect>
@@ -1024,10 +991,10 @@ EmissionRules 0 Arial,8,N</a:FontList>
 <a:GradientFillMode>64</a:GradientFillMode>
 <a:GradientEndColor>12774654</a:GradientEndColor>
 <c:Object>
-<o:Operation Ref="o39"/>
+<o:Operation Ref="o35"/>
 </c:Object>
 </o:OperationSymbol>
-<o:EventSymbol Id="o13">
+<o:EventSymbol Id="o12">
 <a:CreationDate>1426270508</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-357500,711119), (-351680,716939))</a:Rect>
@@ -1046,10 +1013,10 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:KeepCenter>1</a:KeepCenter>
 <a:ManuallyResized>1</a:ManuallyResized>
 <c:Object>
-<o:Event Ref="o40"/>
+<o:Event Ref="o36"/>
 </c:Object>
 </o:EventSymbol>
-<o:EventSymbol Id="o10">
+<o:EventSymbol Id="o9">
 <a:CreationDate>1426270508</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-364539,688941), (-358861,694619))</a:Rect>
@@ -1068,10 +1035,10 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:KeepCenter>1</a:KeepCenter>
 <a:ManuallyResized>1</a:ManuallyResized>
 <c:Object>
-<o:Event Ref="o41"/>
+<o:Event Ref="o37"/>
 </c:Object>
 </o:EventSymbol>
-<o:EventSymbol Id="o16">
+<o:EventSymbol Id="o15">
 <a:CreationDate>1426270508</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-382005,702905), (-378143,706767))</a:Rect>
@@ -1089,10 +1056,10 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:KeepCenter>1</a:KeepCenter>
 <a:ManuallyResized>1</a:ManuallyResized>
 <c:Object>
-<o:Event Ref="o42"/>
+<o:Event Ref="o38"/>
 </c:Object>
 </o:EventSymbol>
-<o:EventSymbol Id="o7">
+<o:EventSymbol Id="o6">
 <a:CreationDate>1426270508</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-349404,689294), (-343820,694878))</a:Rect>
@@ -1111,10 +1078,10 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:KeepCenter>1</a:KeepCenter>
 <a:ManuallyResized>1</a:ManuallyResized>
 <c:Object>
-<o:Event Ref="o43"/>
+<o:Event Ref="o39"/>
 </c:Object>
 </o:EventSymbol>
-<o:TextSymbol Id="o44">
+<o:TextSymbol Id="o40">
 <a:Text>C1</a:Text>
 <a:CreationDate>1426270508</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
@@ -1128,7 +1095,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:FontName>Arial,8,N</a:FontName>
 <a:ManuallyResized>1</a:ManuallyResized>
 </o:TextSymbol>
-<o:EventSymbol Id="o19">
+<o:EventSymbol Id="o18">
 <a:CreationDate>1426270508</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-343293,702248), (-339431,706110))</a:Rect>
@@ -1146,13 +1113,13 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:KeepCenter>1</a:KeepCenter>
 <a:ManuallyResized>1</a:ManuallyResized>
 <c:Object>
-<o:Event Ref="o45"/>
+<o:Event Ref="o41"/>
 </c:Object>
 </o:EventSymbol>
-<o:TextSymbol Id="o46">
-<a:Text>Commande</a:Text>
+<o:TextSymbol Id="o42">
+<a:Text>Panier</a:Text>
 <a:CreationDate>1426270508</a:CreationDate>
-<a:ModificationDate>1426277130</a:ModificationDate>
+<a:ModificationDate>1429879861</a:ModificationDate>
 <a:Rect>((-343625,704961), (-338826,708560))</a:Rect>
 <a:TextStyle>4130</a:TextStyle>
 <a:LineColor>0</a:LineColor>
@@ -1161,10 +1128,10 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontName>Arial,8,N</a:FontName>
 </o:TextSymbol>
-<o:TextSymbol Id="o47">
-<a:Text>&quot; Commande modifié &quot;</a:Text>
+<o:TextSymbol Id="o43">
+<a:Text>&quot; Panier modifié &quot;</a:Text>
 <a:CreationDate>1426270508</a:CreationDate>
-<a:ModificationDate>1426277130</a:ModificationDate>
+<a:ModificationDate>1429879856</a:ModificationDate>
 <a:Rect>((-343794,698708), (-338995,702307))</a:Rect>
 <a:TextStyle>4130</a:TextStyle>
 <a:LineColor>0</a:LineColor>
@@ -1173,7 +1140,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontName>Arial,8,N</a:FontName>
 </o:TextSymbol>
-<o:EventSymbol Id="o22">
+<o:EventSymbol Id="o21">
 <a:CreationDate>1426275411</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-373152,695391), (-369290,699253))</a:Rect>
@@ -1191,31 +1158,10 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:KeepCenter>1</a:KeepCenter>
 <a:ManuallyResized>1</a:ManuallyResized>
 <c:Object>
-<o:Event Ref="o48"/>
+<o:Event Ref="o44"/>
 </c:Object>
 </o:EventSymbol>
-<o:EventSymbol Id="o25">
-<a:CreationDate>1426275433</a:CreationDate>
-<a:ModificationDate>1426277130</a:ModificationDate>
-<a:Rect>((-364303,708007), (-360441,711869))</a:Rect>
-<a:AutoAdjustToText>0</a:AutoAdjustToText>
-<a:LineColor>32768</a:LineColor>
-<a:FillColor>14680031</a:FillColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>STRN 0 Arial,8,N
-DISPNAME 0 Arial,8,N
-ALIA 0 Arial,8,N</a:FontList>
-<a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>512</a:GradientFillMode>
-<a:GradientEndColor>16777215</a:GradientEndColor>
-<a:KeepAspect>1</a:KeepAspect>
-<a:KeepCenter>1</a:KeepCenter>
-<a:ManuallyResized>1</a:ManuallyResized>
-<c:Object>
-<o:Event Ref="o49"/>
-</c:Object>
-</o:EventSymbol>
-<o:TextSymbol Id="o50">
+<o:TextSymbol Id="o45">
 <a:Text>Panier</a:Text>
 <a:CreationDate>1426275721</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
@@ -1227,7 +1173,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontName>Arial,8,N</a:FontName>
 </o:TextSymbol>
-<o:EventSymbol Id="o31">
+<o:EventSymbol Id="o27">
 <a:CreationDate>1426276873</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-376603,704334), (-372603,708334))</a:Rect>
@@ -1243,10 +1189,10 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:KeepAspect>1</a:KeepAspect>
 <a:KeepCenter>1</a:KeepCenter>
 <c:Object>
-<o:Event Ref="o51"/>
+<o:Event Ref="o46"/>
 </c:Object>
 </o:EventSymbol>
-<o:EventSymbol Id="o28">
+<o:EventSymbol Id="o24">
 <a:CreationDate>1426276874</a:CreationDate>
 <a:ModificationDate>1426277130</a:ModificationDate>
 <a:Rect>((-380779,696896), (-376779,700896))</a:Rect>
@@ -1262,10 +1208,10 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:KeepAspect>1</a:KeepAspect>
 <a:KeepCenter>1</a:KeepCenter>
 <c:Object>
-<o:Event Ref="o52"/>
+<o:Event Ref="o47"/>
 </c:Object>
 </o:EventSymbol>
-<o:TextSymbol Id="o53">
+<o:TextSymbol Id="o48">
 <a:Text>Obtenir_promotion(promotion)
 </a:Text>
 <a:CreationDate>1426276920</a:CreationDate>
@@ -1280,7 +1226,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:FontName>Arial,8,N</a:FontName>
 <a:ManuallyResized>1</a:ManuallyResized>
 </o:TextSymbol>
-<o:TextSymbol Id="o54">
+<o:TextSymbol Id="o49">
 <a:Text>se_realise (réduction)
 </a:Text>
 <a:CreationDate>1426276936</a:CreationDate>
@@ -1293,7 +1239,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontName>Arial,8,N</a:FontName>
 </o:TextSymbol>
-<o:TextSymbol Id="o55">
+<o:TextSymbol Id="o50">
 <a:Text>C1</a:Text>
 <a:CreationDate>1426277146</a:CreationDate>
 <a:ModificationDate>1426277152</a:ModificationDate>
@@ -1311,7 +1257,7 @@ ALIA 0 Arial,8,N</a:FontList>
 </o:ConceptualDiagram>
 </c:ConceptualDiagrams>
 <c:Actions>
-<o:Action Id="o56">
+<o:Action Id="o51">
 <a:ObjectID>C3CEFA36-FF9F-4915-A0A6-AB429DB03CAA</a:ObjectID>
 <a:Name>- Vérification des promotions et réductions</a:Name>
 <a:Code>__VERIFICATION_DES_PROMOTIONS_ET_REDUCTIONS</a:Code>
@@ -1320,7 +1266,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1426276795</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 </o:Action>
-<o:Action Id="o57">
+<o:Action Id="o52">
 <a:ObjectID>FDF45710-A6D6-4A43-A458-86E4F03EAB7B</a:ObjectID>
 <a:Name>Verification du stocke (table produit qte_restant)</a:Name>
 <a:Code>VERIFICATION_DU_STOCKE__TABLE_PRODUIT_QTE_RESTANT_</a:Code>
@@ -1331,7 +1277,7 @@ ALIA 0 Arial,8,N</a:FontList>
 </o:Action>
 </c:Actions>
 <c:Operations>
-<o:Operation Id="o39">
+<o:Operation Id="o35">
 <a:ObjectID>A2895520-71BD-4DC3-A0AD-9C6BCF420F37</a:ObjectID>
 <a:Name>Ajout d&#39;un produit</a:Name>
 <a:Code>AJOUT_D_UN_PRODUIT</a:Code>
@@ -1341,13 +1287,13 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:Modifier>Ersagun</a:Modifier>
 <a:Synchronization>Ext1</a:Synchronization>
 <c:Operation.Actions>
-<o:Action Ref="o57"/>
-<o:Action Ref="o56"/>
+<o:Action Ref="o52"/>
+<o:Action Ref="o51"/>
 </c:Operation.Actions>
 </o:Operation>
 </c:Operations>
 <c:Events>
-<o:Event Id="o40">
+<o:Event Id="o36">
 <a:ObjectID>F2D28313-D9B0-403E-A482-F0420055A1FC</a:ObjectID>
 <a:Name>OB1</a:Name>
 <a:Code>OB1</a:Code>
@@ -1358,7 +1304,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:Event.Alias>Ext1</a:Event.Alias>
 <a:Event.Type>1</a:Event.Type>
 </o:Event>
-<o:Event Id="o41">
+<o:Event Id="o37">
 <a:ObjectID>00BE0830-593E-46F7-B377-76422EAD0E89</a:ObjectID>
 <a:Name>Message de validation</a:Name>
 <a:Code>MESSAGE_DE_VALIDATION</a:Code>
@@ -1369,7 +1315,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:Event.Alias>EXT2</a:Event.Alias>
 <a:Event.Type>1</a:Event.Type>
 </o:Event>
-<o:Event Id="o42">
+<o:Event Id="o38">
 <a:ObjectID>21B82852-70E8-4E43-BB3F-063EBE601FDA</a:ObjectID>
 <a:Name>OB2</a:Name>
 <a:Code>OB2</a:Code>
@@ -1378,7 +1324,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1426270508</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 </o:Event>
-<o:Event Id="o43">
+<o:Event Id="o39">
 <a:ObjectID>C74427C3-7A35-43B2-841C-EB941984E5B8</a:ObjectID>
 <a:Name>Message d&#39;erreur</a:Name>
 <a:Code>MESSAGE_D_ERREUR</a:Code>
@@ -1388,7 +1334,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:Modifier>Ersagun</a:Modifier>
 <a:Event.Type>1</a:Event.Type>
 </o:Event>
-<o:Event Id="o45">
+<o:Event Id="o41">
 <a:ObjectID>557E10C4-116F-417B-98AC-CE1E657E555A</a:ObjectID>
 <a:Name>OB3</a:Name>
 <a:Code>OB3</a:Code>
@@ -1397,7 +1343,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1426270508</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 </o:Event>
-<o:Event Id="o48">
+<o:Event Id="o44">
 <a:ObjectID>36657ED9-A166-4ACC-B2BC-63534FDE82C2</a:ObjectID>
 <a:Name>OB4</a:Name>
 <a:Code>OB4</a:Code>
@@ -1406,16 +1352,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1426275411</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 </o:Event>
-<o:Event Id="o49">
-<a:ObjectID>220996FC-01E7-4C24-98D6-9B0C35863920</a:ObjectID>
-<a:Name>OB5</a:Name>
-<a:Code>OB5</a:Code>
-<a:CreationDate>1426275433</a:CreationDate>
-<a:Creator>Ersagun</a:Creator>
-<a:ModificationDate>1426275433</a:ModificationDate>
-<a:Modifier>Ersagun</a:Modifier>
-</o:Event>
-<o:Event Id="o51">
+<o:Event Id="o46">
 <a:ObjectID>3C49E772-56B3-417F-AE6F-AEFE0763185C</a:ObjectID>
 <a:Name>OB6</a:Name>
 <a:Code>OB6</a:Code>
@@ -1424,7 +1361,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1426276888</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 </o:Event>
-<o:Event Id="o52">
+<o:Event Id="o47">
 <a:ObjectID>857F910E-54DC-4BD4-BFC4-9057C19B8990</a:ObjectID>
 <a:Name>OB7</a:Name>
 <a:Code>OB7</a:Code>
@@ -1435,36 +1372,49 @@ ALIA 0 Arial,8,N</a:FontList>
 </o:Event>
 </c:Events>
 <c:OperationTriggerings>
-<o:OperationTriggering Id="o14">
+<o:OperationTriggering Id="o13">
 <a:ObjectID>991C4EDB-5E51-42D3-9639-320C68400DEE</a:ObjectID>
 <a:CreationDate>1426270508</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
 <a:ModificationDate>1426270508</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 <c:Object1>
-<o:Operation Ref="o39"/>
+<o:Operation Ref="o35"/>
 </c:Object1>
 <c:Object2>
-<o:Event Ref="o40"/>
+<o:Event Ref="o36"/>
 </c:Object2>
 </o:OperationTriggering>
 </c:OperationTriggerings>
 <c:OperationEmissions>
-<o:OperationEmission Id="o8">
+<o:OperationEmission Id="o7">
 <a:ObjectID>D5806CEE-711B-424B-BA99-35BE2DF4783A</a:ObjectID>
 <a:CreationDate>1426270508</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
 <a:ModificationDate>1426270508</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 <c:Object1>
-<o:Event Ref="o43"/>
+<o:Event Ref="o39"/>
 </c:Object1>
 <c:Object2>
-<o:Operation Ref="o39"/>
+<o:Operation Ref="o35"/>
 </c:Object2>
 </o:OperationEmission>
-<o:OperationEmission Id="o11">
+<o:OperationEmission Id="o10">
 <a:ObjectID>74268CDC-866A-475F-A3C7-26365C6B8A60</a:ObjectID>
+<a:CreationDate>1426270508</a:CreationDate>
+<a:Creator>Ersagun</a:Creator>
+<a:ModificationDate>1426270508</a:ModificationDate>
+<a:Modifier>Ersagun</a:Modifier>
+<c:Object1>
+<o:Event Ref="o37"/>
+</c:Object1>
+<c:Object2>
+<o:Operation Ref="o35"/>
+</c:Object2>
+</o:OperationEmission>
+<o:OperationEmission Id="o19">
+<a:ObjectID>C4AF7CB0-2A05-4DB2-985C-C311732512B6</a:ObjectID>
 <a:CreationDate>1426270508</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
 <a:ModificationDate>1426270508</a:ModificationDate>
@@ -1473,20 +1423,7 @@ ALIA 0 Arial,8,N</a:FontList>
 <o:Event Ref="o41"/>
 </c:Object1>
 <c:Object2>
-<o:Operation Ref="o39"/>
-</c:Object2>
-</o:OperationEmission>
-<o:OperationEmission Id="o20">
-<a:ObjectID>C4AF7CB0-2A05-4DB2-985C-C311732512B6</a:ObjectID>
-<a:CreationDate>1426270508</a:CreationDate>
-<a:Creator>Ersagun</a:Creator>
-<a:ModificationDate>1426270508</a:ModificationDate>
-<a:Modifier>Ersagun</a:Modifier>
-<c:Object1>
-<o:Event Ref="o45"/>
-</c:Object1>
-<c:Object2>
-<o:Operation Ref="o39"/>
+<o:Operation Ref="o35"/>
 </c:Object2>
 </o:OperationEmission>
 </c:OperationEmissions>
@@ -1494,69 +1431,56 @@ ALIA 0 Arial,8,N</a:FontList>
 <o:ConceptualDiagram Ref="o3"/>
 </c:DefaultDiagram>
 <c:ChildExtendedDependencies>
-<o:ExtendedDependency Id="o17">
+<o:ExtendedDependency Id="o16">
 <a:ObjectID>9A1DEB78-B839-4BBD-B513-7E21747BF81B</a:ObjectID>
 <a:CreationDate>1426270508</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
 <a:ModificationDate>1426270508</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 <c:Object1>
-<o:Operation Ref="o39"/>
+<o:Operation Ref="o35"/>
 </c:Object1>
 <c:Object2>
-<o:Event Ref="o42"/>
+<o:Event Ref="o38"/>
 </c:Object2>
 </o:ExtendedDependency>
-<o:ExtendedDependency Id="o23">
+<o:ExtendedDependency Id="o22">
 <a:ObjectID>6B9F50C9-CACA-4E45-AF1F-AD4DE52AA35D</a:ObjectID>
 <a:CreationDate>1426275425</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
 <a:ModificationDate>1426275425</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 <c:Object1>
-<o:Operation Ref="o39"/>
+<o:Operation Ref="o35"/>
 </c:Object1>
 <c:Object2>
-<o:Event Ref="o48"/>
+<o:Event Ref="o44"/>
 </c:Object2>
 </o:ExtendedDependency>
-<o:ExtendedDependency Id="o26">
-<a:ObjectID>920B2305-02B7-4651-B5FB-11B9BCE5C9CF</a:ObjectID>
-<a:CreationDate>1426275447</a:CreationDate>
-<a:Creator>Ersagun</a:Creator>
-<a:ModificationDate>1426275447</a:ModificationDate>
-<a:Modifier>Ersagun</a:Modifier>
-<c:Object1>
-<o:Operation Ref="o39"/>
-</c:Object1>
-<c:Object2>
-<o:Event Ref="o49"/>
-</c:Object2>
-</o:ExtendedDependency>
-<o:ExtendedDependency Id="o29">
+<o:ExtendedDependency Id="o25">
 <a:ObjectID>CA8C6F20-296F-453B-8586-53388103791E</a:ObjectID>
 <a:CreationDate>1426276995</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
 <a:ModificationDate>1426276995</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 <c:Object1>
-<o:Operation Ref="o39"/>
+<o:Operation Ref="o35"/>
 </c:Object1>
 <c:Object2>
-<o:Event Ref="o52"/>
+<o:Event Ref="o47"/>
 </c:Object2>
 </o:ExtendedDependency>
-<o:ExtendedDependency Id="o32">
+<o:ExtendedDependency Id="o28">
 <a:ObjectID>912D0216-2C2B-4D2B-A75E-78E8A5F6377A</a:ObjectID>
 <a:CreationDate>1426276999</a:CreationDate>
 <a:Creator>Ersagun</a:Creator>
 <a:ModificationDate>1426276999</a:ModificationDate>
 <a:Modifier>Ersagun</a:Modifier>
 <c:Object1>
-<o:Operation Ref="o39"/>
+<o:Operation Ref="o35"/>
 </c:Object1>
 <c:Object2>
-<o:Event Ref="o51"/>
+<o:Event Ref="o46"/>
 </c:Object2>
 </o:ExtendedDependency>
 </c:ChildExtendedDependencies>
