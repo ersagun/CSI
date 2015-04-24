@@ -1,61 +1,36 @@
 <?php
-//require_once("../Models/User.php");
-//echo file_get_contents("../View/View.html");
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
- * Description of Controller
+ * Le controleur qui va choisir quelle action executer
+ * En fonction de ce qui est envoyé dans le $_GET, on appelle la bonne fonction
  *
- * @author ersagun
- * 
- * This class used when user ask data
+ * @author Ersagun
  */
+include_once 'ControllerProduct.php';
+include_once 'ControllerUser.php';
 
-require_once '../Models/Compose.php';
-require_once '../Models/Commande.php';
-require_once '../Models/Historique.php';
-require_once '../Models/ObtenirPromotion.php';
-require_once '../Models/Produit.php';
+//demarage de la session utilisateur
+session_start();
 
-class Controller {
-    
-    /**
-     * Constructor of controller
-     */
-    public function __construct(){
-            $this->action=  array (
+ $action=  array (
+     'Products'=>'allProducts',
+     'displayForm'=>'displayForm',
             'ajouterPanier' => 'ajouterPanier',
             'voirProduits' => 'voirProduits',
             'signIn' => 'signIn',
                 'search'=>'search',
-                'Products'=>'allProducts',
                 'insertUser'=>'insertUser',
-                'findSongs'=>'findSongs'
+                'ajouterProduitSession'=>'ajouterProduitSession',
+                'getProdSession'=>'getProdSession',
         );
-    }
-    
-    /**
-     * 
-     * @param type $param
-     * @return type
-     * 
-     * This function called when a response Ajax adressed to Controller.php with Port or Get
-     */
-    public function callAction($param=null){
+ 
         
+        if(isset($_REQUEST["a"])) { // si $param contient
 
-        
-        if(isset($param["a"])) { // si $param contient
+            if (array_key_exists($_REQUEST["a"], $action)){
+                $a = $action[$_REQUEST["a"]];
 
-            if (array_key_exists($param["a"], $this->action)){
-                $a = $this->action[$param['a']];
-
-                return $this->$a($param);
+                return ControllerUser::$a($_REQUEST);
 
             }else{
 
@@ -65,91 +40,125 @@ class Controller {
 
            //return defautPage();
         }
-    }
    
-    /**
-     * This function get all artists encode in json and transfer all artists in json to Ajax
-     */
-    public function allArtist(){
-        $tab=Artist::findAll(); 
-        echo json_encode($tab);
 
-    }
-    
-    public function findSongs(){
-        $tab=Track::findByArtistId($_POST["artist_id"]);
-        echo json_encode($tab);
-    }
-    
-    /**
-     * Tranform all musics in json to Ajax
-     */
-    public function allProducts(){
-       $tab=Produit::allProducts();
-        echo json_encode($tab);
-    }
-    
-    
-    /**
-     * Called when user want to sign in
-     */
-    public function signIn(){    
-         $user = new User();
-        $user->username = $_POST['username'];
-        $user->password = md5($_POST['password']);
-        $verif = User::compareUser($user);
-        if($verif->username == ""){
-            echo "error_username";
-        }
-        else{
-            if($user->password == $verif->password){
-                echo $user->username;
-                $_SESSION['username'] = $user->username;
-            }
-            else{
-                echo "error_password";
-            }
-        }
-    }
-    
-    /**
-     * Called when user search a sound via artist name or song name
-     */
-    public function search(){
-        $tab=Artist::findArtistTrackLike($_GET['like']); 
-        echo json_encode($tab);
-    }
-    
-    /**
-     * This function check user and insert if not exist
-     */
-    public function insertUser(){
-         $user = new User();
-        $user->username = $_POST['username'];
-        $user->password = md5($_POST['password']);
-        $user->email = $_POST['email'];
-        $verif = User::compareUser($user);
-        if($verif->username == ""){
-            $res = $user->insert();
-            $_SESSION['username'] = $user->username;
-            echo $user->username;
-        }
-        else{
-            echo "error";
-        }
-    }
-    
-    /**
-     * 
-     * @param type $req
-     * 
-     * Function called in each acces to Controller.php
-     */
-    public static function main($req){
-        $control=new Controller();
-        $control->callAction($req);
-    }
-    
-        }
 
-Controller::main($_REQUEST);
+
+/**
+
+//si une action a été renseignée
+if (count($_GET) > 0) {
+    switch ($_GET['a']) {
+        //si cette action est search
+        case 'search':
+            //on choisi l'action en fonction du type renseigné
+            switch ($_GET['type']) {
+                //recherche d'une chanson par son titre
+                case 'trackTitle' :
+                    ControllerTrack::searchByTitle($_GET['val']);
+                    break;
+                //recherche d'un artiste par son nom
+                case 'artistName' :
+                    ControllerArtist::searchByName($_GET['val']);
+                    break;
+                //recherche d'un artiste par son ID
+                case 'artistID' :
+                    ControllerArtist::searchById($_GET['val']);
+                    break;
+                //recherche des chansons d'un artiste
+                case 'trackArtist' :
+                    ControllerTrack::searchByArtist($_GET['val']);
+                    break;
+                //recherche les chanson d'une playlist pour l'affichage
+                case 'playlistTracksDisplay':
+                    ControllerPlaylistTracks::searchByPlaylistId($_GET['val'], 'display');
+                    break;
+                //recherche les chanson d'une playlist pour les traiter
+                case 'playlistTracksJSON' :
+                    ControllerPlaylistTracks::searchByPlaylistId($_GET['val'], 'json');
+                    break;
+                //recherche une chanson par son ID
+                case 'trackID':
+                    ControllerTrack::searchById($_GET['val']);
+                    break;
+                //recherche d'une playlist pour remplir la popup de confirmation de suppression
+                case 'playlistForDelete':
+                    ControllerPlaylist::searchById($_GET['val']);
+                    break;
+                //génère les boutons qui vont permettra l'ajout d'un titre à une playlist
+                case 'playlistTrackModal':
+                    ControllerPlaylistTracks::insertTrackInPlaylistDisplay($_GET['val']);
+                    break;
+            }
+            break;
+        //si l'action est rechercher tout
+        case 'all':
+            switch ($_GET['type']) {
+                //on recherche tous les artistes
+                case 'artist':
+                    ControllerArtist::searchAll();
+                    break;
+                //on recherche toutes les chansons
+                case 'track':
+                    ControllerTrack::searchAll();
+                    break;
+                //recherche de toutes les playlists
+                case 'playlist':
+                    ControllerPlaylist::searchAll($_GET['purpose']);
+                    break;
+            }
+            break;
+        //si l'action est une creation
+        case 'create':
+            switch ($_GET['type']) {
+                //creation d'une playlist
+                case 'playlist':
+                    ControllerPlaylist::newPlaylist($_GET['name']);
+                    break;
+                //insertion d'une chanson dans une playlist
+                case 'playlistTrack':
+                    ControllerPlaylistTracks::newPlatlistTrack($_GET['playlist_id'], $_GET['track_id']);
+                    break;
+            }
+            break;
+        //si l'action est une suppresion
+        case 'delete':
+            switch ($_GET['type']) {
+                //suppression d'une playlist
+                case 'playlist':
+                    ControllerPlaylist::deletePlaylist($_GET['val']);
+                    break;
+                //suppression d'un titre d'une playlist
+                case 'playlistTrack':
+                    ControllerPlaylistTracks::deleteTrackFromPlaylist($_GET['playlist_id'], $_GET['track_id']);
+                    break;
+            }
+            break;
+    }
+}
+
+//pour les actions liées aux compter utilisateurs
+if (count($_POST) > 0) {
+    switch ($_POST['a']) {
+        //connexion de l'utilisateur
+        case 'connect':
+            ControllerUser::connect($_POST['user'], md5($_POST['pass']));
+            break;
+        //déconnexion de l'utilisateur
+        case 'logout':
+            ControllerUser::logout();
+            break;
+        case 'subscribe':
+            switch($_POST['type']){
+                case 'display':
+                    ControllerUser::displayFormSubscribe();
+                    break;
+                case 'insert':
+                    ControllerUser::subscribe($_POST['username'], md5($_POST['password']), $_POST['email']);
+                    break;
+            }
+            break;
+    }
+ **/
+
+
