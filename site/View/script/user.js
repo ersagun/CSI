@@ -27,7 +27,6 @@ function verifySession(){
     });  
 }
 
-
 /**
  * 
  * @returns {undefined}
@@ -67,7 +66,9 @@ function signIn(){
 
 
 function showForm(){
-    $.get( "controller/Controller.php", { a: "displayForm",}).done(function( data ) {
+    $.get( "controller/Controller.php", { a: "sign-up",}).done(function( data ) {
         $( "#center" ).html( data );
 });
+
+
 }

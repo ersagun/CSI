@@ -7,9 +7,9 @@
 var tabProduit;
 function showProducts(){
     $.ajax({ 
-        type: "POST",
+        type: "GET",
         url: "controller/Controller.php", 
-        data: "a=Products",
+        data: "a=products",
         dataType:"json",
         error: function() { 
             console.log("erreur !"); 

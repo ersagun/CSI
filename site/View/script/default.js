@@ -79,6 +79,8 @@ var hashHistory = function () {
         case '#signup' :
             showForm();
             break;
+        case '#signin' :
+            break;
             //sinon on affiche la page d'accueil
         default:
             location.hash = '';
