@@ -30,7 +30,7 @@ session_start();
             if (array_key_exists($_REQUEST["a"], $action)){
                 $a = $action[$_REQUEST["a"]];
 
-                return ControllerUser::$a($_REQUEST);
+                return ControllerProduct::$a($_REQUEST);
 
             }else{
 
