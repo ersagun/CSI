@@ -92,7 +92,7 @@ class Client implements JsonSerializable
 
     private $ville;
 
-
+    private $email;
     // Properties
 
 
@@ -261,6 +261,11 @@ class Client implements JsonSerializable
     {
         try {
             // Connection a la base.
+            $compte=new Compte();
+            $compte->setId($this->id);
+            $compte->setCodename($this->codename);
+            $compte->setMdp($this->mdp);
+           $id= $compte->insert();
 
             $bdd = Base::getConnection();
 
@@ -308,13 +313,17 @@ class Client implements JsonSerializable
                 throw new Exception("Le Client n'a pas pu être inseré
                  dans la base de données car le champ compte_id n'a pas été specifié
                   et il s'agit d'un champ obligatoire.");
+            }else if (!isset($this->email)) {
+                throw new Exception("Le Client n'a pas pu être inseré
+                 dans la base de données car le champ compte_id n'a pas été specifié
+                  et il s'agit d'un champ obligatoire.");
             }
 
             // On prépare la requête
 
             $requete = $bdd->prepare("INSERT INTO client(Client_Nom, Client_Prenom, Client_Numvoie, Client_Rue,
-              Client_Cp, Client_Ville, Client_Dernierpanier, Client_Admin, Client_Codename, Client_mdp, Compte_id)
-              VALUES (:nom, :pnom, :voie, :rue, :cp, :vil, :dp, :adm, :cdn, :mdp, :c_id);");
+              Client_Cp, Client_Ville, Client_Dernierpanier, Client_Admin, Client_Codename, Client_mdp,Client_email, Compte_id)
+              VALUES (:nom, :pnom, :voie, :rue, :cp, :vil, :dp, :adm, :cdn, :mdp,:c_emil :c_id);");
 
             $admin = 1;
 
@@ -332,8 +341,8 @@ class Client implements JsonSerializable
                 'dp' => $this->dernierpanier,
                 'adm' => $admin,
                 'cdn' => $this->codename,
-                'mdp' => $this->mdp,
-                'c_id' => $this->compte_id
+                'c_email'=>$this->email,
+                'c_id' => $this->$id
             ));
 
             // On récupere l'identifiant du Client inséré.

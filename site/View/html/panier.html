@@ -4,10 +4,116 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-  <div id = "panier">
-                <div class="list-group">
-                    <H1 id="titlePanier">Panier</H1>
-                    <div id="panierElem">
+<div class="container">
+   <span class="simpleCart_quantity glyphicon glyphicon-shopping-cart"></span> items - <span class="simpleCart_total"></span>
+    
+    <nav class="navbar navbar-default " role="navigation">
+	<div class="container">
+	  <!-- Brand and toggle get grouped for better mobile display -->
+	  <div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".derma">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="#">brand</a>
+      
+	  </div>
+
+
+	  <div class="collapse navbar-collapse derma">
+		<ul class="nav navbar-nav">
+		  <!-- place dynamic links here -->
+      
+		  <li class="dropdown menu-large">
+			<a href="#" class="dropdown-toggle" id="dLabel" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span> Basket <b class="caret"></b></a>
+			<ul class="dropdown-menu megamenu">
+			      <div class="col-sm-12 clearfix">
+                              <div class="simpleCart_items"></div>
+                      <ul id="cart" class='clearfix'></ul><li class="divider"></li>
+                        	<div class="btn-group pull-right">
+				<a href="#" class="simpleCart_empty btn btn-lg btn-danger">Clear Cart</a>
+				<a href="#" class="simpleCart_checkout btn btn-lg btn-success">Checkout Now</a>
+				</div>
                     </div>
-                </div>
-            </div>
+			</ul>
+		  </li>
+		</ul>
+		 <ul class="nav navbar-nav navbar-right">
+             <a class="btn btn-success btn-sm navbar-btn" style="margin-left:10px;" href="#">Sign in</a>
+				<a class="btn btn-danger btn-sm navbar-btn" href="#">Sign up</a>
+				<div class="btn-group ">
+					  <button class="btn btn-info navbar-btn btn-sm">En</button>
+					  <button class="btn dropdown-toggle navbar-btn btn-info btn-sm" data-toggle="dropdown">
+						<span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu" style="min-width:30px;">
+						<!-- dropdown menu links -->
+						<li><a href="">es</a></li>
+						<li><a href="">en</a></li>
+
+						
+					  </ul>
+					</div>
+            </ul>
+		</div><!-- /.navbar-collapse --> 
+	</div>	
+</nav>
+    
+    
+    
+    
+
+    
+    
+    
+<div class="row">
+  
+    <div class="col-md-3 simpleCart_shelfItem">   
+<div class="panel panel-default">
+     <div class="panel-heading item_name">Product 1</div>
+  <div class="panel-body">
+ <img src="http://placehold.it/1000x1000/cecc00/" class="img-thumbnail img-responsive item_thumb"><br> 
+     <p class='input-sm clearfix'>Description of this product is rather long and so we may need to trim it by using the fantabulous JQuery... again..</p><span class='row'></span>
+  </div>
+  <div class="panel-footer"> <p class="item_price">$ 88</p><span class='btn btn-danger btn-md item_add'>ADD</span> 
+      <label>Qty: <input class="item_Quantity form-control" type="text" value="1"></label>
+     <select name="size" id="size" class="item_size">
+  <option value="#">120</option>
+  <option value="small"><240></240></option>
+  <option value="medium">Medium</option>
+  <option value="large">Large</option>
+</select> 
+     </div>
+</div>
+</div><!-- end object -->
+
+ <div class="col-md-3 simpleCart_shelfItem">   
+<div class="panel panel-default">
+     <div class="panel-heading item_name">Product 2</div>
+  <div class="panel-body">
+ <img src="http://placehold.it/1000x1000/ffdc00/" class="img-thumbnail img-responsive item_thumb"><br>Description
+  </div>
+  <div class="panel-footer"><p class="item_price">$ 38</p>  <span class='btn btn-danger btn-md item_add'>ADD</span>  <label>Qty: <input class="item_Quantity form-control" type="text" value="1"></label></div>
+</div>
+
+</div><!-- end object -->
+     <div class="col-md-3 simpleCart_shelfItem">   
+<div class="panel panel-default">
+     <div class="panel-heading item_name">Product 3</div>
+  <div class="panel-body">
+  <img src="http://placehold.it/1000x1000/ffcc00/" class="img-thumbnail img-responsive item_thumb"><br>Description
+  </div>
+  <div class="panel-footer"><p class="item_price">$ 348</p>  <span class='btn btn-danger btn-md item_add'>ADD </span>  <label>Qty: <input class="item_Quantity form-control" type="text" value="1"></label></div>
+</div>
+
+</div><!-- end object -->
+    
+    
+    
+    </div> <!-- end row -->
+      <ul id="shoppingbasket"></ul> 
+         
+         
+         </div><!-- end container -->

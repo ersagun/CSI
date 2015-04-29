@@ -1,32 +1,97 @@
-<div class="container">
-<div class="row">
-    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-		<form role="form" id="inscription" action="../Controller/Controller.php" method="POST" >
-			<h2>Please Sign Up <br><small>Its free and always will be.</small></h2>
-			<hr class="colorgraph">
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-                                         <input type="hidden" id="a" name="a" value="insertUser">
-                                         <input type="text" name="username" id="username" class="form-control input-lg" placeholder="User Name" tabindex="1">
-					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
-			</div>
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
-					</div>
-				</div>
-			</div>
-			<hr class="colorgraph">
-			<div class="row">
-				 <div class="col-xs-12 col-md-6"><input type="button" id="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
-			</div>
-		</form>
-	</div>
+<form class="form-horizontal" method="POST" >
+<fieldset>
+
+<!-- Form Name -->
+<legend>Subscribe</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="pseudo">pseudo</label>  
+  <div class="col-md-4">
+  <input id="pseudo" name="pseudo" type="text" placeholder="pseudo" class="form-control input-md">
+  <span class="help-block">help</span>  
+  </div>
 </div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="prenom">prenom</label>  
+  <div class="col-md-4">
+  <input id="prenom" name="prenom" type="text" placeholder="prenom" class="form-control input-md">
+  <span class="help-block">help</span>  
+  </div>
 </div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="nom">nom</label>  
+  <div class="col-md-4">
+  <input id="nom" name="nom" type="text" placeholder="nom" class="form-control input-md">
+  <span class="help-block">help</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="email">email</label>  
+  <div class="col-md-4">
+  <input id="email" name="email" type="text" placeholder="email" class="form-control input-md">
+  <span class="help-block">help</span>  
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="pass">pass</label>
+  <div class="col-md-4">
+    <input id="pass" name="pass" type="password" placeholder="pass" class="form-control input-md">
+    <span class="help-block">help</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="voie">voie</label>  
+  <div class="col-md-4">
+  <input id="voie" name="voie" type="text" placeholder="voie" class="form-control input-md">
+  <span class="help-block">help</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="rue">rue</label>  
+  <div class="col-md-4">
+  <input id="rue" name="rue" type="text" placeholder="rue" class="form-control input-md">
+  <span class="help-block">help</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cp">cp</label>  
+  <div class="col-md-4">
+  <input id="cp" name="cp" type="text" placeholder="cp" class="form-control input-md">
+  <span class="help-block">help</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="ville">ville</label>  
+  <div class="col-md-4">
+  <input id="ville" name="ville" type="text" placeholder="ville" class="form-control input-md">
+  <span class="help-block">help</span>  
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="enregistrer"></label>
+  <div class="col-md-4">
+    <button id="enregistrer" name="enregistrer" class="btn btn-primary" onclick="subscribe()">Enregistrer</button>
+  </div>
+</div>
+
+</fieldset>
+</form>

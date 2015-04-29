@@ -103,7 +103,7 @@ if (count($_POST) > 0) {
                     ControllerUser::displayFormSubscribe();
                     break;
                 case 'insert':
-                    ControllerUser::subscribe($_POST['username'], md5($_POST['password']), $_POST['email']);
+                    ControllerUser::subscribe($_POST['prenom'],$_POST['nom'],$_POST['pseudo'],$_POST['rue'], $_POST['ville'],$_POST['cp'],$_POST['voie'],md5($_POST['pass']), $_POST['email']);
                     break;
             }
             break;

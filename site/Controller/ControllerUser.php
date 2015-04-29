@@ -35,6 +35,7 @@ class ControllerUser {
         }
     }
     
+    
     /**
      * This function check user and insert if not exist
      */
@@ -62,4 +63,18 @@ class ControllerUser {
         $form = file_get_contents('../view/html/formulaire.html');
         echo $form;
     }
+    public static function subscribe($a,$b,$c,$d,$e,$f,$g,$h,$i){
+        $cli=new Client();
+               $cli->setPrenom($a);
+               $cli->setNom($b);
+               $cli->setCodename($c);
+               $cli->setRue($d);
+               $cli->setVille($e);
+               $cli->setCp($f);
+               $cli->setNumvoie($g);
+               $cli->setMdp($h);  
+               $cli->insert();
+               
+               echo "inseré";
+               }
 }

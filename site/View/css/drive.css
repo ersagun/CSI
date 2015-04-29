@@ -50,14 +50,14 @@ body{
 
 #content{
 	position:relative;
-	height:450px;
+	height:600px;
 
 }
 #center{
     text-align:justify;
     position:relative;
     
-    width: 75%;
+    width: 100%;
     height:100%;
     margin-left: 1%;
 }
@@ -98,10 +98,10 @@ text-align:center;
 }
 
 #music{
-    margin-left:6px;
+    margin-left:30px;
     float: left;
     width: 275px;
-    height:275px;
+    height:250px;
     vertical-align:top; 
     display: inline-block;
 }

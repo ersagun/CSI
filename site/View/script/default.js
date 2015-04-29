@@ -85,8 +85,8 @@ var hashHistory = function () {
         default:
             location.hash = '';
             var c = '<div class="jumbotron">'
-                    + '<p>Bienvenue dans notre pojet développé dans cadre du cours de Programmation Web.</p>'
-                    + '<p>Si vous souhaitez sauvegarder et accéder à vos playlists depuis n\'importe où, veuillez créer un compte</p>'
+                    + '<p>Bienvenue dans notre site de drive dévéloppé dans le cadre de cours de CSI.</p>'
+                    + '<p>Si vous souhaitez faire des achats, veuillez créer un compte</p>'
                     + '<p><button class="btn btn-success no-radius" onclick="displaySubscribeForm();">S\'inscrire</button></p>'
                     + '</div>';
             $("#center").html(c);

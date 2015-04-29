@@ -26,7 +26,7 @@ function showProducts(){
                 $("#center").append('<div id="music" class="thumbnail"><img class="imgBlock" data-src="holder.js/300x300" src="view/'+retour[i].img_url+'" alt="artist" style="height:150px;widht:150px;"><div class="caption">\
                         <p>'+retour[i].nom.substring(0,21)+'</p>\
                         <p style="width:300px;text-align:justify"></p>\
-                        <p><span onclick="ajouterPanier(\''+i+'\')" class="btn btn-primary" role="button">ajouter au panier</span></p>\
+                        <p><span onclick="ajouterPanier(\''+i+'\')" class="btn btn-primary" role="button">(+) panier</span></p>\
                         </div>\
                         </div>');      
             } 

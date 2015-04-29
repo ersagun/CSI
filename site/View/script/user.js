@@ -71,4 +71,30 @@ function showForm(){
 });
 
 
-}
+function subscribe() {
+    
+    //on récupère les valeurs dans les champs
+    var pseudo = $('pseudo').val();
+    var prenom = $('#prenom').val();
+    var nom = $('#nom').val();
+       var email = $('#email').val();
+    var pass = $('#pass').val();
+    var voie = $('#voie').val();
+       var rue = $('#rue').val();
+    var cp = $('#cp').val();
+    var ville = $('#ville').val();
+
+                    
+                    //si le formulaire est correctement rempli on procède à l'inscription
+                    jQuery.ajax({
+                        url: 'controller/Controller.php',
+                        type: 'post',
+                        data: {a: 'subscribe', type: 'insert',pseudo:pseudo,prenom:prenom,nom:nom,email:email,pass:pass,voie:voie,rue:rue,cp:cp,ville:ville},
+                        success: function(res){
+                           // $('#subsribe-success').show(200);
+                            console.log(res);
+                            location.hash = '';
+                        }
+                    });
+                }
+            }

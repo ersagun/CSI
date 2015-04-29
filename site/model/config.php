@@ -1,6 +1,6 @@
 ﻿<?php
 
-$host = 'mysql:host=localhost;dbname=drive;charset=utf8';
+$host = 'mysql:host=127.0.0.1;dbname=drive;charset=utf8';
 $user = 'root';
 $pass = '';
 

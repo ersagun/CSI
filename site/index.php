@@ -27,7 +27,7 @@ $footer = file_get_contents('view/html/footer.html');
     <div id="slider"></div>'
 
  . $navbar
- . $main_content .$panier.' </div>'
+ . $main_content.' </div>'
  . $footer .
  '</body>
     </html>');
