@@ -51,6 +51,7 @@ body{
 #content{
 	position:relative;
 	height:600px;
+        margin-top: 60px;
 
 }
 #center{
@@ -104,5 +105,9 @@ text-align:center;
     height:250px;
     vertical-align:top; 
     display: inline-block;
+}
+
+#subsribe-success{
+    display:none;
 }
 

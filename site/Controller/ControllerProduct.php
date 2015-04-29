@@ -68,4 +68,9 @@ require_once '../model/Produit.php';
         echo json_encode($produit);
     }
     
+        public static function search($ab){
+        $tab=  Produit::findProduitCategorieLike($ab); 
+        echo json_encode($tab);
+    }
+    
  }

@@ -8,6 +8,7 @@
  */
 include_once 'ControllerProduct.php';
 include_once 'ControllerUser.php';
+include_once 'ControllerPanier.php';
 
 //demarage de la session utilisateur
 session_start();
@@ -49,13 +50,21 @@ session_start();
 //si une action a été renseignée
 if (count($_GET) > 0) {
     switch ($_GET['a']) {
-        //si cette action est search
+       case 'panier':
+            ControllerPanier::showPanier();
+            break;
         case 'products':
             ControllerProduct::allProducts();
+            break;
+        case 'search':
+            ControllerProduct::search($_GET['like']);
             break;
         //si l'action est rechercher tout
         case 'sign-up':
            ControllerUser::displayForm();
+            break;
+        case 'sign-in':
+           ControllerUser::displaySignIn();
             break;
         //si l'action est une creation
         case 'create':
@@ -86,6 +95,8 @@ if (count($_GET) > 0) {
     }
 }
 
+
+
 //pour les actions liées aux compter utilisateurs
 if (count($_POST) > 0) {
     switch ($_POST['a']) {
@@ -98,12 +109,14 @@ if (count($_POST) > 0) {
             ControllerUser::logout();
             break;
         case 'subscribe':
+            ControllerUser::subscribe($_POST['prenom'],$_POST['nom'],$_POST['codename'],$_POST['rue'], $_POST['ville'],$_POST['cp'],$_POST['voie'],md5($_POST['pass']), $_POST['email']);
+            break;
             switch($_POST['type']){
                 case 'display':
                     ControllerUser::displayFormSubscribe();
                     break;
                 case 'insert':
-                    ControllerUser::subscribe($_POST['prenom'],$_POST['nom'],$_POST['pseudo'],$_POST['rue'], $_POST['ville'],$_POST['cp'],$_POST['voie'],md5($_POST['pass']), $_POST['email']);
+                    ControllerUser::subscribe($_POST['prenom'],$_POST['nom'],$_POST['codename'],$_POST['rue'], $_POST['ville'],$_POST['cp'],$_POST['voie'],md5($_POST['pass']), $_POST['email']);
                     break;
             }
             break;

@@ -138,9 +138,9 @@ class Client implements JsonSerializable
      * @param $_compte_id The new value of the compte_id of this Client.
      */
 
-    public function setCompte_id($_compte_id)
+    public function setCompte_id($_compteid)
     {
-        $this->compte_id = $_compte_id;
+        $this->compte_id = $_compteid;
     }
 
     /**
@@ -192,7 +192,6 @@ class Client implements JsonSerializable
     {
         $this->nom = $_nom;
     }
-
     /**
      * Modifies the numvoie attribute.
      * @param $_numvoie The new value of the numvoie of this Client.
@@ -222,6 +221,12 @@ class Client implements JsonSerializable
     {
         $this->rue = $_rue;
     }
+    
+        public function setEmail($_e)
+    {
+        $this->email = $_e;
+    }
+
 
     /**
      * Modifies the ville attribute.
@@ -261,18 +266,13 @@ class Client implements JsonSerializable
     {
         try {
             // Connection a la base.
-            $compte=new Compte();
-            $compte->setId($this->id);
-            $compte->setCodename($this->codename);
-            $compte->setMdp($this->mdp);
-           $id= $compte->insert();
 
             $bdd = Base::getConnection();
 
             if (!isset($this->nom)) {
-                throw new Exception("Le Client n'a pas pu être inseré
+                /**throw new Exception("Le Client n'a pas pu être inseré
                  dans la base de données car le champ nom n'a pas été specifié
-                  et il s'agit d'un champ obligatoire.");
+                  et il s'agit d'un champ obligatoire.");**/
             } else if (!isset($this->prenom)) {
                 throw new Exception("Le Client n'a pas pu être inseré
                  dans la base de données car le champ prenom n'a pas été specifié
@@ -305,32 +305,23 @@ class Client implements JsonSerializable
                 throw new Exception("Le Client n'a pas pu être inseré
                  dans la base de données car le champ codename n'a pas été specifié
                   et il s'agit d'un champ obligatoire.");
-            } else if (!isset($this->mdp)) {
+            } else if (!isset($this->email)) {
                 throw new Exception("Le Client n'a pas pu être inseré
-                 dans la base de données car le champ mdp n'a pas été specifié
-                  et il s'agit d'un champ obligatoire.");
-            } else if (!isset($this->compte_id)) {
-                throw new Exception("Le Client n'a pas pu être inseré
-                 dans la base de données car le champ compte_id n'a pas été specifié
-                  et il s'agit d'un champ obligatoire.");
-            }else if (!isset($this->email)) {
-                throw new Exception("Le Client n'a pas pu être inseré
-                 dans la base de données car le champ compte_id n'a pas été specifié
+                 dans la base de données car le champ email n'a pas été specifié
                   et il s'agit d'un champ obligatoire.");
             }
 
             // On prépare la requête
 
-            $requete = $bdd->prepare("INSERT INTO client(Client_Nom, Client_Prenom, Client_Numvoie, Client_Rue,
-              Client_Cp, Client_Ville, Client_Dernierpanier, Client_Admin, Client_Codename, Client_mdp,Client_email, Compte_id)
-              VALUES (:nom, :pnom, :voie, :rue, :cp, :vil, :dp, :adm, :cdn, :mdp,:c_emil :c_id);");
-
+             $requete = $bdd->prepare("INSERT INTO client(Client_Nom, Client_Prenom, Client_Numvoie, Client_Rue,
+              Client_Cp, Client_Ville, Client_Dernierpanier, Client_Admin, Client_Codename, Client_email, Compte_id)
+              VALUES (:nom, :pnom, :voie, :rue, :cp, :vil, :dp, :adm, :cdn, :email, :c_id);");
             $admin = 1;
 
             if ($this->admin)
                 $admin = 0;
 
-            $requete->execute(array
+            $bol=$requete->execute(array
             (
                 'nom' => $this->nom,
                 'pnom' => $this->prenom,
@@ -341,9 +332,12 @@ class Client implements JsonSerializable
                 'dp' => $this->dernierpanier,
                 'adm' => $admin,
                 'cdn' => $this->codename,
-                'c_email'=>$this->email,
-                'c_id' => $this->$id
+                'email'=>$this->email,
+                'c_id' => $this->compte_id
             ));
+            if(!$bol){
+                throw new Exception("Le Client n'a pas pu ête inséré");
+            }
 
             // On récupere l'identifiant du Client inséré.
 
@@ -392,7 +386,6 @@ class Client implements JsonSerializable
                 $c = new Compte();
 
                 $c->setId(intval($reponse['cmp_id']));
-                $c->setCodename($reponse['Compte_Codename']);
                 $c->setMdp($reponse['Compte_mdp']);
 
                 $cl = new Client();
@@ -501,8 +494,8 @@ class Client implements JsonSerializable
             // On prépare la requete pour compter le nombre de nom équivalent
             // au parametre
 
-            $reponse = $bdd -> prepare("SELECT Count(*) AS copies FROM Client WHERE
-                Client_Codename = :name AND Client_mdp = :mdp;");
+            $reponse = $bdd -> prepare("SELECT Count(*) AS copies FROM Client inner join Compte on Client.Compte_Id=Compte.Compte_Id WHERE
+                Client.Client_Codename = :name AND Compte.Compte_mdp = :mdp;");
 
             $reponse -> execute(array(
                 'name' => $codename,

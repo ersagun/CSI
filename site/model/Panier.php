@@ -85,7 +85,7 @@ class Panier implements JsonSerializable
      * @param $_debutred The new value of the debutred of this Panier.
      */
 
-    public function setDebutRed($_debutred) { $this->debutred = $_debutred; }
+    public function setDebutRed($_dtred) { $this->debutred = $_dtred; }
 
     /**
      * Modifies the finred attribute.

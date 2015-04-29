@@ -47,6 +47,9 @@ var hashHistory = function () {
 
     switch (hash[0]) {
         //si la première sous chaine est #artists
+         case '#panier':
+         showPanier();
+            //on regarde la deuxième sous chaine et on appelle les fonctions adéquates
         case '#product':
             //on regarde la deuxième sous chaine et on appelle les fonctions adéquates
             switch (hash[1]) {
@@ -80,6 +83,7 @@ var hashHistory = function () {
             showForm();
             break;
         case '#signin' :
+            showSignIn();
             break;
             //sinon on affiche la page d'accueil
         default:
@@ -87,7 +91,7 @@ var hashHistory = function () {
             var c = '<div class="jumbotron">'
                     + '<p>Bienvenue dans notre site de drive dévéloppé dans le cadre de cours de CSI.</p>'
                     + '<p>Si vous souhaitez faire des achats, veuillez créer un compte</p>'
-                    + '<p><button class="btn btn-success no-radius" onclick="displaySubscribeForm();">S\'inscrire</button></p>'
+                    + '<p><button class="btn btn-success no-radius" onclick="showForm();">S\'inscrire</button></p>'
                     + '</div>';
             $("#center").html(c);
             break;

@@ -384,6 +384,46 @@ class Produit implements JsonSerializable
      * - $rech['prixMax'] : un filtre qui enleve tous les produits avec un prix supérieur
      */
 
+     public static function findProduitCategorieLike($val) {
+        
+      $c = Base::getConnection();
+      $query = "select * from Produit as a left join Categorie as t on a.Produit_Id=t.Categorie_Id  where t.Categorie_Nom LIKE '".$val."%' OR a.Produit_Nom LIKE '".$val."%' UNION select * from Produit as a right join Categorie as t on a.Produit_Id=t.Categorie_Id  where t.Categorie_Nom LIKE '".$val."%' OR a.Produit_Nom LIKE '".$val."%'";
+      $stmt = $c->prepare($query) ;
+      $stmt->execute();
+      $tab = array();
+      while ($reponse = $stmt->fetch(PDO::FETCH_BOTH)) 
+      {
+       $c_id=intval($reponse['Categorie_Id']);
+                $categorie_nom=$reponse['Categorie_Nom'];
+                $c = new Categorie();
+                $c->setCategorie_id($c_id);
+                $c->setCategorie_nom($categorie_nom);
+
+
+                $p_id= $reponse['Produit_Id'];
+                $p_nom = $reponse['Produit_Nom'];
+                $p_img_url = $reponse['Produit_Img_Url'];
+                $p_prix = floatval($reponse['Produit_Prix']);
+                $p_categorie_id = intval($reponse['Categorie_Id']);
+
+                $c = new Categorie();
+                $c->setCategorie_id($c_id);
+                $c->setCategorie_nom($categorie_nom);
+
+                $p = new Produit();
+                $p->id = $p_id;
+                $p->nom = $p_nom;
+                $p->img_url = $p_img_url;
+                $p->prix = $p_prix;
+                $p->categorie_id = $p_categorie_id;;
+                $p->categorie = $c;
+
+                array_push($tab ,$p);
+      }
+      return $tab;
+          
+    }
+    
     public static function rechercherProduit($rech)
     {
         try

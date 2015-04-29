@@ -1,0 +1,11 @@
+DELETE FROM compose;
+DELETE FROM commande;
+DELETE FROM obtenir_promotion;
+DELETE FROM panier;
+DELETE FROM produit;
+DELETE FROM client;
+DELETE FROM categorie;
+DELETE FROM compte;
+DELETE FROM heurerecuperation;
+DELETE FROM promotion;
+DELETE FROM reduction;

@@ -1,4 +1,6 @@
-<form class="form-horizontal" method="POST" >
+
+<div class="col-md-12 col-xs-12">
+<form class="form-horizontal" role="form" >
 <fieldset>
 
 <!-- Form Name -->
@@ -8,8 +10,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="pseudo">pseudo</label>  
   <div class="col-md-4">
-  <input id="pseudo" name="pseudo" type="text" placeholder="pseudo" class="form-control input-md">
-  <span class="help-block">help</span>  
+  <input id="codename" name="pseudo" type="text" placeholder="pseudo" class="form-control input-md">
+  
   </div>
 </div>
 
@@ -18,7 +20,7 @@
   <label class="col-md-4 control-label" for="prenom">prenom</label>  
   <div class="col-md-4">
   <input id="prenom" name="prenom" type="text" placeholder="prenom" class="form-control input-md">
-  <span class="help-block">help</span>  
+
   </div>
 </div>
 
@@ -27,7 +29,7 @@
   <label class="col-md-4 control-label" for="nom">nom</label>  
   <div class="col-md-4">
   <input id="nom" name="nom" type="text" placeholder="nom" class="form-control input-md">
-  <span class="help-block">help</span>  
+
   </div>
 </div>
 
@@ -36,7 +38,7 @@
   <label class="col-md-4 control-label" for="email">email</label>  
   <div class="col-md-4">
   <input id="email" name="email" type="text" placeholder="email" class="form-control input-md">
-  <span class="help-block">help</span>  
+ 
   </div>
 </div>
 
@@ -45,7 +47,7 @@
   <label class="col-md-4 control-label" for="pass">pass</label>
   <div class="col-md-4">
     <input id="pass" name="pass" type="password" placeholder="pass" class="form-control input-md">
-    <span class="help-block">help</span>
+ 
   </div>
 </div>
 
@@ -54,7 +56,7 @@
   <label class="col-md-4 control-label" for="voie">voie</label>  
   <div class="col-md-4">
   <input id="voie" name="voie" type="text" placeholder="voie" class="form-control input-md">
-  <span class="help-block">help</span>  
+
   </div>
 </div>
 
@@ -63,7 +65,7 @@
   <label class="col-md-4 control-label" for="rue">rue</label>  
   <div class="col-md-4">
   <input id="rue" name="rue" type="text" placeholder="rue" class="form-control input-md">
-  <span class="help-block">help</span>  
+
   </div>
 </div>
 
@@ -72,7 +74,7 @@
   <label class="col-md-4 control-label" for="cp">cp</label>  
   <div class="col-md-4">
   <input id="cp" name="cp" type="text" placeholder="cp" class="form-control input-md">
-  <span class="help-block">help</span>  
+
   </div>
 </div>
 
@@ -81,7 +83,7 @@
   <label class="col-md-4 control-label" for="ville">ville</label>  
   <div class="col-md-4">
   <input id="ville" name="ville" type="text" placeholder="ville" class="form-control input-md">
-  <span class="help-block">help</span>  
+  
   </div>
 </div>
 
@@ -89,9 +91,10 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="enregistrer"></label>
   <div class="col-md-4">
-    <button id="enregistrer" name="enregistrer" class="btn btn-primary" onclick="subscribe()">Enregistrer</button>
+    <button id="enregistrer" name="enregistrer" class="btn btn-primary" onclick="subscribe(event)">Enregistrer</button>
   </div>
 </div>
 
 </fieldset>
 </form>
+</div>

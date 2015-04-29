@@ -12,13 +12,6 @@ class Compte implements JsonSerializable
 
     // Fields
 
-
-    /**
-     * @var String
-     */
-
-    private $codename;
-
     /**
      * @var int
      */
@@ -53,12 +46,6 @@ class Compte implements JsonSerializable
         throw new Exception($emess, 45);
     }
 
-    /**
-     * Modifies the codename attribute.
-     * @param $_codename The new value of the codename of this Compte.
-     */
-
-    public function setCodename($_codename) { $this->codename = $_codename; }
 
     /**
      * Modifies the id attribute.
@@ -106,13 +93,8 @@ class Compte implements JsonSerializable
 
             $bdd = Base::getConnection();
 
-            if (!isset($this->codename))
-            {
-                throw new Exception("Le compte n'a pas pu etre inseré
-                 dans la base de donnees car le champ codename n'a pas ete specifié
-                  et il s'agit d'un champ obligatoire.");
-            }
-            else if (!isset($this->mdp))
+            
+           if (!isset($this->mdp))
             {
                 throw new Exception("Le compte n'a pas pu etre inseré
                  dans la base de donnees car le champ mdp n'a pas ete specifié
@@ -121,17 +103,15 @@ class Compte implements JsonSerializable
 
             // On prépare la requete
 
-            $requete = $bdd -> prepare("INSERT INTO compte(Compte_Codename, Compte_mdp)
-              VALUES (:codename, :mdp);");
+            $requete = $bdd -> prepare("INSERT INTO compte(Compte_mdp)
+              VALUES (:mdp);");
             $requete -> execute(array
             (
-                'codename' => $this->codename,
-                'mdp' => $this->mdp
+                'mdp'=>$this->mdp
             ));
 
             // On récupere l'identifiant de le Compte insérée.
 
-            $this->id = $bdd->LastInsertID('compte');
             $requete->closeCursor();
             return $this->id;
         }
