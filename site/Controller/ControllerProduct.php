@@ -40,9 +40,7 @@ require_once '../model/Produit.php';
         $tab=Produit::findByID($_GET['like']);
         echo json_encode($tab);
     }
-    
 
-    
     public function ajouterProduitSession(){
         session_start();
         if (!isset($_SESSION["user"])){

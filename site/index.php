@@ -15,7 +15,7 @@
 header('Content-Type: charset=utf-8'); 
 
 session_start();
-
+$ss="  <input type=\"hidden\" id=\"hdnSession\" data-value=\"default\" />";
 $head = file_get_contents('view/html/head.html');
 $navbar = file_get_contents('view/html/navbar.html');
 $panier = file_get_contents('view/html/panier.html');
@@ -26,6 +26,7 @@ $footer = file_get_contents('view/html/footer.html');
 if (isset($_SESSION['username'])) {
 
     if ($_SESSION['username'] != "default") {
+        $ss="  <input type=\"hidden\" id=\"hdnSession\" data-value=\"".$_SESSION["username"]."\" />";
         $navbar='<div id="navvbar-on">
                 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
@@ -61,8 +62,8 @@ if (isset($_SESSION['username'])) {
 
 
  echo('<!DOCTYPE html>
-    <html>'. $head .'<body><div id="all_content">
-    <div id="slider"></div>
+    <html>'. $head .'<body><div id="all_content">'.$ss.
+    '<div id="slider"></div>
         <div ="navb">'
          .$navbar.''
         .'</div>'
@@ -71,5 +72,4 @@ if (isset($_SESSION['username'])) {
  . $footer .
  '</body>
      <div id="ses">
-  <input type="hidden" id="hdnSession" data-value="default" />
     </html></div>');

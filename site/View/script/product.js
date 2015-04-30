@@ -33,7 +33,7 @@ function showProducts(){
                 milieu += "     <p class='input-sm clearfix'>"+r[i].nom+"<\/p><span class='row'><\/span>";
                 milieu += "  <\/div>";
                 milieu += "  <div class=\"panel-footer\"> <p class=\"item_price\">"+r[i].prix+"<\/p><span class='btn btn-danger btn-md item_add' onclick=\"ajouterPanier("+i+")\">ADD<\/span> ";
-                milieu += "      <label>Qty: <input id=\"qteFor"+i+"\" type=\"text\" value=\"1\"><\/label>";
+                milieu += "      <label>Qty: <input id=\"qte-for"+i+"\" type=\"text\" value=\"1\"><\/label>";
                 milieu += "     <\/div>";
                 milieu += "<\/div>";
                 milieu += "<\/div>";
@@ -81,8 +81,8 @@ function searchBar(val){
                 milieu += " <img src=\"view/"+r[i].img_url+"\" class=\"img-thumbnail img-responsive item_thumb\" style=width:400px;height:300px; align:middle;><br> ";
                 milieu += "     <p class='input-sm clearfix'>"+r[i].nom+"<\/p><span class='row'><\/span>";
                 milieu += "  <\/div>";
-                milieu += "  <div class=\"panel-footer\"> <p class=\"item_price\">"+r[i].prix+"<\/p><span class='btn btn-danger btn-md item_add' onclick=ajouterPanier("+i+","+$("#qte").val()+")>ADD<\/span> ";
-                milieu += "      <label>Qty: <input id=\"qte\" type=\"text\" value=\"1\"><\/label>";
+                milieu += "  <div class=\"panel-footer\"> <p class=\"item_price\">"+r[i].prix+"<\/p><span class='btn btn-danger btn-md item_add' onclick=ajouterPanier("+i+")>ADD<\/span> ";
+                milieu += "      <label>Qty: <input id=\"qte-for"+i+"\" type=\"text\" value=\"1\"><\/label>";
                 milieu += "     <\/div>";
                 milieu += "<\/div>";
                 milieu += "<\/div>";

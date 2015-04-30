@@ -12,40 +12,6 @@ include_once 'ControllerPanier.php';
 include_once 'ControllerCommande.php';
 //demarage de la session utilisateur
 session_start();
-/**
- $action=  array (
-     'Products'=>'allProducts',
-     'displayForm'=>'displayForm',
-            'ajouterPanier' => 'ajouterPanier',
-            'voirProduits' => 'voirProduits',
-            'signIn' => 'signIn',
-                'search'=>'search',
-                'insertUser'=>'insertUser',
-                'ajouterProduitSession'=>'ajouterProduitSession',
-                'getProdSession'=>'getProdSession',
-        );
- 
-        
-        if(isset($_REQUEST["a"])) { // si $param contient
-
-            if (array_key_exists($_REQUEST["a"], $action)){
-                $a = $action[$_REQUEST["a"]];
-
-                return ControllerProduct::$a($_REQUEST);
-
-            }else{
-
-                return "404 !";
-            }
-        }else{
-
-           //return defautPage();
-        }
-   
-
-**/
-
-
 
 //si une action a été renseignée
 if (count($_GET) > 0) {
@@ -57,7 +23,7 @@ if (count($_GET) > 0) {
             ControllerCommande::etape1cmd($_SESSION["username"], $_SESSION["pass"]);
             break;
         case 'ajouterPanier':
-            ControllerPanier::ajouterProduitPanier($_GET["like"],1,$_SESSION["username"], $_SESSION["pass"]);
+            ControllerPanier::ajouterProduitPanier($_GET["like"],$_GET["qte"],$_SESSION["username"], $_SESSION["pass"]);
             break;
         case 'products':
             ControllerProduct::allProducts();
@@ -100,7 +66,6 @@ if (count($_GET) > 0) {
             break;
     }
 }
-
 
 
 //pour les actions liées aux compter utilisateurs
