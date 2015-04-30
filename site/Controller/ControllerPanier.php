@@ -6,6 +6,8 @@
  * and open the template in the editor.
  */
 
+include_once '../model/Compte.php';
+include_once '../model/Compose.php';
 /**
  * Description of ControllerPanier
  *
@@ -14,8 +16,21 @@
 class ControllerPanier {
     //put your code here
     
-    public static function showPanier(){
-         $form = file_get_contents('../view/html/panier.html');
-        echo $form;
+    public static function showPanier($u,$mdp){
+        $id= Client::VerifierMdpId($u, $mdp);
+        $table= Compose::findByPanierID($id);
+        echo json_encode($table);
+         
+    }
+    
+    public static function ajouterProduitPanier($id,$qte,$user,$mdp){
+        $client=Client::VerifierMdpId($user,$mdp);
+        $compose=new Compose();
+        $compose->setPanier_id($client);
+        $compose->setProduit_id($id);
+        $compose->setQuantite($qte);
+        $compose->insert();
+        echo $client.$qte;
+        
     }
 }

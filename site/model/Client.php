@@ -318,7 +318,7 @@ class Client implements JsonSerializable
               VALUES (:nom, :pnom, :voie, :rue, :cp, :vil, :dp, :adm, :cdn, :email, :c_id);");
             $admin = 1;
 
-            if ($this->admin)
+            if ($this->admin==true)
                 $admin = 0;
 
             $bol=$requete->execute(array
@@ -510,6 +510,40 @@ class Client implements JsonSerializable
             // Si le compte est 1, le nom est unique, on retourne vrai.
 
             return ($result['copies'] == 1);
+        }
+        catch(BaseException $e)
+        {
+            print $e -> getMessage();
+        }
+    }
+    
+      public static function VerifierMdpId($codename, $mdp)
+    {
+        try
+        {
+            // Connection a la base.
+
+            $bdd = Base::getConnection();
+
+            // On prépare la requete pour compter le nombre de nom équivalent
+            // au parametre
+
+            $reponse = $bdd -> prepare("SELECT Client.Client_Dernierpanier FROM Client inner join Compte on Client.Compte_Id=Compte.Compte_Id WHERE
+                Client.Client_Codename = :name AND Compte.Compte_mdp = :mdp;");
+
+            $reponse -> execute(array(
+                'name' => $codename,
+                'mdp' => $mdp
+            ));
+
+            // On récupere le résulat
+
+            $result = $reponse -> fetch();
+            $reponse -> closeCursor();
+
+            // Si le compte est 1, le nom est unique, on retourne vrai.
+
+            return ($result["Client_Dernierpanier"]);
         }
         catch(BaseException $e)
         {

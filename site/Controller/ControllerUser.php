@@ -26,14 +26,12 @@ class ControllerUser {
         if($bol){
              $_SESSION['username'] = $a;
              $_SESSION['pass'] = $b;
-             $navbar=file_get_contents('../view/html/navbar_connected.html');
-            echo $navbar;
+            // $navbar=file_get_contents('../view/html/navbar_connected.html');
+            echo $a;
            
         }else{
             echo "<p>Vous n'etes pas inscrit ".$a." ou alors t'es bourré</p>";
-        }
-   
-                
+        }            
     }
     
     /**
@@ -111,9 +109,9 @@ class ControllerUser {
         //remise à zero de la session (utilisateur pas défaut)
         session_start();
         $_SESSION['username'] = 'default';
-        $_SESSION['password'] = 'default';
+        $_SESSION['pass'] = 'default';
         $navbar=file_get_contents('../view/html/navbar.html');
-        echo $navbar;
+        echo "<input type=\"hidden\" id=\"hdnSession\" data-value=\"default\" />";
     }
     
 

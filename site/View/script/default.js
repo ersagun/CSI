@@ -60,7 +60,7 @@ var hashHistory = function () {
                     searchForm('artistName', hash[2]);
                     break;
                 default:
-                    searchAllArtists();
+                    //searchAllArtists();
                     break;
             }
             break;

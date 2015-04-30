@@ -121,6 +121,45 @@ class Compte implements JsonSerializable
         }
     }
 
+    public static function getClientPanierId($username,$mdp){
+        {
+        try {
+            // Connection a la base.
+
+            $bdd = Base::getConnection();
+
+            // On prépare la récupération du Client avec l'ID spécifié.
+
+            $requete = $bdd->prepare("SELECT Client_DernierPanier FROM Client INNER JOIN Compte ON Compte.Compte_Id =
+            Client.Compte_Id WHERE Compte.Compte_mdp = ?,Client.Client_codename=?");
+            $requete->execute(array($mdp,$username));
+
+            /**
+             * Décommenter ici et commenter la suite si vous voulez retourner
+             * l'objet en format JSON.
+             * return json_encode($requete->fetchAll(PDO::FETCH_ASSOC));
+             */
+
+            // On transforme le résultat en un objet
+
+            $reponse = $requete->fetch(PDO::FETCH_ASSOC);
+
+            // On transforme l'objet en un Produit
+
+            if ($reponse) {
+               $rep=$reponse["Client_Id"];
+
+                $requete->closeCursor();
+                return $cl;
+            } else $rep=null;
+            
+            return $rep;
+        } catch (BaseException $e) {
+            print $e->getMessage();
+        }
+    }
+    }
+    
     // function called when encoded with json_encode
     public function jsonSerialize() {
         return get_object_vars($this);

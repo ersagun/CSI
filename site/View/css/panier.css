@@ -13,14 +13,14 @@ and open the template in the editor.
     padding: 10px;
 }
 
-.simpleCart_items table{width:100%}
+.simpleCart_items table{width:70%}
 .test{color:brown;border-left:10px solid #ccc;margin-bottom:2px}
 
 .simpleCart_items {background-color: #ffffff;}
 .itemRow .item-remove a{
 	color:#ddd;
 }
-.simpleCart_shelfItem .item_Quantity {width:50px}
+.simpleCart_shelfItem .item_Quantity {width:30px}
 
 .headerRow{background-color:#c5c4be;color:#ffffff;padding:3px}
 .simpleCart_quantity, .simpleCart_total{
@@ -105,4 +105,5 @@ and open the template in the editor.
   .navbar-nav .open .dropdown-menu .dropdown-header{
 	color:#fff;
   }
+
 }

@@ -9,7 +9,7 @@
 include_once 'ControllerProduct.php';
 include_once 'ControllerUser.php';
 include_once 'ControllerPanier.php';
-
+include_once 'ControllerCommande.php';
 //demarage de la session utilisateur
 session_start();
 /**
@@ -52,6 +52,12 @@ if (count($_GET) > 0) {
     switch ($_GET['a']) {
        case 'panier':
             ControllerPanier::showPanier();
+            break;
+        case 'etap1cmd': 
+            ControllerCommande::etape1cmd($_SESSION["username"], $_SESSION["pass"]);
+            break;
+        case 'ajouterPanier':
+            ControllerPanier::ajouterProduitPanier($_GET["like"],1,$_SESSION["username"], $_SESSION["pass"]);
             break;
         case 'products':
             ControllerProduct::allProducts();
@@ -107,6 +113,9 @@ if (count($_POST) > 0) {
         //déconnexion de l'utilisateur
         case 'logout':
             ControllerUser::logout();
+            break;
+        case 'showpanier':
+            ControllerPanier::showPanier($_SESSION["username"],$_SESSION["pass"]);
             break;
         case 'subscribe':
             ControllerUser::subscribe($_POST['prenom'],$_POST['nom'],$_POST['codename'],$_POST['rue'], $_POST['ville'],$_POST['cp'],$_POST['voie'],md5($_POST['pass']), $_POST['email']);

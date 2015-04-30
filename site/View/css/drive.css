@@ -58,7 +58,7 @@ body{
     text-align:justify;
     position:relative;
     
-    width: 100%;
+    width: 98%;
     height:100%;
     margin-left: 1%;
 }
@@ -111,3 +111,10 @@ text-align:center;
     display:none;
 }
 
+#linom{
+    margin-top: 15px;
+}
+#lideco{
+    margin-top:10px;
+    margin-left:30px;
+}

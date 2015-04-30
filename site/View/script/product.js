@@ -14,23 +14,34 @@ function showProducts(){
         error: function() { 
             console.log("erreur !"); 
         },
-        success: function(retour){
-            tabProduit=retour;
+        success: function(r){
+            tabProduit=r;
             //console.log(tabProduit);
             $("#center").empty();
-            
-            $("#center").append('<div class="row" style="text-align:center;"><div class="col-sm-6 col-md-4">');
-  
-            for(i=0;i<retour.length;i++){
+             $("#center").append('<legend style="color: graytext; font-size:20pt;\">Nos produits </legend>');
+
+            $("#center").append(' <div class="row">');
+                
+            for(i=0;i<r.length;i++){
       
-                $("#center").append('<div id="music" class="thumbnail"><img class="imgBlock" data-src="holder.js/300x300" src="view/'+retour[i].img_url+'" alt="artist" style="height:150px;widht:150px;"><div class="caption">\
-                        <p>'+retour[i].nom.substring(0,21)+'</p>\
-                        <p style="width:300px;text-align:justify"></p>\
-                        <p><span onclick="ajouterPanier(\''+i+'\')" class="btn btn-primary" role="button">(+) panier</span></p>\
-                        </div>\
-                        </div>');      
-            } 
-            $("#center").append('</div>');
+                var milieu = "";
+                milieu += "<div class=\"col-md-3 simpleCart_shelfItem\" >   ";
+                milieu += "<div class=\"panel panel-default\">";
+                milieu += "     <div class=\"panel-heading item_name\">"+r[i].nom+"<\/div>";
+                milieu += "  <div class=\"panel-body\">";
+                milieu += " <img src=\"view/"+r[i].img_url+"\" class=\"img-thumbnail img-responsive item_thumb\" style=width:400px;height:300px; align:middle;><br> ";
+                milieu += "     <p class='input-sm clearfix'>"+r[i].nom+"<\/p><span class='row'><\/span>";
+                milieu += "  <\/div>";
+                milieu += "  <div class=\"panel-footer\"> <p class=\"item_price\">"+r[i].prix+"<\/p><span class='btn btn-danger btn-md item_add' onclick=\"ajouterPanier("+i+")\">ADD<\/span> ";
+                milieu += "      <label>Qty: <input id=\"qteFor"+i+"\" type=\"text\" value=\"1\"><\/label>";
+                milieu += "     <\/div>";
+                milieu += "<\/div>";
+                milieu += "<\/div>";
+                
+                   $("#center").append(milieu);
+            }
+            
+               $("#center").append('</div>');
         }
     }); 
 }
@@ -44,26 +55,6 @@ function showProducts(){
  * This function charge the sound in the audio balise and play it. Function is called
  * when user click on a listen button
  */
-function ajouterPanier(val){ 
-ajouterPanierVisuel(val);
-
-$.ajax({ 
-        type: "POST", 
-        url: "../Controller/Controller.php", 
-        data: "a=ajouterProduitSession&like="+tabProduit[val].id,
-        dataType:"json",
-        error: function() { 
-            console.log("erreur adjonction produit au session"); 
-        },
-        success: function(retour){
-    }}); 
-}
-
-function ajouterPanierVisuel(val){
-    $("#panierElem").append('<a href="#" class="list-group-item active">'+tabProduit[val].nom+'</a>');
-console.log(tabProduit[val]);
-}
-
 
 
 function searchBar(val){
@@ -75,21 +66,31 @@ function searchBar(val){
         error: function() { 
             console.log("erreur !"); 
         },
-        success: function(retour){
+        success: function(r){
             $("#center").empty();
 
-            $("#center").append('<div class="row" style="text-align:justify;"><div class="col-sm-6 col-md-4">');
+         $("#center").append(' <div class="row">');
                 
-            for(i=0;i<retour.length;i++){
+            for(i=0;i<r.length;i++){
       
-                $("#center").append('<div id="music" class="thumbnail"><img class="imgBlock" data-src="holder.js/300x300" src="view/'+retour[i].img_url+'" alt="artist" style="height:150px;widht:150px;"><div class="caption">\
-                        <p>'+retour[i].nom.substring(0,21)+'</p>\
-                        <p style="width:300px;text-align:justify"></p>\
-                        <p><span onclick="ajouterPanier(\''+i+'\')" class="btn btn-primary" role="button">(+) panier</span></p>\
-                        </div>\
-                        </div>');      
-            } 
-            $("#center").append('</div>');
+                var milieu = "";
+                milieu += "<div class=\"col-md-3 simpleCart_shelfItem\" >   ";
+                milieu += "<div class=\"panel panel-default\">";
+                milieu += "     <div class=\"panel-heading item_name\">"+r[i].nom+"<\/div>";
+                milieu += "  <div class=\"panel-body\">";
+                milieu += " <img src=\"view/"+r[i].img_url+"\" class=\"img-thumbnail img-responsive item_thumb\" style=width:400px;height:300px; align:middle;><br> ";
+                milieu += "     <p class='input-sm clearfix'>"+r[i].nom+"<\/p><span class='row'><\/span>";
+                milieu += "  <\/div>";
+                milieu += "  <div class=\"panel-footer\"> <p class=\"item_price\">"+r[i].prix+"<\/p><span class='btn btn-danger btn-md item_add' onclick=ajouterPanier("+i+","+$("#qte").val()+")>ADD<\/span> ";
+                milieu += "      <label>Qty: <input id=\"qte\" type=\"text\" value=\"1\"><\/label>";
+                milieu += "     <\/div>";
+                milieu += "<\/div>";
+                milieu += "<\/div>";
+                
+                   $("#center").append(milieu);
+            }
+            
+               $("#center").append('</div>');
         }
     }); 
     }

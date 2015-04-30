@@ -3,16 +3,37 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/wamp/www/CSI/Drive/site/view/script/panier.js</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/model/Panier.php</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/view/html/modal_connect.html</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/controller/ControllerCommande.php</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/view/script/commande.js</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/model/Client.php</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/controller/ControllerPanier.php</file>
             <file>file:/D:/wamp/www/CSI/Drive/site/controller/Controller.php</file>
-            <file>file:/D:/wamp/www/CSI/Drive/site/controller/ControllerUser.php</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/model/Commande.php</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/index.php</file>
             <file>file:/D:/wamp/www/CSI/Drive/site/view/html/formulaire.html</file>
-            <file>file:/D:/wamp/www/CSI/Drive/site/view/script/product.js</file>
-            <file>file:/D:/wamp/www/CSI/Drive/site/view/script/default.js</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/view/html/etape1cmd.html</file>
             <file>file:/D:/wamp/www/CSI/Drive/site/view/script/jsPrincipal.js</file>
             <file>file:/D:/wamp/www/CSI/Drive/site/view/html/view.html</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/controller/ControllerUser.php</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/model/Produit.php</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/view/script/product.js</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/view/css/panier.css</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/controller/ControllerProduct.php</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/Tests/tests.php</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/view/script/user.js</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/model/Compose.php</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/model/Compte.php</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/view/html/main_content.html</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/view/script/default.js</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/view/html/head.html</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/view/html/panier.html</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/view/html/navbar.html</file>
             <file>file:/D:/wamp/www/CSI/Drive/site/view/css/drive.css</file>
             <file>file:/D:/wamp/www/CSI/Drive/site/view/html/footer.html</file>
-            <file>file:/D:/wamp/www/CSI/Drive/site/view/script/user.js</file>
+            <file>file:/D:/wamp/www/CSI/Drive/site/Tests/annuler_tests.sql</file>
         </group>
     </open-files>
 </project-private>

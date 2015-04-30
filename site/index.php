@@ -26,19 +26,19 @@ $footer = file_get_contents('view/html/footer.html');
 if (isset($_SESSION['username'])) {
 
     if ($_SESSION['username'] != "default") {
-
-        //on remplace le bouton de connexion par celui de déconnexion
-        $navbar = '<div id"navvbar">
+        $navbar='<div id="navvbar-on">
                 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
                         <div class="container">
                             
                         <div class="collapse navbar-collapse navbar-ex1-collapse">
                             <ul class="nav navbar-nav navbar-right">
+                                <li id="linom"><p> Bonjour '.$_SESSION['username'].'</p></li>
                                 <li><a href="#product/all">Nos produits</a></li>
-                                <li><a href="">'.$_SESSION["username"].'</a></li>
-                                <li><a href="#panier">Mon panier</a></li>
-                                <li> <button id="connect" name="connect" class="btn btn-primary" onclick="logout(event)"> Se Deconnecter </button></li>
+                                <li id="monPanier"><a href="#panier">Mon panier</a></li>
+                               
+                                <li id="lisignup"></li>
+                                <li id="lisignin"></li>
                                 <li>
                                     <div id = "searchbar" style="margin-top:2px;">
                                         <form class="navbar-form navbar-right inline-form">
@@ -48,6 +48,7 @@ if (isset($_SESSION['username'])) {
                                         </form>
                                     </div>
                                 </li>
+                                 <li id="lideco"><button id="connect" name="connect" class="btn btn-primary" onclick="logout(event)"> Se Deconnecter </button></li>
                             </ul>
                         </div><!--/.navbar-collapse -->
                             
@@ -61,10 +62,14 @@ if (isset($_SESSION['username'])) {
 
  echo('<!DOCTYPE html>
     <html>'. $head .'<body><div id="all_content">
-    <div id="slider"></div>'
-
- . $navbar.
-  $main_content.'</div>'
+    <div id="slider"></div>
+        <div ="navb">'
+         .$navbar.''
+        .'</div>'
+    .$main_content.''
+    . '</div>'
  . $footer .
  '</body>
-    </html>');
+     <div id="ses">
+  <input type="hidden" id="hdnSession" data-value="default" />
+    </html></div>');

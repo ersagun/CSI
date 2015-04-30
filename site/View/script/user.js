@@ -123,41 +123,22 @@ function connectin(event) {
         url: 'controller/Controller.php',
         type: 'Post',
         data: {a: 'connect', user: user, pass: pass},
+  
         error: function () {
             console.log("erreur !");
         },
         success: function (res) {
-
+            $("#ses").html(res);
             //$('#connect-success-text').html('Connexion effectuée, Bienvenue <strong>'+user+'</strong>');
             //$('#connect-success').show(200);
-            location.hash = '#panier';
-            var navbar = "";
-            navbar += "<div id\"navvbar\">";
-            navbar += "                <nav class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\">";
-            navbar += "                        <div class=\"container\">                         ";
-            navbar += "                        <div class=\"collapse navbar-collapse navbar-ex1-collapse\">";
-            navbar += "                            <ul class=\"nav navbar-nav navbar-right\">";
-            navbar += "                                <li><a href=\"#product\/all\">Nos produits<\/a><\/li>";
-            navbar += "                                <li><a href=\"\"> "+user+"<\/a><\/li>";
-            navbar += "                                <li><a href=\"#panier\">Mon panier<\/a><\/li>";
-            navbar += "                                <li> <button id=\"connect\" name=\"connect\" class=\"btn btn-primary\" onclick=\"logout(event)\"> Se Deconnecter <\/button><\/li>";
-            navbar += "                                <li>";
-            navbar += "                                    <div id = \"searchbar\" style=\"margin-top:2px;\">";
-            navbar += "                                        <form class=\"navbar-form navbar-right inline-form\">";
-            navbar += "                                            <div class=\"form-group\" >";
-            navbar += "                                                <input type=\"search\" class=\"input-sm form-control\" placeholder=\"Recherche\" onkeyup=\"searchBar(this.value)\">";
-            navbar += "                                            <\/div>";
-            navbar += "                                        <\/form>";
-            navbar += "                                    <\/div>";
-            navbar += "                                <\/li>";
-            navbar += "                            <\/ul>";
-            navbar += "                        <\/div><!--\/.navbar-collapse -->                           ";
-            navbar += "                    <\/div><!--\/.container -->                       ";
-            navbar += "                <\/nav>";
-            navbar += "            <\/div>";
-
-            
-            $("#navvbar").html(navbar);
+            location.hash = '#panier'; 
+           // $("#navvbar").html(navbar);
+           $("#linom").append("<p> Bonjour "+user+",</p>");
+           $("#monPanier").append('<a href="#panier">Mon panier</a>');
+           $("#lideco").append('<button id="connect" name="connect" class="btn btn-primary" onclick="logout(event)"> Se Deconnecter </button>');
+           $("#lisignup").empty();
+           $("#lisignin").empty();  
+           $("#ses").html("<input type=\"hidden\" id=\"hdnSession\" data-value=\""+res+"\" />");
            
         }
 
@@ -166,7 +147,7 @@ function connectin(event) {
 }
 
 function logout() {
-
+    location.hash = '#product/all';
     //envoit de la requète au serveur
     jQuery.ajax({
         url: 'controller/Controller.php',
@@ -183,36 +164,14 @@ function logout() {
             //récupération des playlists
             // getPlaylists('display', 0);
             //getPlaylists('selection', 0);
-            var navbar="";
-navbar += "         <div id=\"navvbar\">";
-navbar += "                <nav class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\">";
-navbar += "";
-navbar += "                        <div class=\"container\">";
-navbar += "                            ";
-navbar += "                        <div class=\"collapse navbar-collapse navbar-ex1-collapse\">";
-navbar += "                            <ul class=\"nav navbar-nav navbar-right\">";
-navbar += "                                <li><a href=\"#product\/all\">Nos produits<\/a><\/li>";
-navbar += "                                <li><a href=\"#signup\">Sign Up<\/a><\/li>";
-navbar += "                                <li><a href=\"#signin\">Sign in<\/a><\/li>";
-navbar += "                                <li>";
-navbar += "                                    <div id = \"searchbar\" style=\"margin-top:2px;\">";
-navbar += "                                        <form class=\"navbar-form navbar-right inline-form\">";
-navbar += "                                            <div class=\"form-group\" >";
-navbar += "                                                <input type=\"search\" class=\"input-sm form-control\" placeholder=\"Recherche\" onkeyup=\"searchBar(this.value)\">";
-navbar += "                                            <\/div>";
-navbar += "                                        <\/form>";
-navbar += "                                    <\/div>";
-navbar += "                                <\/li>";
-navbar += "                            <\/ul>";
-navbar += "                        <\/div><!--\/.navbar-collapse -->";
-navbar += "                            ";
-navbar += "                    <\/div><!--\/.container -->";
-navbar += "                        ";
-navbar += "                <\/nav>";
-navbar += "            <\/div>";
 
-            $("#navvbar").html(navbar);
+           $("#lisignup").html('<a href="#signup">Sign Up</a>');
+           $("#lisignin").html('<a href="#signin">Sign In</a>');
+            $("#linom").empty();
+           $("#monPanier").empty();
+           $("#lideco").empty();
+           $("#ses").html("<input type=\"hidden\" id=\"hdnSession\" data-value=\"default\" />");
         }
     });
-     location.hash = '#product/all';
+     
 }
