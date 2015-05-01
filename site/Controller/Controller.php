@@ -95,7 +95,7 @@ if (count($_POST) > 0) {
             ControllerPanier::showPanier($_SESSION["username"],$_SESSION["pass"]);
             break;
         case 'showpanierid':
-            ControllerPanier::showPanierId($_GET["id"],$_SESSION["username"],$_SESSION["pass"]);
+            ControllerPanier::showPanierId($_POST["id"],$_SESSION["username"],$_SESSION["pass"]);
             break;
         case 'showcommandes':
             ControllerCommande::showCommandes($_SESSION["username"],$_SESSION["pass"]);

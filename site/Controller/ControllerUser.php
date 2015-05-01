@@ -22,12 +22,11 @@ class ControllerUser {
      */
     
     public static function connect($a,$b){
-        $bol=Client::VerifierMdp($a, $b);
+        $bol=Client::VerifierMdp($a,$b);
         if($bol){
              $_SESSION['username'] = $a;
              $_SESSION['pass'] = $b;
-            // $navbar=file_get_contents('../view/html/navbar_connected.html');
-            echo $a;
+            echo "<input type=\"hidden\" id=\"hdnSession\" data-value=\""+$_SESSION["username"]+"\" />";
            
         }else{
             echo "<p>Vous n'etes pas inscrit ".$a." ou alors t'es bourré</p>";

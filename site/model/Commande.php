@@ -258,8 +258,7 @@ class Commande implements JsonSerializable
 
             // On prépare la récupération de la Commande avec le Panier_Id spécifié.
 
-            $requete = $bdd -> prepare("SELECT Commande_Id, Commande_date, Comande_recuperee,
-            Commande.HeureRecuperation_Id AS hr_id, HeureRecuperation_Deb, HeureRecuperation_Fin, Panier_Id
+            $requete = $bdd -> prepare("SELECT Commande_Id, Commande_date, Comande_recuperee,Commande_Total,Commande.HeureRecuperation_Id AS hr_id, HeureRecuperation_Deb, HeureRecuperation_Fin, Panier_Id
             FROM Commande INNER JOIN HeureRecuperation ON HeureRecuperation.HeureRecuperation_id =
              Commande.HeureRecuperation_Id WHERE Commande.Client_id= ?;");
             $requete->execute(array($id));
@@ -291,11 +290,11 @@ class Commande implements JsonSerializable
 
                 $c->id = intval($reponse['Commande_Id']);
                 $c->date = new DateTime($reponse['Commande_date']);
-                $c->recuperee = (intval($reponse['Comande_recuperee']) == 0);
+                $c->recuperee = (intval($reponse['Comande_recuperee']) == 1);
                 $c->panier_id = intval($reponse['Panier_Id']);
                 $c->heurerecuperation_id = intval($reponse['hr_id']);
                 $c->heurerecuperation = $hr;
-
+                $c->tot=$reponse["Commande_Total"];
                 $tab[$i] = $c;
                 $i++;
             }

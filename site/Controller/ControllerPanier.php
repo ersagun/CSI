@@ -27,7 +27,7 @@ class ControllerPanier {
         if(Client::VerifierMdp($u, $mdp)){
             $table= Compose::findByPanierID($id);
              echo json_encode($table);   
-        }      
+        }     
     }
     
     
@@ -38,7 +38,7 @@ class ControllerPanier {
         $compose->setProduit_id($id);
         $compose->setQuantite($qte);
         $compose->insert();
-        echo $client.$qte;
+        echo $id;
         
     }
     

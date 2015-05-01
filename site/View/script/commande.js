@@ -71,17 +71,17 @@ function showCommandes(){
             var milieu="";
             for (i = 0; i < r.length; i++) {
                 etat="";
-                if(r[i].recuperee ==0){
-                    etat= "n\'est pas récupéréé.";
+                if(r[i].recuperee ==true){
+                    etat= "est récupéréé.";
                 }else{
-                    etat= "est récupéréé";
+                    etat= "n\'est pas récupéréé";
                 }
-               milieu+="<div class=\"simpleCart_items\"><a href=\"#oldPanier\" onclick=\"showPanierId("+r[i].panier_id+");return false;\" class=\"simpleCart_empty btn btn-lg btn-danger\" style=\"font-size:10px;height:10px\">Cliquez ici<\/a>&nbsp;&nbsp;&nbsp;Le "+r[i].Commande_date+", vous avez passé une commande pour venir le chercher le"+r[i].heurerecuperation.deb+". Vous avez jusqu`a "+r[i].heurerecuperation.fin+" pour venir le chercher. ETAT DE LA COMMANDE : "+etat+", PRIX TOTAL :"+r[i].tot+"]<\/div><br>";   
+               milieu+="<div class=\"simpleCart_items\"><a href=\"#oldPanier\" onclick=\"showPanierId("+r[i].panier_id+");return false;\" class=\"simpleCart_empty btn btn-lg btn-danger\" style=\"font-size:12px;\">Cliquez ici<\/a>&nbsp;&nbsp;&nbsp;[ Le "+r[i].date.date+", vous avez passé une commande pour venir le chercher le "+r[i].heurerecuperation.deb.date+" . Vous avez jusqu`a "+r[i].heurerecuperation.fin.date+" pour venir le chercher. ETAT DE LA COMMANDE : "+etat+", PRIX TOTAL :"+r[i].tot+" ]<\/div><br>";   
             }
             var fin = "";  
             fin += "                      <ul id=\"cart\" class='clearfix'><\/ul><li class=\"divider\"><\/li>";
             fin += "                        	<div class=\"btn-group pull-right\">";
-            fin += "				<a href=\"#\" class=\"simpleCart_checkout btn btn-lg btn-success\">Retourne<\/a>";
+            fin += "				<a href=\"#panier\" class=\"simpleCart_checkout btn btn-lg btn-success\">Retourne<\/a>";
             fin += "				<\/div>";
             fin += "                    <\/div>";
             fin += "			<\/ul>";

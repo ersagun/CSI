@@ -554,24 +554,42 @@ class Client implements JsonSerializable
     public function update(){
         try {
            
-
+            $bdd = Base::getConnection();
             // On prépare la requête
 
-             $requete = $bdd->prepare("Update client SET Client_Dernierpanier=:dp;");
-            $admin = 1;
-
-            if ($this->admin==true)
-                $admin = 0;
+             $requete = $bdd->prepare("Update client SET Client_Dernierpanier=:dp WHERE Client_Id= :cli_id;");
 
             $bol=$requete->execute(array
             (
-                'dp' => $this->dernierpanier
+                'dp' => $this->dernierpanier,
+                'cli_id'=>$this->id
             ));
             // On récupere l'identifiant du Client inséré.
 
             $this->id = $bdd->LastInsertID('client');
             $requete->closeCursor();
             return $this->id;
+        } catch (BaseException $e) {
+            print $e->getMessage();
+        }
+    }
+    
+    public static function updateLastPanier($id,$dernier_p){
+        try {
+           
+            $bdd = Base::getConnection();
+            // On prépare la requête
+
+             $requete = $bdd->prepare("Update client SET Client_Dernierpanier=:dp WHERE Client_Id= :cli_id;");
+
+            $bol=$requete->execute(array
+            (
+                'dp' => $dernier_p,
+                'cli_id'=>$id
+            ));
+            // On récupere l'identifiant du Client inséré.
+
+            $requete->closeCursor();
         } catch (BaseException $e) {
             print $e->getMessage();
         }

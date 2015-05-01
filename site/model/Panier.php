@@ -190,6 +190,7 @@ class Panier implements JsonSerializable
         }
     }
 
+
     /**
      * Permet de retrouver un Panier dans la base de données
      * a l'aide de son identifiant.

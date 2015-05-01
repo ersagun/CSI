@@ -21,7 +21,7 @@ function showProducts(){
              $("#center").append('<legend style="color: graytext; font-size:20pt;\">Nos produits </legend>');
 
             $("#center").append(' <div class="row">');
-                
+                console.log(r); 
             for(i=0;i<r.length;i++){
       
                 var milieu = "";
@@ -32,8 +32,8 @@ function showProducts(){
                 milieu += " <img src=\"view/"+r[i].img_url+"\" class=\"img-thumbnail img-responsive item_thumb\" style=width:400px;height:300px; align:middle;><br> ";
                 milieu += "     <p class='input-sm clearfix'>"+r[i].nom+"<\/p><span class='row'><\/span>";
                 milieu += "  <\/div>";
-                milieu += "  <div class=\"panel-footer\"> <p class=\"item_price\">"+r[i].prix+"<\/p><span class='btn btn-danger btn-md item_add' onclick=\"ajouterPanier("+i+")\">ADD<\/span> ";
-                milieu += "      <label>Qty: <input id=\"qte-for"+i+"\" type=\"text\" value=\"1\"><\/label>";
+                milieu += "  <div class=\"panel-footer\"> <p class=\"item_price\">"+r[i].prix+"<\/p><span class='btn btn-danger btn-md item_add' onclick=\"ajouterPanier("+r[i].id+")\">ADD<\/span> ";
+                milieu += "      <label>Qty: <input id=\"qte-for"+r[i].id+"\" type=\"text\" value=\"1\"><\/label>";
                 milieu += "     <\/div>";
                 milieu += "<\/div>";
                 milieu += "<\/div>";
@@ -81,8 +81,8 @@ function searchBar(val){
                 milieu += " <img src=\"view/"+r[i].img_url+"\" class=\"img-thumbnail img-responsive item_thumb\" style=width:400px;height:300px; align:middle;><br> ";
                 milieu += "     <p class='input-sm clearfix'>"+r[i].nom+"<\/p><span class='row'><\/span>";
                 milieu += "  <\/div>";
-                milieu += "  <div class=\"panel-footer\"> <p class=\"item_price\">"+r[i].prix+"<\/p><span class='btn btn-danger btn-md item_add' onclick=ajouterPanier("+i+")>ADD<\/span> ";
-                milieu += "      <label>Qty: <input id=\"qte-for"+i+"\" type=\"text\" value=\"1\"><\/label>";
+                milieu += "  <div class=\"panel-footer\"> <p class=\"item_price\">"+r[i].prix+"<\/p><span class='btn btn-danger btn-md item_add' onclick=ajouterPanier("+r[i].id+")>ADD<\/span> ";
+                milieu += "      <label>Qty: <input id=\"qte-for"+r[i].id+"\" type=\"text\" value=\"1\"><\/label>";
                 milieu += "     <\/div>";
                 milieu += "<\/div>";
                 milieu += "<\/div>";

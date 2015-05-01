@@ -223,7 +223,7 @@ class Compose implements JsonSerializable
             $requete = $bdd -> prepare("SELECT Compose.Produit_Id AS pr_id, Panier_Id, Quantite, Produit_Nom,
             Produit_Img_URL, Produit_Prix, Produit.Categorie_Id AS c_id, Categorie_Nom FROM Compose
             INNER JOIN Produit ON Produit.Produit_Id = Compose.Produit_Id INNER JOIN Categorie ON
-            Categorie.Categorie_ID = Produit.Categorie_Id WHERE Panier_Id = ?;");
+            Categorie.Categorie_ID = Produit.Categorie_Id WHERE Compose.Panier_Id = ?;");
             $requete->execute(array($id));
 
             /**

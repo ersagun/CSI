@@ -333,29 +333,16 @@ class Produit implements JsonSerializable
             foreach($reponses as $reponse)
             {
 
-                $c_id=intval($reponse['c_id']);
-                $categorie_nom=$reponse['Categorie_Nom'];
                 $c = new Categorie();
-                $c->setCategorie_id($c_id);
-                $c->setCategorie_nom($categorie_nom);
-
-
-                $p_id= $reponse['Produit_Id'];
-                $p_nom = $reponse['Produit_Nom'];
-                $p_img_url = $reponse['Produit_Img_URL'];
-                $p_prix = floatval($reponse['Produit_Prix']);
-                $p_categorie_id = intval($reponse['c_id']);
-
-                $c = new Categorie();
-                $c->setCategorie_id($c_id);
-                $c->setCategorie_nom($categorie_nom);
+                $c->setCategorie_id(intval($reponse['c_id']));
+                $c->setCategorie_nom($reponse['Categorie_Nom']);
 
                 $p = new Produit();
-                $p->id = $p_id;
-                $p->nom = $p_nom;
-                $p->img_url = $p_img_url;
-                $p->prix = $p_prix;
-                $p->categorie_id = $p_categorie_id;;
+                $p->setId(intval($reponse['Produit_Id']));
+                $p->setNom($reponse['Produit_Nom']);
+                $p->setImg_URL($reponse['Produit_Img_URL']);
+                $p->setPrix(floatval($reponse['Produit_Prix']));
+                $p->setCategorie_id(intval($reponse['c_id']));
                 $p->categorie = $c;
 
                 array_push($tab ,$p);
