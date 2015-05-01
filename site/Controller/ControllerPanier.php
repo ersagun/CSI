@@ -23,6 +23,14 @@ class ControllerPanier {
          
     }
     
+    public static function showPanierId($id,$u,$mdp){
+        if(Client::VerifierMdp($u, $mdp)){
+            $table= Compose::findByPanierID($id);
+             echo json_encode($table);   
+        }      
+    }
+    
+    
     public static function ajouterProduitPanier($id,$qte,$user,$mdp){
         $client=Client::VerifierMdpId($user,$mdp);
         $compose=new Compose();
@@ -32,5 +40,17 @@ class ControllerPanier {
         $compose->insert();
         echo $client.$qte;
         
+    }
+    
+    public static function supprimerIdPanier($a,$user,$mdp){
+        $client=Client::VerifierMdpId($user,$mdp);
+        Compose::supprimerContenuPanierId($client, $a);
+        echo $a+" deleted";
+    }
+    
+        public static function supprimerPanier($user,$mdp){
+        $client=Client::VerifierMdpId($user,$mdp);
+        Compose::supprimerContenuPanier($client);
+        echo $a+" deleted";
     }
 }

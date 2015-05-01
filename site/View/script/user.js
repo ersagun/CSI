@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-
+/**
 function verifySession() {
     $.ajax({
         type: "POST",
@@ -26,7 +26,7 @@ function verifySession() {
             }
         }
     });
-}
+}**/
 
 /**
  * 
@@ -174,4 +174,15 @@ function logout() {
         }
     });
      
+}
+
+function verifyConnexion(){
+    val=false;
+    res=$("#hdnSession").data('value');
+    if(res !=""){
+        if (res != "default") {
+            val=true;
+        }
+    }
+    return val;
 }

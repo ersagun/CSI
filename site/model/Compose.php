@@ -178,6 +178,31 @@ class Compose implements JsonSerializable
             print $e -> getMessage();
         }
     }
+    
+     public static function supprimerContenuPanierId($id_panier,$b)
+    {
+        try
+        {
+            // Connection a la base.
+
+            $bdd = Base::getConnection();
+
+            // On prépare la requête
+
+            $requete = $bdd -> prepare("DELETE FROM Compose WHERE Panier_Id = :id AND Produit_Id= :p_id;");
+
+            $requete -> execute(array
+            (
+                'id' => $id_panier,
+                    'p_id'=>$b
+            ));
+        }
+        catch(BaseException $e)
+        {
+            print $e -> getMessage();
+        }
+    }
+
 
     /**
      * Permet de retrouver le contenu d'un Panier dans la base de données

@@ -44,12 +44,19 @@ class Commande implements JsonSerializable
      */
 
     private $panier_id;
+    
+      /**
+     * @var int
+     */
+    private $tot;
 
     /**
      * @var boolean
      */
 
     private $recuperee;
+    
+    private $cli_id;
 
 
     // Properties
@@ -93,6 +100,8 @@ class Commande implements JsonSerializable
      */
 
     public function setId($_id) { $this->id = $_id; }
+    
+    public function setTot($_id) { $this->tot = $_id; }
 
     /**
      * Modifies the panier_id attribute.
@@ -100,6 +109,7 @@ class Commande implements JsonSerializable
      */
 
     public function setPanier_id($_panier_id) { $this->panier_id = $_panier_id; }
+    public function setCliId($_panier_id) { $this->cli_id = $_panier_id; }
 
     /**
      * Modifies the recuperee attribute.
@@ -140,13 +150,13 @@ class Commande implements JsonSerializable
 
             $bdd = Base::getConnection();
 
-            if (!isset($this->date))
+         /**   if (!isset($this->date))
             {
                 throw new Exception("La Commande n'a pas pu être inserée
                  dans la base de données car le champ date n'a pas été specifié
                   et il s'agit d'un champ obligatoire.");
-            }
-            else if (!isset($this->recuperee))
+            }**/
+            if (!isset($this->recuperee))
             {
                 throw new Exception("La Commande n'a pas pu être inserée
                  dans la base de données car le champ recuperee n'a pas été specifié
@@ -173,14 +183,15 @@ class Commande implements JsonSerializable
             // On prépare la requête
 
             $requete = $bdd -> prepare("INSERT INTO commande(Commande_date, Comande_recuperee,
-              HeureRecuperation_id, Panier_Id) VALUES (:dat, :rec, :hr_id, :p_id);");
+              HeureRecuperation_id,Commande_Total, Panier_Id, Client_Id) VALUES (NOW(), :rec, :hr_id,:c_tot, :p_id, :cli_id);");
 
             $requete -> execute(array
             (
-                'dat' => $this->date,
-                'rec' => $rec,
+                'rec' => $this->recuperee,
                 'hr_id' => $this->heurerecuperation_id,
-                'p_id' => $this->panier_id
+                'c_tot' => $this->tot,
+                'p_id' => $this->panier_id,
+                'cli_id'=>$this->cli_id
             ));
 
             // On récupere l'identifiant de la Commande insérée.
@@ -237,7 +248,7 @@ class Commande implements JsonSerializable
      * @param $id Le Compose avec l'identifiant du Panier recherché
      */
 
-    public static function findByPanierID($id)
+    public static function findByCliID($id)
     {
         try
         {
@@ -250,7 +261,7 @@ class Commande implements JsonSerializable
             $requete = $bdd -> prepare("SELECT Commande_Id, Commande_date, Comande_recuperee,
             Commande.HeureRecuperation_Id AS hr_id, HeureRecuperation_Deb, HeureRecuperation_Fin, Panier_Id
             FROM Commande INNER JOIN HeureRecuperation ON HeureRecuperation.HeureRecuperation_id =
-             Commande.HeureRecuperation_Id WHERE Panier_Id = ?;");
+             Commande.HeureRecuperation_Id WHERE Commande.Client_id= ?;");
             $requete->execute(array($id));
 
             /**

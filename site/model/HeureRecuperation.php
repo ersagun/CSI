@@ -65,7 +65,17 @@ class HeureRecuperation implements JsonSerializable
      * @param $_fin The new value of the fin of this HeureRecuperation.
      */
 
-    public function setFin($_fin) { $this->fin = $_fin; }
+    public function setFin($v) { 
+        /**
+        list($year, $month, $day, $hour, $min) = preg_split('/[: -]/', $v);
+        $hint=intval($hour);
+        $val=$hint+1;
+        $heuremod=$val;
+        
+        $_fin=$year+"-"+$month+"-"+$day+"- "+$heuremod+":"+$min;
+         * **/
+        $this->fin=$v;
+    }
 
     /**
      * Modifies the id attribute.
@@ -112,17 +122,17 @@ class HeureRecuperation implements JsonSerializable
                  dans la base de donnees car le champ deb n'a pas été specifié
                   et il s'agit d'un champ obligatoire.");
             }
-            else if (!isset($this->fin))
+           /** else if (!isset($this->fin))
             {
                 throw new Exception("L'HeureRécupération n'a pas pu être inseré
                  dans la base de donnees car le champ fin n'a pas été specifié
                   et il s'agit d'un champ obligatoire.");
-            }
+            }**/
 
             // On prépare la requete
 
             $requete = $bdd -> prepare("INSERT INTO heurerecuperation(HeureRecuperation_Deb, HeureRecuperation_Fin)
-              VALUES (:deb, :fin);");
+              VALUES (STR_TO_DATE(:deb,'%Y-%m-%d %H:%i:%s'),STR_TO_DATE(:fin,'%Y-%m-%d %H:%i:%s'));");
             $requete -> execute(array
             (
                 'deb' => $this->deb,

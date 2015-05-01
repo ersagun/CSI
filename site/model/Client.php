@@ -550,7 +550,67 @@ class Client implements JsonSerializable
             print $e -> getMessage();
         }
     }
+    
+    public function update(){
+        try {
+           
 
+            // On prépare la requête
+
+             $requete = $bdd->prepare("Update client SET Client_Dernierpanier=:dp;");
+            $admin = 1;
+
+            if ($this->admin==true)
+                $admin = 0;
+
+            $bol=$requete->execute(array
+            (
+                'dp' => $this->dernierpanier
+            ));
+            // On récupere l'identifiant du Client inséré.
+
+            $this->id = $bdd->LastInsertID('client');
+            $requete->closeCursor();
+            return $this->id;
+        } catch (BaseException $e) {
+            print $e->getMessage();
+        }
+    }
+
+      public static function VerifierMdpRetId($codename, $mdp)
+    {
+        try
+        {
+            // Connection a la base.
+
+            $bdd = Base::getConnection();
+
+            // On prépare la requete pour compter le nombre de nom équivalent
+            // au parametre
+
+            $reponse = $bdd -> prepare("SELECT Client.Client_Id FROM Client inner join Compte on Client.Compte_Id=Compte.Compte_Id WHERE
+                Client.Client_Codename = :name AND Compte.Compte_mdp = :mdp;");
+
+            $reponse -> execute(array(
+                'name' => $codename,
+                'mdp' => $mdp
+            ));
+
+            // On récupere le résulat
+
+            $result = $reponse -> fetch();
+            $reponse -> closeCursor();
+
+            // Si le compte est 1, le nom est unique, on retourne vrai.
+
+            return ($result["Client_Id"]);
+        }
+        catch(BaseException $e)
+        {
+            print $e -> getMessage();
+        }
+    }
+    
     // function called when encoded with json_encode
     public function jsonSerialize() {
         return get_object_vars($this);

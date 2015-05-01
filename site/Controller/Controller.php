@@ -16,11 +16,23 @@ session_start();
 //si une action a été renseignée
 if (count($_GET) > 0) {
     switch ($_GET['a']) {
+        case 'supprimerIdPanier':
+            ControllerPanier::supprimerIdPanier($_GET["like"],$_SESSION["username"], $_SESSION["pass"]);
+            break;
+        case 'cmdForm':
+            ControllerCommande::cmdForm();
+            break;
+        case 'supprimerPanier':
+            ControllerPanier::supprimerPanier($_SESSION["username"], $_SESSION["pass"]);
+            break;
        case 'panier':
             ControllerPanier::showPanier();
             break;
-        case 'etap1cmd': 
-            ControllerCommande::etape1cmd($_SESSION["username"], $_SESSION["pass"]);
+        case 'etape1cmd': 
+            ControllerCommande::etape1cmd();
+            break;
+           case 'etape2cmd': 
+            ControllerCommande::etape2cmd($_GET["heure"],$_GET["total"],$_SESSION["username"], $_SESSION["pass"]);
             break;
         case 'ajouterPanier':
             ControllerPanier::ajouterProduitPanier($_GET["like"],$_GET["qte"],$_SESSION["username"], $_SESSION["pass"]);
@@ -81,6 +93,12 @@ if (count($_POST) > 0) {
             break;
         case 'showpanier':
             ControllerPanier::showPanier($_SESSION["username"],$_SESSION["pass"]);
+            break;
+        case 'showpanierid':
+            ControllerPanier::showPanierId($_GET["id"],$_SESSION["username"],$_SESSION["pass"]);
+            break;
+        case 'showcommandes':
+            ControllerCommande::showCommandes($_SESSION["username"],$_SESSION["pass"]);
             break;
         case 'subscribe':
             ControllerUser::subscribe($_POST['prenom'],$_POST['nom'],$_POST['codename'],$_POST['rue'], $_POST['ville'],$_POST['cp'],$_POST['voie'],md5($_POST['pass']), $_POST['email']);

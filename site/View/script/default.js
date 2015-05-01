@@ -46,9 +46,13 @@ var hashHistory = function () {
     var hash = location.hash.split("/");
 
     switch (hash[0]) {
+        //case '#passeCommande':
+       // passerCommande();
+       // break;
         //si la première sous chaine est #artists
          case '#panier':
          showPanier();
+          break;
             //on regarde la deuxième sous chaine et on appelle les fonctions adéquates
         case '#product':
             //on regarde la deuxième sous chaine et on appelle les fonctions adéquates
@@ -82,6 +86,9 @@ var hashHistory = function () {
         case '#signup' :
             showForm();
             break;
+        case '#mesCommandes' :
+            showCommandes();
+            break;
         case '#signin' :
             showSignIn();
             break;
@@ -89,9 +96,9 @@ var hashHistory = function () {
         default:
             location.hash = '';
             var c = '<div class="jumbotron">'
-                    + '<p>Bienvenue dans notre site de drive dévéloppé dans le cadre de cours de CSI.</p>'
-                    + '<p>Si vous souhaitez faire des achats, veuillez créer un compte</p>'
-                    + '<p><button class="btn btn-success no-radius" onclick="showForm();">S\'inscrire</button></p>'
+                    + '<p style="margin-left:30px;">Bienvenue dans notre site de drive dévéloppé dans le cadre de cours de CSI.</p>'
+                    + '<p style="margin-left:30px;">Si vous souhaitez faire des achats, veuillez créer un compte</p>'
+                    + '<p><button class="btn btn-success no-radius" onclick="showForm();" style="margin-left:30px;">S\'inscrire</button></p>'
                     + '</div>';
             $("#center").html(c);
             break;
