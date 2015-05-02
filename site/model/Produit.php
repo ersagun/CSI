@@ -285,12 +285,12 @@ class Produit implements JsonSerializable
 
             $p = new Produit();
 
-            $p->id = intval($reponse['Produit_Id']);
-            $p->nom = $reponse['Produit_Nom'];
-            $p->img_url = $reponse['Produit_Img_URL'];
-            $p->prix = floatval($reponse['Produit_Prix']);
-            $p->categorie_id = intval($reponse['c_id']);
-            $p->categorie = $c;
+            $p->setId(intval($reponse['Produit_Id']));
+            $p->setNom($reponse['Produit_Nom']);
+            $p->setImg_URL($reponse['Produit_Img_URL']);
+            $p->setPrix(floatval($reponse['Produit_Prix']));
+            $p->setCategorie_id(intval($reponse['c_id']));
+            $p->setCategorie($c);
 
             $requete->closeCursor();
             return $p;
@@ -343,7 +343,7 @@ class Produit implements JsonSerializable
                 $p->setImg_URL($reponse['Produit_Img_URL']);
                 $p->setPrix(floatval($reponse['Produit_Prix']));
                 $p->setCategorie_id(intval($reponse['c_id']));
-                $p->categorie = $c;
+                $p->setCategorie($c);
 
                 array_push($tab ,$p);
                //echo($tab[$i]);
@@ -380,7 +380,8 @@ class Produit implements JsonSerializable
       $tab = array();
       while ($reponse = $stmt->fetch(PDO::FETCH_BOTH)) 
       {
-       $c_id=intval($reponse['Categorie_Id']);
+                
+                $c_id=intval($reponse['Categorie_Id']);
                 $categorie_nom=$reponse['Categorie_Nom'];
                 $c = new Categorie();
                 $c->setCategorie_id($c_id);
@@ -404,6 +405,7 @@ class Produit implements JsonSerializable
                 $p->prix = $p_prix;
                 $p->categorie_id = $p_categorie_id;;
                 $p->categorie = $c;
+                
 
                 array_push($tab ,$p);
       }

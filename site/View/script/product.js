@@ -25,14 +25,13 @@ function showProducts(){
             for(i=0;i<r.length;i++){
       
                 var milieu = "";
-                milieu += "<div class=\"col-md-3 simpleCart_shelfItem\" >   ";
+                milieu += "<div class=\"col-md-3 simpleCart_shelfItem\" style=\"margin-bottom:2%;\">   ";
                 milieu += "<div class=\"panel panel-default\">";
                 milieu += "     <div class=\"panel-heading item_name\">"+r[i].nom+"<\/div>";
                 milieu += "  <div class=\"panel-body\">";
-                milieu += " <img src=\"view/"+r[i].img_url+"\" class=\"img-thumbnail img-responsive item_thumb\" style=width:400px;height:300px; align:middle;><br> ";
-                milieu += "     <p class='input-sm clearfix'>"+r[i].nom+"<\/p><span class='row'><\/span>";
+                milieu += " <img src=\"view/"+r[i].img_url+"\" class=\"img-thumbnail img-responsive item_thumb\" style=\"width:100%;heigth:80%;min-height:250px; max-height:250px;\"><br> ";
                 milieu += "  <\/div>";
-                milieu += "  <div class=\"panel-footer\"> <p class=\"item_price\">"+r[i].prix+"<\/p><span class='btn btn-danger btn-md item_add' onclick=\"ajouterPanier("+r[i].id+")\">ADD<\/span> ";
+                milieu += "  <div class=\"panel-footer\"> <p class=\"item_price\">"+r[i].prix+"<\/p><span class='btn btn-danger btn-md item_add' onclick=ajouterPanier("+r[i].id+")>ADD<\/span> ";
                 milieu += "      <label>Qty: <input id=\"qte-for"+r[i].id+"\" type=\"text\" value=\"1\"><\/label>";
                 milieu += "     <\/div>";
                 milieu += "<\/div>";
@@ -72,14 +71,13 @@ function searchBar(val){
          $("#center").append(' <div class="row">');
                 
             for(i=0;i<r.length;i++){
-      
+                location.hash="#searchProduct";
                 var milieu = "";
-                milieu += "<div class=\"col-md-3 simpleCart_shelfItem\" >   ";
+                milieu += "<div class=\"col-md-3 simpleCart_shelfItem\" style=\"margin-bottom:2%;\">   ";
                 milieu += "<div class=\"panel panel-default\">";
                 milieu += "     <div class=\"panel-heading item_name\">"+r[i].nom+"<\/div>";
                 milieu += "  <div class=\"panel-body\">";
-                milieu += " <img src=\"view/"+r[i].img_url+"\" class=\"img-thumbnail img-responsive item_thumb\" style=width:400px;height:300px; align:middle;><br> ";
-                milieu += "     <p class='input-sm clearfix'>"+r[i].nom+"<\/p><span class='row'><\/span>";
+                milieu += " <img src=\"view/"+r[i].img_url+"\" class=\"img-thumbnail img-responsive item_thumb\" style=\"width:100%;heigth:80%;min-height:250px; max-height:250px;\"><br> ";
                 milieu += "  <\/div>";
                 milieu += "  <div class=\"panel-footer\"> <p class=\"item_price\">"+r[i].prix+"<\/p><span class='btn btn-danger btn-md item_add' onclick=ajouterPanier("+r[i].id+")>ADD<\/span> ";
                 milieu += "      <label>Qty: <input id=\"qte-for"+r[i].id+"\" type=\"text\" value=\"1\"><\/label>";

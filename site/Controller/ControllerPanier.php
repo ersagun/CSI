@@ -37,9 +37,9 @@ class ControllerPanier {
         $compose->setPanier_id($client);
         $compose->setProduit_id($id);
         $compose->setQuantite($qte);
-        $compose->insert();
-        echo $id;
-        
+        $val=$compose->insert();
+        $prod=Produit::findByID($id);
+        echo $prod->nom;
     }
     
     public static function supprimerIdPanier($a,$user,$mdp){

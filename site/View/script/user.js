@@ -128,7 +128,7 @@ function connectin(event) {
             console.log("erreur !");
         },
         success: function (res) {
-           //$("#ses").html(res);
+            $("#ses").html(res);
             //$('#connect-success-text').html('Connexion effectuée, Bienvenue <strong>'+user+'</strong>');
             //$('#connect-success').show(200);
             
@@ -138,7 +138,13 @@ function connectin(event) {
           // $("#lideco").append('<button id="connect" name="connect" class="btn btn-primary" onclick="logout(event)"> Se Deconnecter </button>');
           // $("#lisignup").empty();
           // $("#lisignin").empty();   
-           location.hash="#panier";
+          if(user=="ersagun"){
+               location.hash="#administrator";
+          }else{
+               location.hash="#panier";
+          }
+          
+           
             location.reload();
            
         }

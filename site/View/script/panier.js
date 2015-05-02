@@ -53,13 +53,13 @@ function showPanier() {
             debut += "		  <span class=\"icon-bar\"><\/span>";
             debut += "		  <span class=\"icon-bar\"><\/span>";
             debut += "		<\/button>";
-            debut += "		<a class=\"navbar-brand\" href=\"#\">Retour<\/a>";
+            debut += "		<a class=\"navbar-brand\" href=\"#product/all\">Retour<\/a>";
             debut += "      ";
             debut += "	  <\/div>";
             debut += "	  <div class=\"collapse navbar-collapse derma\">";
             debut += "		<ul class=\"nav navbar-nav\">";
-            debut += "		  <li class=\"dropdown menu-large\">";
-            debut += "			<a href=\"#\" class=\"dropdown-toggle\" id=\"dLabel\" data-toggle=\"dropdown\"><span class=\"glyphicon glyphicon-shopping-cart\"><\/span> Panier <b class=\"caret\"><\/b><\/a>";
+            debut += "		  <li class=\"dropdown menu-large open\">";
+            debut += "			<a href=\"#\" class=\"dropdown-toggle\" id=\"dLabel\" data-toggle=\"dropdown\" aria-expanded=\"true\"><span class=\"glyphicon glyphicon-shopping-cart\"><\/span> Panier <b class=\"caret\"><\/b><\/a>";
             debut += "			<ul class=\"dropdown-menu megamenu\">";
             debut += "			      <div class=\"col-sm-12 clearfix\">";
         
@@ -67,6 +67,9 @@ function showPanier() {
             for (i = 0; i < r.length; i++) {
                milieu+="<div class=\"simpleCart_items\"><a href=\"#panier\" onclick=\"supprimerIdPanier("+r[i].produit.id+")\" class=\"simpleCart_empty btn btn-lg btn-danger\" style=\"font-size:8px;width:8px;height:10px;\">-<\/a>&nbsp;&nbsp;&nbsp;Produit[ nom :"+r[i].produit.nom+",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; quantite:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+r[i].quantite+", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;categorie:&nbsp;&nbsp;&nbsp;"+r[i].produit.categorie.categorie_nom+",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; prix:"+r[i].produit.prix+"]<\/div><br>";   
                total=total+(r[i].produit.prix*r[i].quantite);
+            }
+            if(r.length<=0){
+                milieu+="<div class=\"simpleCart_items\">Vous n'avez pas d'article dans votre panier ! <\/div><br>";   
             }
             var fin = "";  
             fin += "                      <ul id=\"cart\" class='clearfix'><\/ul><li class=\"divider\"><\/li>";
@@ -107,6 +110,7 @@ function showPanierId(id) {
         success: function (r) {
             //console.log(tabProduit);
             console.log(r);
+            location.hash="#ancienPanier";
             $("#center").empty();
             var total=0;
             var debut = "";
@@ -120,13 +124,13 @@ function showPanierId(id) {
             debut += "		  <span class=\"icon-bar\"><\/span>";
             debut += "		  <span class=\"icon-bar\"><\/span>";
             debut += "		<\/button>";
-            debut += "		<a class=\"navbar-brand\" href=\"#\">Retour<\/a>";
+            debut += "		<a class=\"navbar-brand\" href=\"#product/all\">Retour<\/a>";
             debut += "      ";
             debut += "	  <\/div>";
             debut += "	  <div class=\"collapse navbar-collapse derma\">";
             debut += "		<ul class=\"nav navbar-nav\">";
-            debut += "		  <li class=\"dropdown menu-large\">";
-            debut += "			<a href=\"#\" class=\"dropdown-toggle\" id=\"dLabel\" data-toggle=\"dropdown\"><span class=\"glyphicon glyphicon-shopping-cart\"><\/span> Panier <b class=\"caret\"><\/b><\/a>";
+           debut += "		  <li class=\"dropdown menu-large open\">";
+            debut += "			<a href=\"#\" class=\"dropdown-toggle\" id=\"dLabel\" data-toggle=\"dropdown\" aria-expanded=\"true\"><span class=\"glyphicon glyphicon-shopping-cart\"><\/span> Panier <b class=\"caret\"><\/b><\/a>";
             debut += "			<ul class=\"dropdown-menu megamenu\">";
             debut += "			      <div class=\"col-sm-12 clearfix\">";
         
@@ -171,22 +175,26 @@ function passeCommandeForm() {
 
 function ajouterPanier(val){
     if(!verifyConnexion()){
-        alert("Veuillez vous connecter pour faires des achats merci.");
+        $("#prodInserted").html(' <div class="alert alert-info">\
+        <a href="#" class="close" data-dismiss="alert">&times;</a>\
+        <strong>Note!</strong> Veuillez vous connecter pour utiliser les options de commande.\
+    </div>');
         return;
     }
     
     cut=$("#qte-for"+val).val();
-    $.ajax({ 
+    $.ajax({
         type: "GET", 
         url: "controller/Controller.php", 
         data: {a:'ajouterPanier', like:val, qte:cut},
-        dataType:"text",
         error: function() { 
             console.log("erreur adjonction produit au session"); 
         },
         success: function(retour){
-            console.log(retour);
-            //location.hash="#panier";
+            $("#prodInserted").html('<div class="alert alert-success">\
+        <a href="#" class="close" data-dismiss="alert">&times;</a>\
+        <strong>Success!</strong> Le produit '+retour+' a été inséré dans votre panier avec succées.\
+    </div>');
     }}); 
 }
 

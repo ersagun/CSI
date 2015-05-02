@@ -10,6 +10,7 @@ include_once 'ControllerProduct.php';
 include_once 'ControllerUser.php';
 include_once 'ControllerPanier.php';
 include_once 'ControllerCommande.php';
+include_once 'ControllerStats.php';
 //demarage de la session utilisateur
 session_start();
 
@@ -49,6 +50,9 @@ if (count($_GET) > 0) {
             break;
         case 'sign-in':
            ControllerUser::displaySignIn();
+            break;
+         case 'stats':
+           ControllerUser::displayStats();
             break;
         //si l'action est une creation
         case 'create':

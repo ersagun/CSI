@@ -10,7 +10,7 @@ html{
 body{
     
         font-family: "Ubuntu", Helvetica, Arial, sans-serif!important;
-        	background: #222222;
+        background: #222222;
 	color: gray;
 }
 
@@ -105,10 +105,6 @@ text-align:center;
     height:250px;
     vertical-align:top; 
     display: inline-block;
-}
-
-#subsribe-success{
-    display:none;
 }
 
 #linom{

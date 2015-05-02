@@ -66,6 +66,9 @@ var hashHistory = function () {
                 default:
                     //searchAllArtists();
                     break;
+                    case 'statistiques':
+                    showStats();
+                    break;
             }
             break;
             //si la première sous chaine est #tracks
@@ -89,18 +92,29 @@ var hashHistory = function () {
         case '#mesCommandes' :
             showCommandes();
             break;
+        case '#searchProduct' :           
+            break;
+        case '#ancienPanier' :           
+            break;
+        case '#passeCommande1' : 
+            break;
+        case '#passeCommande2' :    
+            etape2commande();
+            break;
         case '#signin' :
             showSignIn();
+            break;
+        case '#administrator' :    
             break;
             //sinon on affiche la page d'accueil
         default:
             location.hash = '';
-            /**var c = '<div class="jumbotron">'
-                    + '<p style="margin-left:30px;">Bienvenue dans notre site de drive dévéloppé dans le cadre de cours de CSI.</p>'
-                    + '<p style="margin-left:30px;">Si vous souhaitez faire des achats, veuillez créer un compte</p>'
-                    + '<p><button class="btn btn-success no-radius" onclick="showForm();" style="margin-left:30px;">S\'inscrire</button></p>'
-                    + '</div>';
-            $("#center").html(c);**/
+            var c = '<div class="jumbotron">\
+                    <p style="margin-left:30px;">Bienvenue dans notre site de drive dévéloppé dans le cadre de cours de CSI.</p>\
+                    <p style="margin-left:30px;">Si vous souhaitez faire des achats, veuillez créer un compte</p>\
+                    <p><button class="btn btn-success no-radius" onclick="showForm();" style="margin-left:30px;">S\'inscrire</button></p>\
+                    </div>';
+            $("#center").html(c);
             break;
     }
 };

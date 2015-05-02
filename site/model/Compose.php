@@ -112,7 +112,7 @@ class Compose implements JsonSerializable
             // Connection a la base.
 
             $bdd = Base::getConnection();
-
+            
             if (!isset($this->produit_id))
             {
                 throw new Exception("Le Compose n'a pas pu être inseré

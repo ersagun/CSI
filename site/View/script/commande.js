@@ -7,6 +7,7 @@
 
 function passerCommande(total){
     $.get("controller/Controller.php", {a: "etape1cmd"}).done(function (data) {
+        location.hash="#passeCommande1";
         $("#center").html(data);
         $("#center").append("<input type=\"hidden\" id=\"totp\" data-value=\""+total+"\" />");
         $('#datetimepicker3').datetimepicker({dateFormat: "dd-mm-yy", 
@@ -25,6 +26,7 @@ function passerCommande(total){
         data: {a: 'etape2cmd', heure:val,total:res},
   
         error: function () {
+            location.hash="#passeCommande2";
             console.log("erreur !");
         },
         success: function (res) {
@@ -58,13 +60,13 @@ function showCommandes(){
             debut += "		  <span class=\"icon-bar\"><\/span>";
             debut += "		  <span class=\"icon-bar\"><\/span>";
             debut += "		<\/button>";
-            debut += "		<a class=\"navbar-brand\" href=\"#\">Retour<\/a>";
+            debut += "		<a class=\"navbar-brand\" href=\"#product/all\">Retour<\/a>";
             debut += "      ";
             debut += "	  <\/div>";
             debut += "	  <div class=\"collapse navbar-collapse derma\">";
             debut += "		<ul class=\"nav navbar-nav\">";
-            debut += "		  <li class=\"dropdown menu-large\">";
-            debut += "			<a href=\"#\" class=\"dropdown-toggle\" id=\"dLabel\" data-toggle=\"dropdown\"><span class=\"glyphicon glyphicon-shopping-cart\"><\/span> Panier <b class=\"caret\"><\/b><\/a>";
+            debut += "		  <li class=\"dropdown menu-large open\">";
+            debut += "			<a href=\"#\" class=\"dropdown-toggle\" id=\"dLabel\" data-toggle=\"dropdown\" aria-expanded=\"true\"><span class=\"glyphicon glyphicon-shopping-cart\"><\/span> Panier <b class=\"caret\"><\/b><\/a>";
             debut += "			<ul class=\"dropdown-menu megamenu\">";
             debut += "			      <div class=\"col-sm-12 clearfix\">";
         
