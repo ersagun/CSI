@@ -132,7 +132,7 @@ class HeureRecuperation implements JsonSerializable
             // On prépare la requete
 
             $requete = $bdd -> prepare("INSERT INTO heurerecuperation(HeureRecuperation_Deb, HeureRecuperation_Fin)
-              VALUES (STR_TO_DATE(:deb,'%Y-%m-%d %H:%i:%s'),STR_TO_DATE(:fin,'%Y-%m-%d %H:%i:%s'));");
+              VALUES (STR_TO_DATE(:deb,'%Y-%m-%d %H:%i:%s'),STR_TO_DATE(:fin,'%Y-%m-%d %H:%i:%s')+ INTERVAL 2 HOUR);");
             $requete -> execute(array
             (
                 'deb' => $this->deb,

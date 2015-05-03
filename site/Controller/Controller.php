@@ -32,6 +32,12 @@ if (count($_GET) > 0) {
         case 'etape1cmd': 
             ControllerCommande::etape1cmd();
             break;
+         case 'stats': 
+            ControllerStats::showStats();
+            break;
+        case 'pdf': 
+            ControllerStats::pdf();
+            break;
            case 'etape2cmd': 
             ControllerCommande::etape2cmd($_GET["heure"],$_GET["total"],$_SESSION["username"], $_SESSION["pass"]);
             break;

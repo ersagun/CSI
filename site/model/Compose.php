@@ -95,7 +95,53 @@ class Compose implements JsonSerializable
 
     }
 
+    public static function insertProd($panier,$qte,$prod){
+        try
+        {
+            // Connection a la base.
 
+            $bdd = Base::getConnection();
+           
+            $requete = $bdd -> prepare("INSERT INTO compose(Compose.Produit_Id)
+              VALUES (-1);");
+
+            $requete -> execute();
+            $v=$bdd->errorInfo();
+            print_r($v);
+             $iidd= $bdd->LastInsertID('compose');
+             return $iidd;
+            
+        }
+        catch(BaseException $e)
+        {
+            print $e -> getMessage();
+        }
+    }
+    
+    
+    
+    public static function updateComp($qte,$prod_id,$panier){
+       try {
+           
+            $bdd = Base::getConnection();
+            // On prépare la requête
+
+             $requete = $bdd->prepare("Update compose SET Compose.Produit_Id=:pi,Compose.Panier_Id=:panid,Compose.Quantite=:qte WHERE Compose.Produit_Id=-1");
+
+            $bol=$requete->execute(array
+            (
+                "pi"=>$prod_id,
+                "panid"=>$panier,
+                "qte"=>$qte
+            ));
+            // On récupere l'identifiant du Client inséré.
+
+            $requete->closeCursor();
+        } catch (BaseException $e) {
+            print $e->getMessage();
+        }
+    }
+    
     // Methods
 
 
@@ -112,7 +158,7 @@ class Compose implements JsonSerializable
             // Connection a la base.
 
             $bdd = Base::getConnection();
-            
+            /**
             if (!isset($this->produit_id))
             {
                 throw new Exception("Le Compose n'a pas pu être inseré
@@ -130,7 +176,7 @@ class Compose implements JsonSerializable
                 throw new Exception("Le Compose n'a pas pu être inseré
                  dans la base de données car le champ quantite n'a pas été specifié
                   et il s'agit d'un champ obligatoire.");
-            }
+            }**/
 
             // On prépare la requête
 

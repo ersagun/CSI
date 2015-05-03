@@ -113,6 +113,48 @@ class Historique implements JsonSerializable
 
     }
 
+    public static function findAll(){
+         try
+        {
+            // Connection a la base.
+
+            $bdd = Base::getConnection();
+
+            $requete = $bdd -> prepare("SELECT Historique_Ca,Historique_Nbvente,Historique_Deb,Historique_Fin FROM Historique");
+            $requete->execute();
+
+            /**
+             * Décommenter ici et commenter la suite si vous voulez retourner
+             * l'objet en format JSON.
+             * return json_encode($requete->fetchAll(PDO::FETCH_ASSOC));
+             */
+
+            // On transforme le résultat en un tableau d'objets
+
+
+
+            // Que l'on va retransformer en tableau de membres
+            $tab = array();
+            $reponses= $requete->fetchAll(PDO::FETCH_ASSOC);
+            foreach($reponses as $reponse)
+            {
+
+                $h = new Historique();
+                $h->setCA(intval($reponse["Historique_Ca"]));
+                $h->setNbVente(intval($reponse["Historique_Nbvente"]));
+                $h->setFin(intval($reponse["Historique_Fin"]));
+                $h->setDeb(intval($reponse["Historique_Deb"]));
+                array_push($tab,$h);
+            }
+
+            $requete->closeCursor();
+            return $tab;
+            
+        }
+        catch(BaseException $e) { print $e -> getMessage(); }
+    }
+    
+    
 
     // Methods
 

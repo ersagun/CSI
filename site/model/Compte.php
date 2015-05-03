@@ -74,6 +74,26 @@ class Compte implements JsonSerializable
 
     }
 
+    public static function updateClientId($client_id,$compte_id){
+        try {
+           
+            $bdd = Base::getConnection();
+            // On prépare la requête
+
+             $requete = $bdd->prepare("Update compte SET Compte.Client_Id=:dp WHERE Compte_Id=:coi");
+
+            $bol=$requete->execute(array
+            (
+                'coi'=>$compte_id,
+                'dp'=>$client_id
+            ));
+            // On récupere l'identifiant du Client inséré.
+
+            $requete->closeCursor();
+        } catch (BaseException $e) {
+            print $e->getMessage();
+        }
+    }
 
     // Methods
 

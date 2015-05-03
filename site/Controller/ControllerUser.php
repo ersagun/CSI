@@ -23,13 +23,17 @@ class ControllerUser {
     
     public static function connect($a,$b){
         $bol=Client::VerifierMdp($a,$b);
+        $id=Client::VerifierMdpRetId($a,$b);
         if($bol){
+            if($id>0){
              $_SESSION['username'] = $a;
              $_SESSION['pass'] = $b;
-            echo "<input type=\"hidden\" id=\"hdnSession\" data-value=\""+$_SESSION["username"]+"\" />";
-           
+            return $a;
         }else{
-            echo "<p>Vous n'etes pas inscrit ".$a." ou alors t'es bourré</p>";
+            return "null";
+        }  }
+        else{
+            return "null";
         }            
     }
     
@@ -68,39 +72,46 @@ class ControllerUser {
     
     
     public static function subscribe($a,$b,$c,$d,$e,$f,$g,$h,$i){
-        $bdd=Base::getConnection();
-        $last_id_client=$bdd->LastInsertID('client');
-        $panier=new Panier();
-        $panier->setClient_id($last_id_client+1);
-        $panier->setDebutRed("");
-        $panier->setFinRed("");
-        $panier->setReduction_id("");
-        
-        $compte=new Compte();
-        $compte->setId($last_id_client+1);
-        $compte->setMdp($h);
-        
+         $bdd = Base::getConnection();
         $cli=new Client();
-               $cli->setPrenom($a);
-               $cli->setNom($b);
-               $cli->setCodename($c);
-               $cli->setRue($d);
-               $cli->setVille($e);
-               $cli->setCp($f);
-               $cli->setNumvoie($g);
-               $cli->setAdmin(false);
-               $cli->setEmail($i);
-               $compte->insert();
-               $last_id_compte=$bdd->LastInsertID('compte');
-               $cli->setCompte_id($last_id_compte);
-               
-               $panier->insert();
-               $last_id_panier=$bdd->LastInsertID('panier');
-               $cli->setDernierPanier($last_id_panier);
-               $cli->insert();
+        $cli->setPrenom($a);
+        $cli->setNom($b);
+        $cli->setCodename($c);
+        $cli->setRue($d);
+        $cli->setVille($e);
+        $cli->setCp($f);
+        $cli->setNumvoie($g);
+        $cli->setAdmin(true);
+        $cli->setEmail($i);
+        $cli->insert();
+        $last_client=$bdd->LastInsertID('client');
+        
+      
+        $compte=new Compte();
+        $compte->setMdp($h);
+        $compte->insert();
+        $last_compte=$bdd->LastInsertID('compte');
+        
+        $panier=new Panier();
+        $panier->setClient_id($last_client);
+        $panier->insert();
+        $last_panier=$bdd->LastInsertID('panier');
+        
+
+        Compte::updateClientId($last_client,$last_compte);
+        Client::updatePanierId($last_client, $last_panier);
+        Client::updateCompteId($last_client,$last_compte);
+        
+    
+        
+        //cli : update client et compte 
+         //compte : update clientid et compte        
+         //panier : update clientid et compte        
                
                echo "inseré";
                }
+               
+               
                
                 public static function logout(){
         session_unset();

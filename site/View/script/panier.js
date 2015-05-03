@@ -193,8 +193,8 @@ function ajouterPanier(val){
         success: function(retour){
             $("#prodInserted").html('<div class="alert alert-success">\
         <a href="#" class="close" data-dismiss="alert">&times;</a>\
-        <strong>Success!</strong> Le produit '+retour+' a été inséré dans votre panier avec succées.\
-    </div>');
+        <strong>Success!</strong> Le produit a été inséré dans votre panier avec succées.\
+    </div>');location.hash="#panier";
     }}); 
 }
 

@@ -92,6 +92,9 @@ var hashHistory = function () {
         case '#mesCommandes' :
             showCommandes();
             break;
+        case '#statistiques' :
+            showStatistiques();
+            break;
         case '#searchProduct' :           
             break;
         case '#ancienPanier' :           

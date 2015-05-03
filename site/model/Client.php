@@ -250,7 +250,7 @@ class Client implements JsonSerializable
     {
 
     }
-
+    
 
     // Methods
 
@@ -293,11 +293,11 @@ class Client implements JsonSerializable
                 throw new Exception("Le Client n'a pas pu être inseré
                  dans la base de données car le champ ville n'a pas été specifié
                   et il s'agit d'un champ obligatoire.");
-            } else if (!isset($this->dernierpanier)) {
+            } /**else if (!isset($this->dernierpanier)) {
                 throw new Exception("Le Client n'a pas pu être inseré
                  dans la base de données car le champ dernierpanier n'a pas été specifié
                   et il s'agit d'un champ obligatoire.");
-            } else if (!isset($this->admin)) {
+            } **/else if (!isset($this->admin)) {
                 throw new Exception("Le Client n'a pas pu être inseré
                  dans la base de données car le champ admin n'a pas été specifié
                   et il s'agit d'un champ obligatoire.");
@@ -314,8 +314,8 @@ class Client implements JsonSerializable
             // On prépare la requête
 
              $requete = $bdd->prepare("INSERT INTO client(Client_Nom, Client_Prenom, Client_Numvoie, Client_Rue,
-              Client_Cp, Client_Ville, Client_Dernierpanier, Client_Admin, Client_Codename, Client_email, Compte_id)
-              VALUES (:nom, :pnom, :voie, :rue, :cp, :vil, :dp, :adm, :cdn, :email, :c_id);");
+              Client_Cp, Client_Ville, Client_Admin, Client_Codename, Client_email)
+              VALUES (:nom, :pnom, :voie, :rue, :cp, :vil, :adm, :cdn, :email);");
             $admin = 1;
 
             if ($this->admin==true)
@@ -329,11 +329,9 @@ class Client implements JsonSerializable
                 'rue' => $this->rue,
                 'cp' => $this->cp,
                 'vil' => $this->ville,
-                'dp' => $this->dernierpanier,
                 'adm' => $admin,
                 'cdn' => $this->codename,
                 'email'=>$this->email,
-                'c_id' => $this->compte_id
             ));
             if(!$bol){
                 throw new Exception("Le Client n'a pas pu ête inséré");
@@ -551,7 +549,7 @@ class Client implements JsonSerializable
         }
     }
     
-    public function update(){
+    public static function updatePanierId($client_id,$panier_id){
         try {
            
             $bdd = Base::getConnection();
@@ -561,31 +559,29 @@ class Client implements JsonSerializable
 
             $bol=$requete->execute(array
             (
-                'dp' => $this->dernierpanier,
-                'cli_id'=>$this->id
+                'dp' => $panier_id,
+                'cli_id'=>$client_id
             ));
             // On récupere l'identifiant du Client inséré.
 
-            $this->id = $bdd->LastInsertID('client');
             $requete->closeCursor();
-            return $this->id;
         } catch (BaseException $e) {
             print $e->getMessage();
         }
     }
-    
-    public static function updateLastPanier($id,$dernier_p){
+        
+    public static function updateCompteId($id,$co_id){
         try {
            
             $bdd = Base::getConnection();
             // On prépare la requête
 
-             $requete = $bdd->prepare("Update client SET Client_Dernierpanier=:dp WHERE Client_Id= :cli_id;");
+             $requete = $bdd->prepare("Update client SET Compte_Id=:comp WHERE Client_Id= :cli_id;");
 
             $bol=$requete->execute(array
             (
-                'dp' => $dernier_p,
-                'cli_id'=>$id
+                'cli_id' => $id,
+                'comp'=>$co_id
             ));
             // On récupere l'identifiant du Client inséré.
 

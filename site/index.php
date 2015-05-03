@@ -26,7 +26,7 @@ $userRappel='';
 
 if (isset($_SESSION['username'] )) {
     
-     if ($_SESSION['username'] != "default" && $_SESSION['username'] == "ersagun") {
+     if ($_SESSION['username'] != "default" && $_SESSION['username'] != "ersagun") {
         $ss="  <input type=\"hidden\" id=\"hdnSession\" data-value=\"".$_SESSION["username"]."\" />";
         $navbar='<div id="navvbar-on">
                 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -70,7 +70,6 @@ if (isset($_SESSION['username'] )) {
                         <div class="collapse navbar-collapse navbar-ex1-collapse">
                             <ul class="nav navbar-nav navbar-right">
                                 <li id="linom"><p> Bonjour '.$_SESSION['username'].'</p></li>
-                                <li><a href="#generation">Generations</a></li>
                                 <li id="monPanier"><a href="#statistiques">Statistiques</a></li>
                                
                                 <li id="lisignup"></li>

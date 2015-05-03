@@ -5,14 +5,14 @@
  */
 
 
-function showStats(){
-    
-}
-
-function generateStats(){
-    function showForm() {
+function showStatistiques(){
     $.get("controller/Controller.php", {a: "stats", }).done(function (data) {
         $("#center").html(data);
     });
 }
+
+function genererPDF(){
+    $.get("controller/Controller.php", {a: "pdf"}).done(function (data) {
+        
+    });
 }

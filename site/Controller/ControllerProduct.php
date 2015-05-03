@@ -40,31 +40,7 @@ require_once '../model/Produit.php';
         $tab=Produit::findByID($_GET['like']);
         echo json_encode($tab);
     }
-
-    public function ajouterProduitSession(){
-        session_start();
-        if (!isset($_SESSION["user"])){
-           $_SESSION["user"]="unknown";
-        }
-        
-        $produit=Produit::findById($_POST['like']);
-        $_SESSION["sessionProduct"][$_POST['like']]=  serialize($produit);
-        echo json_encode($produit);
-    }
     
-    public function getProdSession(){
-        session_start();
-        if(isset($_SESSION["user"])){
-        $produit=Session::searchProducts($_SESSION["sessionProduct"]);
-        }else{
-            $_SESSION["user"]="unknown";
-            //session_start();
-            //$_SESSION["user"]="unknown";
-            //$produit=Session::searchProducts($_SESSION["sessionProduct"]);
-        }
-        
-        echo json_encode($produit);
-    }
     
         public static function search($ab){
         $tab=  Produit::findProduitCategorieLike($ab); 

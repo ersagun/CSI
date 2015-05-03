@@ -122,6 +122,34 @@ class Panier implements JsonSerializable
     }
 
 
+    
+    public static function incrementePanier($id){
+         try
+        {
+            // Connection a la base.
+
+            $bdd = Base::getConnection();
+    $requete = $bdd -> prepare("INSERT INTO panier(client_Id)
+              VALUES (:c_id);");
+
+            $requete -> execute(array
+            (
+                'c_id' => $id,
+            ));
+
+            // On récupere l'identifiant du Panier inséré.
+
+          
+            $requete->closeCursor();
+    
+        }
+        catch(BaseException $e)
+        {
+            print $e -> getMessage();
+        }
+    }
+
+    
     // Methods
 
 
@@ -146,36 +174,15 @@ class Panier implements JsonSerializable
                  dans la base de données car le champ client_id n'a pas été specifié
                   et il s'agit d'un champ obligatoire.");
             }
-            else if (!isset($this->debutred))
-            {
-                throw new Exception("Le Panier n'a pas pu être inseré
-                 dans la base de données car le champ debutred n'a pas été specifié
-                  et il s'agit d'un champ obligatoire.");
-            }
-            else if (!isset($this->finred))
-            {
-                throw new Exception("Le Panier n'a pas pu être inseré
-                 dans la base de données car le champ finred n'a pas été specifié
-                  et il s'agit d'un champ obligatoire.");
-            }
-            else if (!isset($this->reduction_id))
-            {
-                throw new Exception("Le Panier n'a pas pu être inseré
-                 dans la base de données car le champ reduction_id n'a pas été specifié
-                  et il s'agit d'un champ obligatoire.");
-            }
 
             // On prépare la requête
 
-            $requete = $bdd -> prepare("INSERT INTO panier(client_Id, DateDebutRed, DateFinRed, Reduction_Id)
-              VALUES (:c_id, :deb, :fin, :r_id);");
+            $requete = $bdd -> prepare("INSERT INTO panier(client_Id)
+              VALUES (:c_id);");
 
             $requete -> execute(array
             (
                 'c_id' => $this->client_id,
-                'deb' => $this->debutred,
-                'fin' => $this->finred,
-                'r_id' => $this->reduction_id
             ));
 
             // On récupere l'identifiant du Panier inséré.
@@ -190,6 +197,30 @@ class Panier implements JsonSerializable
         }
     }
 
+    
+         public static function updateClientId($id,$c_id){
+        try {
+           
+            $bdd = Base::getConnection();
+            // On prépare la requête
+
+             $requete = $bdd->prepare("Update panier SET CLient_Id=:c_id WHERE Panier_Id= :id;");
+
+            $bol=$requete->execute(array
+            (
+                'c_id' => $c_id,
+                'id'=>$id
+            ));
+            // On récupere l'identifiant du Client inséré.
+
+            $this->id = $bdd->LastInsertID('client');
+            $requete->closeCursor();
+            return $this->id;
+        } catch (BaseException $e) {
+            print $e->getMessage();
+        }
+    }
+    
 
     /**
      * Permet de retrouver un Panier dans la base de données

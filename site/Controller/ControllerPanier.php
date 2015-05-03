@@ -8,6 +8,7 @@
 
 include_once '../model/Compte.php';
 include_once '../model/Compose.php';
+include_once '../model/Client.php';
 /**
  * Description of ControllerPanier
  *
@@ -32,14 +33,12 @@ class ControllerPanier {
     
     
     public static function ajouterProduitPanier($id,$qte,$user,$mdp){
-        $client=Client::VerifierMdpId($user,$mdp);
-        $compose=new Compose();
-        $compose->setPanier_id($client);
-        $compose->setProduit_id($id);
-        $compose->setQuantite($qte);
-        $val=$compose->insert();
+        $dernier_p=Client::VerifierMdpId($user,$mdp);
+        //echo($dernier_p);
+        $val=Compose::insertProd($dernier_p, $qte, $id);
+        Compose::updateComp($qte,$id,$dernier_p);
         $prod=Produit::findByID($id);
-        echo $prod->nom;
+        echo $id;
     }
     
     public static function supprimerIdPanier($a,$user,$mdp){
