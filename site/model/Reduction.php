@@ -141,6 +141,48 @@ class Reduction implements JsonSerializable
         }
     }
 
+    
+      public static function findByClientID($id)
+{
+    try
+    {
+        // Connection a la base.
+
+        $bdd = Base::getConnection();
+
+        // On prépare la récupération du Produit avec l'ID spécifié.
+
+        $requete = $bdd -> prepare("SELECT * FROM Panier INNER JOIN Reduction ON Panier.Reduction_Id =
+            Reduction.Reduction_Id WHERE Panier_Id = ?;");
+        $requete->execute(array($id));
+
+        /**
+         * Décommenter ici et commenter la suite si vous voulez retourner
+         * l'objet en format JSON.
+         * return json_encode($requete->fetchAll(PDO::FETCH_ASSOC));
+         */
+
+        // On transforme le résultat en un objet
+
+        $reponse = $requete->fetch(PDO::FETCH_ASSOC);
+
+        // On transforme l'objet en un Produit
+
+        if($reponse)
+        {
+            $red=new Reduction();
+            $red->setMontant($reponse["Reduction_montant"]);
+            $red->setQteReduction($reponse["Reduction_qtereduction"]);
+
+            $requete->closeCursor();
+            return $red;
+        }
+        else return null;
+    }
+    catch(BaseException $e) { print $e -> getMessage(); }
+}
+
+
     // function called when encoded with json_encode
     public function jsonSerialize() {
         return get_object_vars($this);

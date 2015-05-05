@@ -9,6 +9,7 @@ require_once('BaseException.php');
 require_once('Promotion.php');
 require_once('Produit.php');
 
+
 class ObtenirPromotion implements JsonSerializable
 {
 
@@ -32,6 +33,8 @@ class ObtenirPromotion implements JsonSerializable
      */
 
     private $produit_id;
+    
+    private $produit;
 
     /**
      * @var Promotion
@@ -94,7 +97,12 @@ class ObtenirPromotion implements JsonSerializable
      */
 
     public function setPromotion_id($_promotion_id) { $this->promotion_id = $_promotion_id; }
+public function setPromotion($_promotion) { $this->promotion = $_promotion; }
 
+    
+    public function setProduit($prod){
+        $this->produit=$prod;
+    }
 
     // Constructor
 
@@ -283,6 +291,73 @@ class ObtenirPromotion implements JsonSerializable
 
             $requete->closeCursor();
             return $tab;
+        }
+        catch(BaseException $e) { print $e -> getMessage(); }
+    }
+    
+    
+    
+    
+    public static function allProduitPromotion(){
+        try
+        {
+            // Connection a la base.
+
+            $bdd = Base::getConnection();
+
+            $requete = $bdd -> prepare("SELECT * ,Produit_Img_Url FROM Produit INNER JOIN Categorie ON Categorie.Categorie_Id =
+            Produit.Categorie_Id INNER JOIN obtenir_promotion ON Produit.Produit_Id=Obtenir_promotion.Produit_Id INNER JOIN promotion ON Obtenir_promotion.Promotion_Id=Promotion.Promotion_Id;");
+            $requete->execute();
+
+            /**
+             * Décommenter ici et commenter la suite si vous voulez retourner
+             * l'objet en format JSON.
+             * return json_encode($requete->fetchAll(PDO::FETCH_ASSOC));
+             */
+
+            // On transforme le résultat en un tableau d'objets
+
+
+            // Que l'on va retransformer en tableau de membres
+            $tab = array();
+            $reponses= $requete->fetchAll(PDO::FETCH_ASSOC);
+            foreach($reponses as $reponse)
+            {
+
+                $c = new Categorie();
+                $c->setCategorie_id(intval($reponse['Categorie_Id']));
+                $c->setCategorie_nom($reponse['Categorie_Nom']);
+
+                $p = new Produit();
+                $p->setId(intval($reponse['Produit_Id']));
+                $p->setNom($reponse['Produit_Nom']);
+                $p->setImg_URL($reponse['Produit_Img_Url']);
+                $p->setPrix(floatval($reponse['Produit_Prix']));
+                $p->setCategorie_id(intval($reponse['Categorie_Id']));
+                $p->setCategorie($c);
+                
+                $promotion=new Promotion();
+                $promotion->setMontant($reponse["Promotion_montant"]);
+                $promotion->setId($reponse["Promotion_Id"]);
+                
+                
+                
+                $obtProm=new ObtenirPromotion();
+                $obtProm->setProduit_id($reponse["Produit_Id"]);
+                $obtProm->setPromotion_id($reponse["Promotion_Id"]);
+                $obtProm->setDebut($reponse["Date_Debut"]);
+                $obtProm->setFin($reponse["Date_Fin"]);
+                $obtProm->setProduit($p);
+                $obtProm->setPromotion($promotion);
+                
+                array_push($tab ,$obtProm);
+               //echo($tab[$i]);
+                //$i++;
+            }
+
+            //$requete->closeCursor();
+            return $tab;
+            
         }
         catch(BaseException $e) { print $e -> getMessage(); }
     }

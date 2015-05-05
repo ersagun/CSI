@@ -50,10 +50,12 @@ if (isset($_SESSION['username'] )) {
                                     </div>
                                 </li>
                                     <li><select id="searchCrit" name="searchCrit"  style="margin-left:8px;margin-top:15px;" >
-                            <option value="cat">Par categorie</option>
+                      
                             <option value="nom" selected="selected">Par nom</option>
                             <option value="tri-cro" >Trier croissant</option>
                             <option value="tri-decro" >Trier decroissant</option>
+                            <option value="prom" >Promotion</option>
+                            <option value="cat">Par categorie</option>
                         </select></li>
                                  <li id="lideco"><button id="connect" name="connect" class="btn btn-primary" onclick="logout(event)"> Se Deconnecter </button></li>
                             </ul>
@@ -89,10 +91,12 @@ if (isset($_SESSION['username'] )) {
                                     </div>
                                 </li>
                                     <li><select id="searchCrit" name="searchCrit"  style="margin-left:8px;margin-top:15px;" >
-                            <option value="cat">Par categorie</option>
+                           
                             <option value="nom" selected="selected">Par nom</option>
                             <option value="tri-cro" >Trier croissant</option>
                             <option value="tri-decro" >Trier decroissant</option>
+                             <option value="prom" >Promotion</option>
+                            <option value="cat">Par categorie</option>
                         </select></li>
                                  <li id="lideco"><button id="connect" name="connect" class="btn btn-primary" onclick="logout(event)"> Se Deconnecter </button></li>
                             </ul>

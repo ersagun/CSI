@@ -2,7 +2,7 @@
 
 
 require_once '../model/Produit.php';
-
+require_once '../model/ObtenirPromotion.php';
  class ControllerProduct{
      
 //require_once("../Models/User.php");
@@ -59,6 +59,11 @@ require_once '../model/Produit.php';
     
     public static function searchTriCroDeb($ab){
         $tab=  Produit::allProductsTrieDeb($ab); 
+        echo json_encode($tab);
+    }
+    
+    public static function produitPromotion(){
+        $tab= ObtenirPromotion::allProduitPromotion();
         echo json_encode($tab);
     }
     

@@ -44,6 +44,9 @@ if (count($_GET) > 0) {
         case 'ajouterPanier':
             ControllerPanier::ajouterProduitPanier($_GET["like"],$_GET["qte"],$_SESSION["username"], $_SESSION["pass"]);
             break;
+       /** case 'ajouterPanierPromo':
+            ControllerPanier::ajouterProduitPanierPromo($_GET["like"],$_GET["qte"],$_GET["val"],$_SESSION["username"], $_SESSION["pass"]);
+            break;**/
         case 'products':
             ControllerProduct::allProducts();
             break;
@@ -52,6 +55,12 @@ if (count($_GET) > 0) {
             break;
         case 'searchCat':
             ControllerProduct::searchCat($_GET['like']);
+            break;
+        case 'getReduct':
+            ControllerPanier::getReduct($_SESSION["username"], $_SESSION["pass"]);
+            break;
+        case 'produitPromotion':
+            ControllerProduct::produitPromotion();
             break;
            case 'searchTriCro':
             ControllerProduct::searchTriCro("croissant",$_GET['like']);
