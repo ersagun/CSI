@@ -7,20 +7,31 @@
 
 function passerCommande(total){
     $.get("controller/Controller.php", {a: "etape1cmd"}).done(function (data) {
-        location.hash="#passeCommande1";
-        $("#center").html(data);
-        $("#center").append("<input type=\"hidden\" id=\"totp\" data-value=\""+total+"\" />");
-        $('#datetimepicker3').datetimepicker({dateFormat: "dd-mm-yy", 
-    timeFormat: "HH:mm:ss"}); 
+        if(total>0){
+            var nowDate = new Date();
+            var today = new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate(), 0, 0, 0, 0);
+            location.hash="#passeCommande1";
+            $("#center").html(data);
+            $("#center").append("<input type=\"hidden\" id=\"totp\" data-value=\""+total+"\" />");
+            $('#datetimepicker3').datetimepicker({
+                startDate: today,
+                dateFormat: "dd-mm-yy", 
+                timeFormat: "HH:mm:ss"}); 
+            $("#datetimepicker").datetimepicker("option", "minDate", 0);
+            }else{
+            $("#prodInserted").html(' <div class="alert alert-info">\
+            <a href="#" class="close" data-dismiss="alert">&times;</a>\
+            <strong>Rappel!</strong> Votre panier est vide, veuillez le remplir pour préparer une commande.\
+            </div>');
+        }  
     });
-        //location.hash="#passerCommande";
-    };
+    }
     
     function etape2cmd(){
         res=$("#totp").data('value');
         val=$("#datetimepicker3").find("input").val();
-        //val=$("#dateCmd").val();
-        $.ajax({
+        
+             $.ajax({
         url: 'controller/Controller.php',
         type: 'Get',
         data: {a: 'etape2cmd', heure:val,total:res},
@@ -34,6 +45,7 @@ function passerCommande(total){
         }
 
     });
+       
     }
     
     
@@ -47,7 +59,6 @@ function showCommandes(){
             console.log("erreur !");
         },
         success: function (r) {
-            //console.log(tabProduit);
             $("#center").empty();
             var debut = "";
             debut += "<div class=\"container\">";
@@ -71,6 +82,10 @@ function showCommandes(){
             debut += "			      <div class=\"col-sm-12 clearfix\">";
         
             var milieu="";
+            if(r.length<=0){
+                milieu+="<div class=\"simpleCart_items\">Vous n'avez pas commande !<\/div><br>";   
+            }
+            
             for (i = 0; i < r.length; i++) {
                 etat="";
                 if(r[i].recuperee ==true){

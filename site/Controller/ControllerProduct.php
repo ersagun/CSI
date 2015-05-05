@@ -47,4 +47,19 @@ require_once '../model/Produit.php';
         echo json_encode($tab);
     }
     
+        public static function searchCat($ab){
+        $tab=  Produit::findProduitCat($ab); 
+        echo json_encode($tab);
+    }
+    
+     public static function searchTriCro($a,$ab){
+        $tab=  Produit::allProductsTrie($a,$ab); 
+        echo json_encode($tab);
+    }
+    
+    public static function searchTriCroDeb($ab){
+        $tab=  Produit::allProductsTrieDeb($ab); 
+        echo json_encode($tab);
+    }
+    
  }

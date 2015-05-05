@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{36ECBD23-238E-463E-83DA-58D04F425297}" Label="" LastModificationDate="1428415296" Name="MOT Ajout" Objects="18" Symbols="18" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" signature="MTM_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{36ECBD23-238E-463E-83DA-58D04F425297}" Label="" LastModificationDate="1429006354" Name="MOT Ajout" Objects="18" Symbols="18" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" signature="MTM_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -998,10 +998,10 @@ EmissionRules 0 Arial,8,N</a:FontList>
 <a:Code>AJOUT</a:Code>
 <a:CreationDate>1426175281</a:CreationDate>
 <a:Creator>ms</a:Creator>
-<a:ModificationDate>1426175917</a:ModificationDate>
+<a:ModificationDate>1429006354</a:ModificationDate>
 <a:Modifier>ms</a:Modifier>
 <a:Period>Temps reel</a:Period>
-<a:Phase.Type>1</a:Phase.Type>
+<a:Phase.Type>2</a:Phase.Type>
 <c:Phase.Tasks>
 <o:Task Ref="o25"/>
 <o:Task Ref="o26"/>

@@ -11,13 +11,15 @@
 		<Model ID="{C4DFEAFB-1116-4B70-9370-8AE2C6B7D561}" Loaded="No" Name="MOT Connexion" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" URL="MOT/Connexion MOT.mtm"/>
 		<Model Expanded="Yes" ID="{13624FC0-BAE8-40B2-AA92-A7AD9DE96539}" Loaded="No" Name="MCT Connexion" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" URL="MCT/Connexion MCT.mtm"/>
 		<Model Expanded="Yes" ID="{13624FC0-BAE8-40B2-AA92-A7AD9DE96539}" Loaded="No" Name="MCT Inscription" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" URL="MCT/Inscription MCT.mtm"/>
-		<Model ID="{161B2D87-F097-479F-A019-3E12A3E41F7D}" Name="MCT ValidationCommande" Selected="Yes" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" URL="MCT/validationCommande.mtm"/>
-		<Model Expanded="Yes" ID="{13624FC0-BAE8-40B2-AA92-A7AD9DE96539}" Name="MCT Ajout" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" URL="MCT/Ajouter MCT.mtm"/>
-		<Model ID="{E1B3EB45-B987-4C40-A43F-C9E4E2F37710}" Loaded="No" Name="MPD" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="MPD/MPD.mpd"/>
+		<Model ID="{161B2D87-F097-479F-A019-3E12A3E41F7D}" Loaded="No" Name="MCT ValidationCommande" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" URL="MCT/validationCommande.mtm"/>
+		<Model Expanded="Yes" ID="{13624FC0-BAE8-40B2-AA92-A7AD9DE96539}" Loaded="No" Name="MCT Ajout" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" URL="MCT/Ajouter MCT.mtm"/>
+		<Model ID="{E1B3EB45-B987-4C40-A43F-C9E4E2F37710}" Name="MPD" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="MPD/MPD.mpd"/>
 		<Model ID="{A0E66666-2240-4E93-9EE3-F6CD0EC1A820}" Loaded="No" Name="MCT EnvoiMessage" Type="{8B5D3680-2056-4280-8B77-FBE8472CB1A8}" URL="MCT/MCT EnvoiMessage.mtm"/>
-		<Model Expanded="Yes" ID="{AD676720-398A-4BD6-B81F-D5C9A225374F}" Loaded="No" Name="MPT Connexion" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="/Users/ms/Desktop/MPT Connexion.mpd"/>
-		<Model Expanded="Yes" ID="{1960580C-E094-4400-B624-A8307A688392}" Loaded="No" Name="MPT Inscription" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="/Users/ms/Desktop/MPT Inscription.mpd"/>
-		<Model Expanded="Yes" ID="{8284F32B-3A17-4567-A77B-366B560181BF}" Name="MPT Ajout" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="/Users/ms/Desktop/MPT Ajout.mpd"/>
+		<Model Expanded="Yes" ID="{AD676720-398A-4BD6-B81F-D5C9A225374F}" Loaded="No" Name="MPT Connexion" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="MPT/MPT Connexion.mpd"/>
+		<Model Expanded="Yes" ID="{1960580C-E094-4400-B624-A8307A688392}" Loaded="No" Name="MPT Inscription" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="MPT/MPT Inscription.mpd"/>
+		<Model Expanded="Yes" ID="{8284F32B-3A17-4567-A77B-366B560181BF}" Loaded="No" Name="MPT Ajout" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="MPT/MPT Ajout.mpd"/>
+		<Model Expanded="Yes" ID="{9B39B739-067A-4AA4-A0CF-3EDF4EC7C11B}" Name="MPD" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="MPD.mpd"/>
+		<Model Expanded="Yes" ID="{4D1AB899-AE25-4A1A-A913-0E6C3AE084F2}" Name="MCD" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="MCD.mcd"/>
 	</Local>
 	<BrowserModule Name="Référentiel"/>
 </Workspace>

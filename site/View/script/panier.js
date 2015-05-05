@@ -39,7 +39,6 @@ function showPanier() {
             console.log("erreur !");
         },
         success: function (r) {
-            //console.log(tabProduit);
             $("#center").empty();
             var total=0;
             var debut = "";
@@ -108,7 +107,6 @@ function showPanierId(id) {
             console.log("erreur !");
         },
         success: function (r) {
-            //console.log(tabProduit);
             console.log(r);
             location.hash="#ancienPanier";
             $("#center").empty();
@@ -161,15 +159,7 @@ function showPanierId(id) {
         }
     });
 }
-/**
-function passeCommandeForm() {
-    $.get("controller/Controller.php", {a: "cmdForm", }).done(function (data) {
-        $("#center").html(data);
-        $('#datetimepicker2').datetimepicker({
-                    locale: 'ru'
-                });
-    });
-}**/
+
 
 
 

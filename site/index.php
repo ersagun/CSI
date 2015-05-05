@@ -22,7 +22,6 @@ $panier = file_get_contents('view/html/panier.html');
 $main_content = file_get_contents('view/html/main_content.html');
 //$modal_connect = file_get_contents('view/html/modal_connect.html');
 $footer = file_get_contents('view/html/footer.html');
-$userRappel='';
 
 if (isset($_SESSION['username'] )) {
     
@@ -50,6 +49,12 @@ if (isset($_SESSION['username'] )) {
                                         </form>
                                     </div>
                                 </li>
+                                    <li><select id="searchCrit" name="searchCrit"  style="margin-left:8px;margin-top:15px;" >
+                            <option value="cat">Par categorie</option>
+                            <option value="nom" selected="selected">Par nom</option>
+                            <option value="tri-cro" >Trier croissant</option>
+                            <option value="tri-decro" >Trier decroissant</option>
+                        </select></li>
                                  <li id="lideco"><button id="connect" name="connect" class="btn btn-primary" onclick="logout(event)"> Se Deconnecter </button></li>
                             </ul>
                         </div><!--/.navbar-collapse -->
@@ -83,6 +88,12 @@ if (isset($_SESSION['username'] )) {
                                         </form>
                                     </div>
                                 </li>
+                                    <li><select id="searchCrit" name="searchCrit"  style="margin-left:8px;margin-top:15px;" >
+                            <option value="cat">Par categorie</option>
+                            <option value="nom" selected="selected">Par nom</option>
+                            <option value="tri-cro" >Trier croissant</option>
+                            <option value="tri-decro" >Trier decroissant</option>
+                        </select></li>
                                  <li id="lideco"><button id="connect" name="connect" class="btn btn-primary" onclick="logout(event)"> Se Deconnecter </button></li>
                             </ul>
                         </div><!--/.navbar-collapse -->
@@ -100,7 +111,7 @@ if (isset($_SESSION['username'] )) {
     '<div id="slider"></div>
         <div ="navb">'
          .$navbar.''
-        .'</div>'.$userRappel.$main_content.''
+        .'</div>'.$main_content.''
     . '</div>'
  . $footer .
  '</body>

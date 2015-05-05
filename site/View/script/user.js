@@ -100,8 +100,35 @@ event.preventDefault();
                 console.log("erreur !");
                 },
                 success: function (res) {
-                        location.hash = '#product/all';
-                        location.reload();
+                    
+                    if(res=="insere"){
+                            $("#prodInserted").html('<div class="alert alert-success">\
+                            <a href="#" class="close" data-dismiss="alert">&times;</a>\
+                            <strong>Success!</strong> Vous etes bien inscrit. Connectez vous maintenant !\
+                            </div>'); 
+                            window.setTimeout(function(){location.reload();location.hash="#product/all";},1000);
+                            
+                        }else{
+                            if(res=="client existe"){
+                                $("#prodInserted").html(' <div class="alert alert-info">\
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>\
+                                <strong>Note!</strong> Ce nom d\'utilisateur existe.\
+                                </div>');
+                            }
+                            if(res=="pb email"){
+                                $("#prodInserted").html(' <div class="alert alert-info">\
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>\
+                                <strong>Note!</strong> Votre adresse email n\'est pas correct.\
+                                </div>');
+                            }
+                            if(res =="mot de passe pb"){
+                                $("#prodInserted").html(' <div class="alert alert-info">\
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>\
+                                <strong>Note!</strong> Mot de passe doit etre superieur a 8.\
+                                </div>');
+                 
+                            }
+                        } 
                 }
 
         });
@@ -123,24 +150,32 @@ event.preventDefault();
                 console.log("erreur !");
                 },
                 success: function (res) {
-                $("#ses").html('<input type="hidden" id="hdnSession" data-value="' + res + '"/>');
-                        //$('#connect-success-text').html('Connexion effectuée, Bienvenue <strong>'+user+'</strong>');
-                        //$('#connect-success').show(200);
-
-                        // $("#navvbar").html(navbar);
-                        //  $("#linom").append("<p> Bonjour "+user+"</p>");
-                        // $("#monPanier").append('<a href="#panier">Mon panier</a>');
-                        // $("#lideco").append('<button id="connect" name="connect" class="btn btn-primary" onclick="logout(event)"> Se Deconnecter </button>');
-                        // $("#lisignup").empty();
-                        // $("#lisignin").empty(); 
-                        console.log(res);
-                        $("#prodInserted").html('<div class="alert alert-success">\
-                    <a href="#" class="close" data-dismiss="alert">&times;</a>\
-                    <strong>Success!</strong> N\'oubliez pas de venir chercher vos commandes.\
-                    </div>'); 
-                    location.reload();
-                    location.hash = '#product/all';
                     
+                    if(res=="ok"){
+                        $("#ses").html('<input type="hidden" id="hdnSession" data-value="' + res + '"/>');
+                        $("#prodInserted").html('<div class="alert alert-success">\
+                        <a href="#" class="close" data-dismiss="alert">&times;</a>\
+                        <strong>Success!</strong> N\'oubliez pas de venir chercher vos commandes.\
+                        </div>'); 
+                    window.setTimeout(function(){location.reload();location.hash="#product/all";},500);  
+                        }else{
+                            if(res=="existe pas"){
+                                $("#prodInserted").html(' <div class="alert alert-info">\
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>\
+                                <strong>Note!</strong> Ce nom d\'utilisateur n\' existe pas.\
+                                </div>');
+                        window.setTimeout(function(){location.reload();location.hash="#signin";},1000);  
+                            }
+                            if(res=="mot de passe"){
+                                 $("#prodInserted").html(' <div class="alert alert-info">\
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>\
+                                <strong>Note!</strong> Mot de passe n\' est pas correct.\
+                                </div>');
+                        window.setTimeout(function(){location.reload();location.hash="#signin";},1000);  
+                            }
+                        }
+                        
+               
                      }});
                 return false;
                 }
@@ -153,17 +188,7 @@ event.preventDefault();
                         type: 'post',
                         data: {a: 'logout'},
                         success: function (data) {
-
-                        // $('#connect-success').hide(200);
-                        //changement sur le bouton
-                        // $('#connect-btn').html(data);
-                        // $('#connect-btn').removeClass('btn-danger');
-                        // $('#connect-btn').addClass('btn-success');
-                        // $('#connect-btn').attr('data-target', '#modalConnect');
-                        //récupération des playlists
-                        // getPlaylists('display', 0);
-                        //getPlaylists('selection', 0);
-                        location.reload();
+                         window.setTimeout(function(){location.reload();location.hash="#product/all";},500);  
                                 $("#lisignup").html('<a href="#signup">Sign Up</a>');
                                 $("#lisignin").html('<a href="#signin">Sign In</a>');
                                 $("#linom").empty();

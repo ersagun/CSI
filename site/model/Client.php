@@ -347,6 +347,39 @@ class Client implements JsonSerializable
         }
     }
 
+    public static function getMailbyId($id){
+         try
+        {
+            // Connection a la base.
+
+            $bdd = Base::getConnection();
+
+            // On prépare la requete pour compter le nombre de nom équivalent
+            // au parametre
+
+            $reponse = $bdd -> prepare("SELECT Client.Client_email FROM Client inner join Compte on Client.Compte_Id=Compte.Compte_Id WHERE
+                Client.Client_Id=:idd");
+
+            $reponse -> execute(array(
+                'idd'=>$id
+            ));
+
+            // On récupere le résulat
+
+            $result = $reponse -> fetch();
+            $reponse -> closeCursor();
+
+            // Si le compte est 1, le nom est unique, on retourne vrai.
+
+            return ($result["Client_email"]);
+        }
+        catch(BaseException $e)
+        {
+            print $e -> getMessage();
+        }
+    }
+    
+    
     /**
      * Permet de retrouver un Client dans la base de données
      * a l'aide de son identifiant.
@@ -443,7 +476,7 @@ class Client implements JsonSerializable
 
             // On transforme l'objet en un Produit
 
-            if ($reponse) {
+            if ($requete->rowCount()>0) {
                 $c = new Compte();
 
                 $c->setId(intval($reponse['cmp_id']));
@@ -465,7 +498,7 @@ class Client implements JsonSerializable
                 $cl->mdp = $reponse['Client_mdp'];
                 $cl->compte = $c;
                 $cl->compte_id = $cl->compte->id;
-
+                echo $reponse;
                 $requete->closeCursor();
                 return $cl;
             } else return null;
@@ -474,6 +507,43 @@ class Client implements JsonSerializable
         }
     }
 
+     public static function findByNomRetName($nom)
+    {
+        try {
+            // Connection a la base.
+
+            $bdd = Base::getConnection();
+
+            // On prépare la récupération du Client avec le nomspécifié.
+
+            $requete = $bdd->prepare("SELECT Client_Codename FROM Client WHERE Client_Codename = ?");
+            $requete->execute(array($nom));
+
+            /**
+             * Décommenter ici et commenter la suite si vous voulez retourner
+             * l'objet en format JSON.
+             * return json_encode($requete->fetchAll(PDO::FETCH_ASSOC));
+             */
+
+            // On transforme le résultat en un objet
+
+            $reponse = $requete->fetch(PDO::FETCH_ASSOC);
+
+            // On transforme l'objet en un Produit
+                $a=0;
+                if($reponse["Client_Codename"]===$nom){
+                    $a= 1;
+                }else{
+                    $a= 0;
+                }
+                $requete->closeCursor();
+            return $a;
+        } catch (BaseException $e) {
+            print $e->getMessage();
+        }
+    }
+
+    
     /**
      * Vérifie si un Client a rentré le bon mot de passe.
      * @param $codename L'identifiant du Client.
@@ -485,6 +555,7 @@ class Client implements JsonSerializable
     {
         try
         {
+            $a=0;
             // Connection a la base.
 
             $bdd = Base::getConnection();
@@ -504,10 +575,14 @@ class Client implements JsonSerializable
 
             $result = $reponse -> fetch();
             $reponse -> closeCursor();
+            $val=intval($result['copies']);
+            if( $val===1){
+                $a=1;
+            }else{
+                $a=0;
+            }
 
-            // Si le compte est 1, le nom est unique, on retourne vrai.
-
-            return ($result['copies'] == 1);
+            return $a;
         }
         catch(BaseException $e)
         {

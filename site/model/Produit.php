@@ -356,6 +356,126 @@ class Produit implements JsonSerializable
         }
         catch(BaseException $e) { print $e -> getMessage(); }
     }
+    
+     public static function allProductsTrie($type,$val)
+    {
+        try
+        {
+            // Connection a la base.
+            $requete="";
+            $bdd = Base::getConnection();
+            if($type==="croissant"){
+            $requete=$bdd->prepare("select Produit_Id, Produit_Nom, Produit_Img_URL, Produit_Prix,
+            Produit.Categorie_Id AS c_id, Categorie_Nom  from produit  inner join categorie on Produit.Categorie_Id=Categorie.Categorie_Id  where Categorie.Categorie_Nom LIKE '".$val."%' OR Produit.Produit_Nom LIKE '".$val."%' ORDER BY Produit_Prix");
+           
+            }
+            
+            if($type==="decroissante"){
+            $requete=$bdd->prepare("select Produit_Id, Produit_Nom, Produit_Img_URL, Produit_Prix,
+            Produit.Categorie_Id AS c_id, Categorie_Nom  from produit  inner join categorie on Produit.Categorie_Id=Categorie.Categorie_Id  where Categorie.Categorie_Nom LIKE '".$val."%' OR Produit.Produit_Nom LIKE '".$val."%' ORDER BY Produit_Prix DESC");
+            }
+            
+            $requete->execute();
+
+            /**
+             * Décommenter ici et commenter la suite si vous voulez retourner
+             * l'objet en format JSON.
+             * return json_encode($requete->fetchAll(PDO::FETCH_ASSOC));
+             */
+
+            // On transforme le résultat en un tableau d'objets
+
+
+
+            // Que l'on va retransformer en tableau de membres
+            $tab = array();
+            $reponses= $requete->fetchAll(PDO::FETCH_ASSOC);
+            foreach($reponses as $reponse)
+            {
+
+                $c = new Categorie();
+                $c->setCategorie_id(intval($reponse['c_id']));
+                $c->setCategorie_nom($reponse['Categorie_Nom']);
+
+                $p = new Produit();
+                $p->setId(intval($reponse['Produit_Id']));
+                $p->setNom($reponse['Produit_Nom']);
+                $p->setImg_URL($reponse['Produit_Img_URL']);
+                $p->setPrix(floatval($reponse['Produit_Prix']));
+                $p->setCategorie_id(intval($reponse['c_id']));
+                $p->setCategorie($c);
+
+                array_push($tab ,$p);
+               //echo($tab[$i]);
+                //$i++;
+            }
+
+            //$requete->closeCursor();
+            return $tab;
+            
+        }
+        catch(BaseException $e) { print $e -> getMessage(); }
+    }
+    
+    public static function allProductsTrieDeb($type)
+    {
+        try
+        {
+            // Connection a la base.
+            $requete="";
+            $bdd = Base::getConnection();
+            if($type==="croissant"){
+            $requete=$bdd->prepare("select Produit_Id, Produit_Nom, Produit_Img_URL, Produit_Prix,
+            Produit.Categorie_Id AS c_id, Categorie_Nom  from produit  inner join categorie on Produit.Categorie_Id=Categorie.Categorie_Id ORDER BY Produit_Prix");
+           
+            }
+            
+            if($type==="decroissante"){
+            $requete=$bdd->prepare("select Produit_Id, Produit_Nom, Produit_Img_URL, Produit_Prix,
+            Produit.Categorie_Id AS c_id, Categorie_Nom  from produit  inner join categorie on Produit.Categorie_Id=Categorie.Categorie_Id ORDER BY Produit_Prix DESC");
+            }
+            
+            $requete->execute();
+
+            /**
+             * Décommenter ici et commenter la suite si vous voulez retourner
+             * l'objet en format JSON.
+             * return json_encode($requete->fetchAll(PDO::FETCH_ASSOC));
+             */
+
+            // On transforme le résultat en un tableau d'objets
+
+
+
+            // Que l'on va retransformer en tableau de membres
+            $tab = array();
+            $reponses= $requete->fetchAll(PDO::FETCH_ASSOC);
+            foreach($reponses as $reponse)
+            {
+
+                $c = new Categorie();
+                $c->setCategorie_id(intval($reponse['c_id']));
+                $c->setCategorie_nom($reponse['Categorie_Nom']);
+
+                $p = new Produit();
+                $p->setId(intval($reponse['Produit_Id']));
+                $p->setNom($reponse['Produit_Nom']);
+                $p->setImg_URL($reponse['Produit_Img_URL']);
+                $p->setPrix(floatval($reponse['Produit_Prix']));
+                $p->setCategorie_id(intval($reponse['c_id']));
+                $p->setCategorie($c);
+
+                array_push($tab ,$p);
+               //echo($tab[$i]);
+                //$i++;
+            }
+
+            //$requete->closeCursor();
+            return $tab;
+            
+        }
+        catch(BaseException $e) { print $e -> getMessage(); }
+    }
 
 
 
@@ -374,7 +494,49 @@ class Produit implements JsonSerializable
      public static function findProduitCategorieLike($val) {
         
       $c = Base::getConnection();
-      $query = "select * from Produit as a left join Categorie as t on a.Produit_Id=t.Categorie_Id  where t.Categorie_Nom LIKE '".$val."%' OR a.Produit_Nom LIKE '".$val."%' UNION select * from Produit as a right join Categorie as t on a.Produit_Id=t.Categorie_Id  where t.Categorie_Nom LIKE '".$val."%' OR a.Produit_Nom LIKE '".$val."%'";
+      $query = "select * from Produit inner join Categorie on Produit.Categorie_Id=Categorie.Categorie_Id  where Produit.Produit_Nom LIKE '".$val."%' ";
+      $stmt = $c->prepare($query) ;
+      $stmt->execute();
+      $tab = array();
+      while ($reponse = $stmt->fetch(PDO::FETCH_BOTH)) 
+      {
+                
+                $c_id=intval($reponse['Categorie_Id']);
+                $categorie_nom=$reponse['Categorie_Nom'];
+                $c = new Categorie();
+                $c->setCategorie_id($c_id);
+                $c->setCategorie_nom($categorie_nom);
+
+
+                $p_id= $reponse['Produit_Id'];
+                $p_nom = $reponse['Produit_Nom'];
+                $p_img_url = $reponse['Produit_Img_Url'];
+                $p_prix = floatval($reponse['Produit_Prix']);
+                $p_categorie_id = intval($reponse['Categorie_Id']);
+
+                $c = new Categorie();
+                $c->setCategorie_id($c_id);
+                $c->setCategorie_nom($categorie_nom);
+
+                $p = new Produit();
+                $p->id = $p_id;
+                $p->nom = $p_nom;
+                $p->img_url = $p_img_url;
+                $p->prix = $p_prix;
+                $p->categorie_id = $p_categorie_id;;
+                $p->categorie = $c;
+                
+
+                array_push($tab ,$p);
+      }
+      return $tab;
+          
+    }
+    
+    public static function findProduitCat($val) {
+        
+      $c = Base::getConnection();
+      $query = "select * from Produit inner join Categorie on Produit.Categorie_Id=Categorie.Categorie_Id  where Categorie.Categorie_Nom LIKE '".$val."%' ";
       $stmt = $c->prepare($query) ;
       $stmt->execute();
       $tab = array();

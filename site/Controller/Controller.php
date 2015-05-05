@@ -50,6 +50,21 @@ if (count($_GET) > 0) {
         case 'search':
             ControllerProduct::search($_GET['like']);
             break;
+        case 'searchCat':
+            ControllerProduct::searchCat($_GET['like']);
+            break;
+           case 'searchTriCro':
+            ControllerProduct::searchTriCro("croissant",$_GET['like']);
+            break;
+        case 'searchTriDecro':
+            ControllerProduct::searchTriCro("decroissante",$_GET['like']);
+            break;
+        case 'searchTriCroDeb':
+            ControllerProduct::searchTriCroDeb("croissant");
+            break;
+        case 'searchTriDecroDeb':
+            ControllerProduct::searchTriCroDeb("decroissante");
+            break;
         //si l'action est rechercher tout
         case 'sign-up':
            ControllerUser::displayForm();
@@ -111,7 +126,7 @@ if (count($_POST) > 0) {
             ControllerCommande::showCommandes($_SESSION["username"],$_SESSION["pass"]);
             break;
         case 'subscribe':
-            ControllerUser::subscribe($_POST['prenom'],$_POST['nom'],$_POST['codename'],$_POST['rue'], $_POST['ville'],$_POST['cp'],$_POST['voie'],md5($_POST['pass']), $_POST['email']);
+            ControllerUser::subscribe($_POST['prenom'],$_POST['nom'],$_POST['codename'],$_POST['rue'], $_POST['ville'],$_POST['cp'],$_POST['voie'],$_POST['pass'], $_POST['email']);
             break;
             switch($_POST['type']){
                 case 'display':

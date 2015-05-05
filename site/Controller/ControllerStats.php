@@ -70,7 +70,7 @@ class ControllerStats {
                         $deb=substr($r->deb,0,4);   
                         $fin=substr($r->fin,0,4); 
                 $val.='
-                Date Debut :   '.$deb.'   Date Fin :   '.$fin.'  NB Vente :    '.$r->nbvente.'CA :    '.$r->ca.'
+                Date Debut :   '.$deb.'   Date Fin :   '.$fin.'  NB Vente :    '.$r->nbvente.' CA :    '.$r->ca.'
                     
                 ';
             }
